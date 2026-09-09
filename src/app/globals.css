@@ -1,0 +1,282 @@
+/* ==========================================================================
+   Fable Travels — global tokens & base
+   Palette: Forest Shadow #2D3A3A · Mythic Gold #D4AF37 · Old Vellum #FBF8F1
+   ========================================================================== */
+
+:root {
+  /* Brand */
+  --forest: #2d3a3a;
+  --forest-deep: #1c2626;
+  --forest-ink: #121a1a;
+  --gold: #d4af37;
+  --gold-soft: #e2c96b;
+  --gold-dim: rgba(212, 175, 55, 0.42);
+  --vellum: #fbf8f1;
+  --vellum-deep: #f1ebdc;
+  --vellum-ink: rgba(45, 58, 58, 0.72);
+  --vellum-line: rgba(45, 58, 58, 0.14);
+  --on-forest: rgba(251, 248, 241, 0.92);
+  --on-forest-muted: rgba(251, 248, 241, 0.58);
+  --on-forest-line: rgba(251, 248, 241, 0.14);
+
+  /* Type — set by next/font in layout.tsx */
+  --font-display: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-caps: var(--font-cinzel), "Cinzel", "Times New Roman", serif;
+  --font-body: var(--font-crimson), "Crimson Text", Georgia, serif;
+
+  /* Fluid type scale */
+  --text-hero: clamp(3.4rem, 9.5vw, 10.5rem);
+  --text-display: clamp(2.6rem, 6.2vw, 6.4rem);
+  --text-h2: clamp(2rem, 4.2vw, 4rem);
+  --text-h3: clamp(1.5rem, 2.4vw, 2.25rem);
+  --text-lead: clamp(1.2rem, 1.55vw, 1.55rem);
+  --text-body: clamp(1.05rem, 1.15vw, 1.2rem);
+  --text-caps: 0.72rem;
+  --text-caps-lg: 0.84rem;
+  --tracking-caps: 0.32em;
+
+  /* Rhythm */
+  --gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --section: clamp(6rem, 14vw, 14rem);
+  --measure: 34ch;
+  --radius: 2px;
+
+  /* Layers */
+  --z-content: 1;
+  --z-nav: 40;
+  --z-drawer-backdrop: 60;
+  --z-drawer: 70;
+  --z-transition: 90;
+  --z-cursor: 100;
+
+  /* Motion tokens (mirrored in src/lib/easing.ts) */
+  --ease-fable: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-cinematic: cubic-bezier(0.76, 0, 0.24, 1);
+  --dur-tactile: 0.3s;
+  --dur-reveal: 1.2s;
+
+  color-scheme: light;
+}
+
+html {
+  height: 100%;
+  background: var(--vellum);
+  color: var(--forest);
+  font-family: var(--font-body);
+  font-size: 100%;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: auto;
+}
+
+/* Lenis owns scrolling; keep native fallbacks sane */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100%;
+  background: var(--vellum);
+  color: var(--forest);
+  overflow-x: hidden;
+}
+
+/* Fine pointers get the custom cursor; touch keeps the OS cursor */
+@media (hover: hover) and (pointer: fine) {
+  html.has-cursor,
+  html.has-cursor * {
+    cursor: none !important;
+  }
+}
+
+img,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--forest-ink);
+}
+
+:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Typography utilities
+   -------------------------------------------------------------------------- */
+
+.t-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.t-display em,
+.t-display i {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold);
+}
+
+.t-caps {
+  font-family: var(--font-caps);
+  font-size: var(--text-caps);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+.t-caps--lg {
+  font-size: var(--text-caps-lg);
+}
+
+.t-lead {
+  font-family: var(--font-body);
+  font-size: var(--text-lead);
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.t-body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.t-muted {
+  color: var(--vellum-ink);
+}
+
+/* Split text lines are masked by the parent so they can rise from below */
+.mask-lines .line,
+.mask-lines .word {
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+/* --------------------------------------------------------------------------
+   Layout utilities
+   -------------------------------------------------------------------------- */
+
+.container {
+  width: 100%;
+  padding-inline: var(--gutter);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section);
+}
+
+.rule {
+  height: 1px;
+  background: var(--vellum-line);
+  border: 0;
+}
+
+.on-forest {
+  background: var(--forest);
+  color: var(--on-forest);
+}
+
+.on-forest .rule {
+  background: var(--on-forest-line);
+}
+
+.on-forest .t-muted {
+  color: var(--on-forest-muted);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Film grain overlay — pure CSS, compositor-only (opacity) */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion: everything settles instantly, nothing is hidden
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
