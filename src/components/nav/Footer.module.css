@@ -1,0 +1,138 @@
+.footer {
+  position: relative;
+  padding-block: var(--section) clamp(2rem, 4vw, 3rem);
+  overflow: hidden;
+}
+
+.inner {
+  display: grid;
+  gap: clamp(3rem, 7vw, 6rem);
+}
+
+.legend {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.title {
+  font-size: var(--text-display);
+  max-width: 12ch;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 5rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--on-forest-line);
+}
+
+.col {
+  display: grid;
+  align-content: start;
+  gap: 1.4rem;
+}
+
+.colTitle {
+  color: var(--gold);
+}
+
+.list {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-block: 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  transition: color var(--dur-tactile) var(--ease-fable);
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--gold-soft);
+}
+
+.linkMeta {
+  color: var(--on-forest-muted);
+  font-size: 0.62rem;
+}
+
+.lettersCopy {
+  max-width: 30ch;
+}
+
+.form {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.25rem;
+  border-bottom: 1px solid var(--on-forest-line);
+  padding-bottom: 0.6rem;
+  transition: border-color var(--dur-tactile) var(--ease-fable);
+}
+
+.form:focus-within {
+  border-color: var(--gold);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: var(--on-forest);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+}
+
+.input::placeholder {
+  color: var(--on-forest-muted);
+}
+
+.submit {
+  min-height: 44px;
+  color: var(--gold);
+  transition: color var(--dur-tactile) var(--ease-fable);
+}
+
+.submit:hover,
+.submit:focus-visible {
+  color: var(--gold-soft);
+}
+
+.sent {
+  color: var(--gold);
+}
+
+.legal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--on-forest-line);
+}
+
+.legalMark {
+  opacity: 0.8;
+}
+
+.legalCopy {
+  color: var(--on-forest-muted);
+  font-size: 0.62rem;
+}
+
+@media (max-width: 900px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+}

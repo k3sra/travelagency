@@ -1,0 +1,31 @@
+.main {
+  min-height: 100svh;
+  display: grid;
+  align-content: center;
+  gap: 1.5rem;
+  padding-block: var(--section);
+}
+
+.title {
+  font-size: var(--text-display);
+  max-width: 14ch;
+}
+
+.copy {
+  max-width: 40ch;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  width: fit-content;
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold-dim);
+  transition: border-color var(--dur-tactile) var(--ease-fable);
+}
+
+.link:hover,
+.link:focus-visible {
+  border-color: var(--gold);
+}

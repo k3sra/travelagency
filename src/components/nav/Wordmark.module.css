@@ -1,0 +1,23 @@
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55em;
+  font-family: var(--font-caps);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.fable {
+  font-size: 1.05rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.travels {
+  font-size: 0.58rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  opacity: 0.72;
+  transform: translateY(-0.12em);
+}

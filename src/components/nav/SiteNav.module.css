@@ -1,0 +1,116 @@
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: var(--z-nav);
+  color: var(--vellum);
+  mix-blend-mode: difference;
+  pointer-events: none;
+  /* hidden until the page enters; GSAP reveals */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-16px);
+  will-change: transform;
+}
+
+.nav[data-drawer-open] {
+  visibility: hidden !important;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gutter);
+  padding: clamp(1.1rem, 2.2vw, 1.8rem) var(--gutter);
+}
+
+.brand,
+.link,
+.cta {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.2rem, 3vw, 3rem);
+}
+
+.link,
+.cta {
+  font-family: var(--font-caps);
+  font-size: var(--text-caps);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  position: relative;
+}
+
+.linkLabel {
+  display: inline-block;
+  position: relative;
+  padding-block: 0.4em;
+}
+
+.link .linkLabel::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.1em;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.45s var(--ease-fable);
+}
+
+.link:hover .linkLabel::after,
+.link:focus-visible .linkLabel::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.cta {
+  padding: 0.85em 1.6em;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform var(--dur-tactile) var(--ease-fable);
+  z-index: -1;
+}
+
+.cta:hover::before,
+.cta:focus-visible::before {
+  transform: scaleY(1);
+}
+
+.cta:hover .linkLabel,
+.cta:focus-visible .linkLabel {
+  /* difference blend inverts this against the filled pill */
+  color: var(--forest-ink);
+  transition: color var(--dur-tactile) var(--ease-fable);
+}
+
+@media (max-width: 720px) {
+  .link:not(:first-child) {
+    display: none;
+  }
+  .cta {
+    padding: 0.75em 1.1em;
+    font-size: 0.62rem;
+    letter-spacing: 0.24em;
+  }
+}

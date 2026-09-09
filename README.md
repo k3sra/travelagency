@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fable Travels
 
-## Getting Started
+> **Write your own legend.**
+> A cinematic, editorial web experience for a small-group travel house. Zero page reloads,
+> heavy inertia scrolling, WebGL displacement transitions, tactile UI — at 60 fps.
 
-First, run the development server:
+Built with **Next.js 16** (App Router, Turbopack), **GSAP 3.15** (ScrollTrigger, SplitText, CustomEase),
+**Three.js 0.186** and **Lenis 1.3**.
+
+Read [`ARCHITECTURE.md`](./ARCHITECTURE.md) for the component contract, transition sequence, shader logic,
+motion grammar and the 60 fps rules.
+
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run media     # generate the placeholder media set into public/media (sharp + ffmpeg)
+npm run dev       # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Production:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build && npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Checks:
 
-## Learn More
+```bash
+npm run typecheck   # next typegen + tsc --noEmit
+npm run lint        # eslint
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Experience map
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Route               | What happens                                                                                             |
+| ------------------- | -------------------------------------------------------------------------------------------------------- |
+| `/`                 | Full-screen slow-motion hero video, tagline unmasks, magnetic **Curate Your Journey**. Manifesto. Three destinations emerge from blur into focus. Journey index with shutter-masked imagery. |
+| `/journeys`         | Editorial index of every departure.                                                                       |
+| `/journeys/[slug]`  | Package page: cinematic header, itinerary chapters, **The Collective** (vertical marquee of monochrome portraits, vibe-alignment tags, pulsing scarcity), **Secure Your Spot** → booking drawer. |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Navigation between routes never reloads: `TransitionLink` intercepts `next/link`, the WebGL stage
+displaces the current hero into the destination hero (ripple / stretch / dissolve), the router swaps
+the page underneath, and the curtain lifts on the new page.
 
-## Deploy on Vercel
+## Media
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Placeholders are generated locally so the repo works offline. To ship real footage, mirror the paths in
+`public/media` (see the manifest in `ARCHITECTURE.md`) or point `NEXT_PUBLIC_MEDIA_BASE` at a CDN that does.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Hero: `hero/hero.webm` (VP8) — add `hero/hero.mp4` (H.264) for the widest reach; the component tries both.
+- Every image has a `-blur.jpg` sibling used by the blur-to-focus reveal (pre-blurred so the reveal stays compositor-only).
+- Portraits are monochrome 600×800.
+
+## Payments
+
+`src/lib/payments.ts` is a mock processor. `PaymentButtons` feature-detects Apple Pay and Google Pay through
+the Payment Request API and renders the matching one-click button; wire `processDeposit()` to your PSP
+(Stripe PaymentIntents + Apple Pay merchant validation) to take real deposits. Set
+`NEXT_PUBLIC_DEMO_WALLETS=1` to force both wallet buttons on for design reviews.
+
+## Performance budget
+
+- Scroll-linked motion is transform/opacity only; blur-to-focus crossfades a pre-blurred asset.
+- The WebGL canvas renders on demand — no frame loop while idle.
+- Lenis drives GSAP's ticker; ScrollTrigger updates from Lenis, never from its own scroll listener.
+- Continuous loops (marquee, scarcity pulse) are CSS animations.
+- Reduced motion is honoured everywhere; the site is fully usable without it.
