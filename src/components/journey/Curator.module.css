@@ -1,0 +1,47 @@
+.curator {
+  display: grid;
+  grid-template-columns: clamp(6rem, 11vw, 9.5rem) minmax(0, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  align-items: start;
+}
+
+.portrait {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--vellum-deep);
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  /* Static per frame: never animated. */
+  filter: grayscale(1) contrast(1.05);
+}
+
+.text {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-h3);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.role {
+  font-style: italic;
+}
+
+.bio {
+  max-width: 34ch;
+  margin-top: 0.35rem;
+}
+
+@media (max-width: 600px) {
+  .curator {
+    grid-template-columns: 34vw minmax(0, 1fr);
+  }
+}

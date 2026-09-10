@@ -1,0 +1,61 @@
+.list {
+  --vibe-line: var(--vellum-line);
+  --vibe-ink: var(--vellum-ink);
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.4rem;
+}
+
+:global(.on-forest) .list {
+  --vibe-line: var(--on-forest-line);
+  --vibe-ink: var(--on-forest-muted);
+}
+
+.tag {
+  font-family: var(--font-caps);
+  font-size: var(--text-caps);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  line-height: 1.6;
+  color: var(--vibe-ink);
+  white-space: nowrap;
+}
+
+.pct {
+  color: var(--gold);
+}
+
+/* Bars */
+
+.bars {
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.bars .tag {
+  display: grid;
+  gap: 0.55rem;
+  white-space: normal;
+}
+
+.bar {
+  display: block;
+  height: 1px;
+  background: var(--vibe-line);
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--gold);
+  transform: scaleX(var(--pct, 1));
+  transform-origin: 0 50%;
+}
+
+@media (max-width: 600px) {
+  .tag {
+    letter-spacing: 0.22em;
+  }
+}

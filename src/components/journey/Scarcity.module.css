@@ -1,0 +1,41 @@
+.tag {
+  display: inline-block;
+  font-family: var(--font-caps);
+  font-size: var(--text-caps);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  line-height: 1.6;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.sm {
+  font-size: var(--text-caps);
+}
+
+.lg {
+  font-size: clamp(0.8rem, 2.2vw, 1.05rem);
+  white-space: normal;
+}
+
+/* Compositor-only: opacity 0.55 to 1 over 2.4 s, the house scarcity pulse. */
+.pulse {
+  animation: scarcity-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes scarcity-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    animation: none;
+    opacity: 1;
+  }
+}

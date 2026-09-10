@@ -1,0 +1,71 @@
+.main {
+  width: 100%;
+}
+
+/* The promise: a vellum band, the host beside it. */
+.promise {
+  padding-block: var(--section);
+}
+
+.promiseGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(2.5rem, 6vw, 7rem);
+  align-items: end;
+}
+
+.promiseText {
+  font-size: var(--text-h2);
+  max-width: 22ch;
+}
+
+.curator {
+  max-width: 34rem;
+}
+
+/* Next departure */
+
+.next {
+  --next-ratio: 21 / 9;
+  display: grid;
+  gap: 1.5rem;
+  padding-block: 0 var(--section);
+}
+
+.nextLink {
+  display: grid;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.nextCopy {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.nextTitle {
+  font-size: var(--text-display);
+  max-width: 14ch;
+}
+
+.nextMeta {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .promiseGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .next {
+    --next-ratio: 4 / 5;
+  }
+}
+
+@media (max-width: 600px) {
+  .nextTitle {
+    max-width: none;
+  }
+}

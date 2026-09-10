@@ -1,0 +1,101 @@
+.card {
+  width: 100%;
+}
+
+.grid {
+  --card-ratio: 16 / 10;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: center;
+  padding-block: clamp(3rem, 7vw, 7rem);
+  border-top: 1px solid var(--vellum-line);
+}
+
+/* Magnetic renders the link itself as the grid child. */
+.imageLink {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.flip .imageLink {
+  order: 2;
+}
+
+.media {
+  display: block;
+}
+
+.copy {
+  display: grid;
+  gap: clamp(0.9rem, 1.4vw, 1.25rem);
+  min-width: 0;
+}
+
+.eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.9em;
+}
+
+.index {
+  color: var(--gold);
+}
+
+.title {
+  font-size: var(--text-display);
+  max-width: 12ch;
+}
+
+.subtitle {
+  max-width: var(--measure);
+}
+
+.vibes {
+  margin-top: 0.25rem;
+}
+
+.meta {
+  margin-top: 0.25rem;
+}
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 2rem;
+  margin-top: 0.5rem;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--forest);
+  border-bottom: 1px solid var(--gold-dim);
+  transition: border-color var(--dur-tactile) var(--ease-fable);
+}
+
+.link:hover,
+.link:focus-visible {
+  border-color: var(--gold);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    --card-ratio: 4 / 5;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    padding-block: 3rem;
+  }
+
+  .flip .imageLink {
+    order: 0;
+  }
+
+  .title {
+    max-width: none;
+  }
+}
