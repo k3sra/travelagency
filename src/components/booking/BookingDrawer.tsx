@@ -385,9 +385,11 @@ export function BookingDrawer() {
           {status}
         </p>
 
+        {/* Distinct keys: the details block is faded out by GSAP before the swap, and
+            React must not reuse that node (with its inline opacity) for the confirmation. */}
         <div ref={bodyRef} className={styles.body} data-lenis-prevent>
           {journey && step === "held" && result ? (
-            <div ref={confirmRef} className={styles.confirm} tabIndex={-1}>
+            <div key="held" ref={confirmRef} className={styles.confirm} tabIndex={-1}>
               <h2 id={titleId} className={`t-caps ${styles.eyebrow}`} data-rise>
                 Your place is held
               </h2>
@@ -421,7 +423,7 @@ export function BookingDrawer() {
               </p>
             </div>
           ) : journey ? (
-            <div ref={detailsRef} className={styles.details}>
+            <div key="details" ref={detailsRef} className={styles.details}>
               <p className={`t-caps ${styles.eyebrow}`} data-rise>
                 Secure your place
               </p>

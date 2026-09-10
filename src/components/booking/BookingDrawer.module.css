@@ -360,21 +360,14 @@
 
 @media (max-width: 640px) {
   .panel {
-    width: 100vw;
+    width: 100%;
     box-shadow: none;
   }
 
   .pay {
-    position: sticky;
-    bottom: 0;
-    z-index: 1;
-    margin-top: 1.6rem;
-    margin-inline: calc(-1 * (var(--pad) + env(safe-area-inset-left, 0px)))
-      calc(-1 * (var(--pad) + env(safe-area-inset-right, 0px)));
-    padding: 1.1rem calc(var(--pad) + env(safe-area-inset-right, 0px))
-      calc(1rem + env(safe-area-inset-bottom, 0px)) calc(var(--pad) + env(safe-area-inset-left, 0px));
-    width: auto;
-    background: linear-gradient(180deg, rgba(45, 58, 58, 0) 0%, var(--forest) 22%);
+    /* In flow on phones: a pinned bar would cover the fields while typing. */
+    position: static;
+    padding: 0;
   }
 }
 

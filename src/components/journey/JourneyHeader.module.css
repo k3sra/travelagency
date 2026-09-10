@@ -157,3 +157,11 @@
     padding-bottom: calc(1.75rem + env(safe-area-inset-bottom));
   }
 }
+
+/* Portrait phones crop the wide hero: keep the lower half of the frame, where
+   the subject sits, rather than the empty sky. */
+@media (max-width: 600px) {
+  .media img {
+    object-position: 50% 72%;
+  }
+}
