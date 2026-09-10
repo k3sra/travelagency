@@ -1,0 +1,35 @@
+/* The transition surface sits above every page layer and never takes input.
+   Both elements are invisible while idle; the controller drives them. */
+
+.canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-transition);
+  pointer-events: none;
+  opacity: 0;
+  /* One of the two layers allowed permanent promotion (60 fps rule 6). */
+  will-change: opacity;
+}
+
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-transition);
+  pointer-events: none;
+  background: linear-gradient(160deg, var(--forest) 0%, var(--forest-deep) 100%);
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+}
+
+/* Same film grain as .grain, lifted with screen so it reads on the dark plate. */
+.curtain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}

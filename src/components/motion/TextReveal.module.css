@@ -1,0 +1,56 @@
+.root {
+  display: block;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.visual {
+  display: block;
+}
+
+/* Identical copy for assistive tech; never painted, never selectable. */
+.srOnly {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Hidden until the split has run (same frame as the first mask), with a
+   3 s safety net so copy is never lost if scripting fails. Reduced motion
+   never hides anything. */
+@media (prefers-reduced-motion: no-preference) {
+  .pending .visual {
+    visibility: hidden;
+    animation: text-reveal-unhide 0s linear 3s forwards;
+  }
+}
+
+@keyframes text-reveal-unhide {
+  to {
+    visibility: visible;
+  }
+}
+
+/* SplitText fragments (tag: span) need a box for transforms to apply. */
+.root :global(.line-mask),
+.root :global(.line) {
+  display: block;
+}
+
+.root :global(.word-mask),
+.root :global(.char-mask),
+.root :global(.word),
+.root :global(.char) {
+  display: inline-block;
+}

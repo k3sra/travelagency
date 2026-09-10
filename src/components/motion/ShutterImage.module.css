@@ -1,0 +1,84 @@
+.root {
+  --shutter-plate: var(--vellum);
+  --shutter-over: 0%;
+  --shutter-scale: 1.18;
+  --shutter-n: 6;
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+/* Slats match the section plate unless told otherwise. */
+:global(.on-forest) .root {
+  --shutter-plate: var(--forest);
+}
+
+.root.plateForest {
+  --shutter-plate: var(--forest);
+}
+
+.root.plateVellum {
+  --shutter-plate: var(--vellum);
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--shutter-ratio);
+  overflow: hidden;
+  background: var(--shutter-plate);
+  border-radius: var(--radius);
+}
+
+/* Oversized so the parallax never reveals an edge. */
+.media {
+  position: absolute;
+  inset: calc(-1 * var(--shutter-over)) 0;
+}
+
+.img {
+  object-fit: cover;
+  transform: scale(var(--shutter-scale));
+  transform-origin: 50% 50%;
+  user-select: none;
+}
+
+.slats {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Each slat overlaps its neighbours by a pixel so no seams show. */
+.slat {
+  position: absolute;
+  background: var(--shutter-plate);
+}
+
+/* Vertical bars collapse toward their top edge: the image is uncovered
+   bottom-up, the same direction the type rises. */
+.vertical .slat {
+  top: 0;
+  bottom: 0;
+  left: calc(var(--i) * 100% / var(--shutter-n) - 0.5px);
+  width: calc(100% / var(--shutter-n) + 1px);
+  transform-origin: 50% 0;
+}
+
+.horizontal .slat {
+  left: 0;
+  right: 0;
+  top: calc(var(--i) * 100% / var(--shutter-n) - 0.5px);
+  height: calc(100% / var(--shutter-n) + 1px);
+  transform-origin: 100% 50%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .img {
+    transform: none;
+  }
+
+  .slats {
+    display: none;
+  }
+}

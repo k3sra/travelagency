@@ -1,7 +1,8 @@
 /**
  * Media manifest.
  *
- * All assets resolve under MEDIA_BASE ("/media" by default). Point
+ * All assets resolve under MEDIA_BASE ("/media" by default, prefixed with
+ * NEXT_PUBLIC_BASE_PATH on sub-path hosts such as GitHub Pages). Point
  * NEXT_PUBLIC_MEDIA_BASE at a CDN that mirrors the same paths to swap the
  * generated placeholders for real footage without touching components.
  *
@@ -10,7 +11,9 @@
 
 import type { MediaImage } from "./types";
 
-export const MEDIA_BASE = process.env.NEXT_PUBLIC_MEDIA_BASE ?? "/media";
+const BASE_PATH = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").replace(/\/$/, "");
+
+export const MEDIA_BASE = process.env.NEXT_PUBLIC_MEDIA_BASE ?? `${BASE_PATH}/media`;
 
 export const media = (path: string) => `${MEDIA_BASE}/${path.replace(/^\/+/, "")}`;
 
