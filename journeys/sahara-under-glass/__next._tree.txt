@@ -1,0 +1,13 @@
+:HL["/travelagency/_next/static/chunks/15kxc7kq425r2.css","style"]
+:HL["/travelagency/_next/static/chunks/3-ke6il1xlquf.css","style"]
+:HL["/travelagency/_next/static/chunks/0em8nshdgpdic.css","style"]
+:HL["/travelagency/_next/static/chunks/3pd_rdvca72sr.css","style"]
+:HL["/travelagency/_next/static/media/1ef31f0c5389e115-s.p.2qjzqy9n17vhg.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/travelagency/_next/static/media/2a65768255d6b625-s.p.3u4lli0-axodc.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/travelagency/_next/static/media/385c0eceff071084-s.p.3v5wo4ed3zwa0.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/travelagency/_next/static/media/466e772c7ca57446-s.p.3jhc56h4q_jmd.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/travelagency/_next/static/media/70e3db2de7f94926-s.p.39pl-v7c3qrze.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/travelagency/_next/static/media/ab36a0eb50081e4c-s.p.1zqxwz3s0tyup.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/travelagency/_next/static/media/cc014fcb166cf364-s.p.2cu9iw-l3ih8o.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/travelagency/_next/static/chunks/2p13int3xmf7b.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"journeys","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"sahara-under-glass","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"TTod9J5KltluXf-7dBgrA"}
