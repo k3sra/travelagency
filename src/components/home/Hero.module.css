@@ -1,0 +1,131 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--forest-ink);
+  color: var(--on-forest);
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+.scrimTop,
+.scrimBottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.scrimTop {
+  top: 0;
+  height: 28%;
+  background: linear-gradient(to bottom, rgba(18, 26, 26, 0.55), rgba(18, 26, 26, 0));
+}
+
+.scrimBottom {
+  bottom: 0;
+  height: 60%;
+  background: linear-gradient(to top, rgba(18, 26, 26, 0.88) 0%, rgba(18, 26, 26, 0.45) 45%, rgba(18, 26, 26, 0) 100%);
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: clamp(1.4rem, 3vw, 2.4rem);
+  padding-block: clamp(6rem, 14vh, 9rem) clamp(7rem, 16vh, 11rem);
+  will-change: transform, opacity;
+}
+
+.eyebrow {
+  color: var(--gold);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tagline {
+  font-size: var(--text-hero);
+  max-width: 9ch;
+  color: var(--vellum);
+}
+
+.cta {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.cue {
+  position: absolute;
+  right: var(--gutter);
+  bottom: clamp(1.6rem, 4vh, 2.6rem);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.cueLabel {
+  color: var(--on-forest-muted);
+  font-size: 0.6rem;
+  writing-mode: vertical-rl;
+}
+
+.cueLine {
+  width: 1px;
+  height: 56px;
+  background: var(--gold);
+  transform-origin: top;
+  animation: cue 2.6s var(--ease-cinematic) infinite;
+}
+
+@keyframes cue {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  45% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  55% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+@media (max-width: 720px) {
+  .copy {
+    padding-block: 6rem 6.5rem;
+  }
+  .tagline {
+    max-width: 8ch;
+  }
+  .cue {
+    right: auto;
+    left: var(--gutter);
+    bottom: 1.4rem;
+  }
+  .cueLine {
+    height: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cueLine {
+    animation: none;
+    transform: none;
+  }
+}

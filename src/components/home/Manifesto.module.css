@@ -1,0 +1,55 @@
+.section {
+  background: var(--vellum);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: end;
+}
+
+.eyebrow {
+  grid-column: 1 / -1;
+  color: var(--gold);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.lines {
+  display: grid;
+  gap: 0.35em;
+}
+
+.line {
+  font-size: var(--text-h2);
+  max-width: 16ch;
+}
+
+.line:nth-child(even) {
+  padding-left: clamp(0rem, 4vw, 4rem);
+}
+
+.aside {
+  display: grid;
+  gap: 1.6rem;
+  padding-bottom: 0.4rem;
+}
+
+.copy {
+  max-width: 34ch;
+  color: var(--vellum-ink);
+}
+
+.note {
+  font-size: 0.62rem;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .line:nth-child(even) {
+    padding-left: 0;
+  }
+}

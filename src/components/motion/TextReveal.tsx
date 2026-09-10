@@ -39,6 +39,8 @@ export interface TextRevealProps {
   /** Plain text, <em> and <br/> allowed. Must be static. */
   children: ReactNode;
   className?: string;
+  /** Forwarded to the rendered element (e.g. for aria-labelledby). */
+  id?: string;
   /** @default "lines" */
   split?: SplitMode;
   /** @default "scroll" */
@@ -77,6 +79,7 @@ export function TextReveal({
   as = "p",
   children,
   className,
+  id,
   split = "lines",
   trigger = "scroll",
   start = "top 85%",
@@ -184,7 +187,7 @@ export function TextReveal({
     .join(" ");
 
   return (
-    <Tag className={classes}>
+    <Tag className={classes} id={id}>
       <span className={styles.srOnly}>{children}</span>
       <span
         ref={visualRef}
