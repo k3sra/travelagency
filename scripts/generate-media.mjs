@@ -15,7 +15,6 @@
 import { mkdir, writeFile, stat, readFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
-import { spawnSync } from "node:child_process";
 import sharp from "sharp";
 
 const ROOT = path.resolve(new URL("..", import.meta.url).pathname);
@@ -73,14 +72,6 @@ const mix = (a, b, t) => toHex(hex(a).map((v, i) => v + (hex(b)[i] - v) * t));
 const lighten = (c, t) => mix(c, "#fbf8f1", t);
 const darken = (c, t) => mix(c, "#0d1212", t);
 
-const BRAND = {
-  forest: "#2d3a3a",
-  forestDeep: "#1c2626",
-  ink: "#121a1a",
-  gold: "#d4af37",
-  vellum: "#fbf8f1",
-};
-
 /* ----------------------------------------------------------------------------
    Terrain + atmosphere primitives
    ---------------------------------------------------------------------------- */
@@ -136,11 +127,11 @@ function dunePath(r, { w, h, baseY, amp, spread }) {
   return { d: d.join(" "), cx };
 }
 
-function fogBand({ w, y, height, color, alpha, blur, id }) {
+function fogBand({ w, y, height, color, alpha, id }) {
   return `<rect x="${-0.1 * w}" y="${y}" width="${1.2 * w}" height="${height}" fill="${color}" opacity="${alpha}" filter="url(#blur${id})"/>`;
 }
 
-function defs({ w, h, sky, light, blurs, seed }) {
+function defs({ w, sky, light, blurs, seed }) {
   const [s0, s1, s2] = sky;
   return `
   <defs>
@@ -190,7 +181,7 @@ function renderSceneSvg(seed, size, scene) {
   const blurs = [w * 0.011, w * 0.045, w * 0.09, w * 0.0035];
   const parts = [];
   parts.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">`);
-  parts.push(defs({ w, h, sky: scene.sky, light: scene.light, blurs, seed: hashStr(seed) }));
+  parts.push(defs({ w, sky: scene.sky, light: scene.light, blurs, seed: hashStr(seed) }));
   parts.push(`<rect width="${w}" height="${h}" fill="url(#sky)"/>`);
   parts.push(`<rect width="${w}" height="${h}" fill="url(#light)"/>`);
   const ctx = { w, h, r, scene, blurs };

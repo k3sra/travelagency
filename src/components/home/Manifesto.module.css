@@ -22,7 +22,7 @@
 
 .line {
   font-size: var(--text-h2);
-  max-width: 16ch;
+  max-width: 22ch;
 }
 
 .line:nth-child(even) {

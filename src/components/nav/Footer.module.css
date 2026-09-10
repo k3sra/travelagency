@@ -46,7 +46,9 @@
 .link {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 0.15rem;
+  min-height: 44px;
   padding-block: 0.35rem;
   font-family: var(--font-display);
   font-size: 1.25rem;

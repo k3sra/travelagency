@@ -104,15 +104,15 @@ vec3 dissolve(vec2 zuv, vec2 uv, vec2 d, float p, float em) {
   float s = 0.1;
   float t = mix(-s, 1.0 + s, p);
   float keep = smoothstep(t - s, t + s, n);
-  float band = 1.0 - smoothstep(0.0, 0.03, abs(n - t));
+  float band = 1.0 - smoothstep(0.0, 0.012, abs(n - t));
   band *= smoothstep(0.0, 0.06, p) * (1.0 - smoothstep(0.94, 1.0, p));
   vec2 push = d * uIntensity * em;
   vec3 a = sampleFrom(zuv + push * p);
   vec3 b = sampleTo(zuv - push * (1.0 - p));
   // The edge burns a little before it lets go.
-  a *= 1.0 - 0.45 * band;
+  a *= 1.0 - 0.3 * band;
   vec3 col = mix(b, a, keep);
-  col += uGold * band * 0.5;
+  col += uGold * band * 0.3;
   return col;
 }
 

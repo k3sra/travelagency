@@ -1,4 +1,7 @@
 import type { MetadataRoute } from "next";
+
+// Required for `output: "export"` (GitHub Pages build).
+export const dynamic = "force-static";
 import { getJourneys } from "@/lib/journeys";
 
 const BASE = "https://fabletravels.com";
