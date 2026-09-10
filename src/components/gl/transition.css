@@ -1,0 +1,15 @@
+/* Set on <html> by the transition controller for the length of a navigation.
+   Page content is covered by the canvas or curtain, so it must not take input
+   or selection in the meantime. Chrome that lives outside <main> (nav, footer)
+   is included; the booking drawer and cursor are not. */
+
+html.is-transitioning main,
+html.is-transitioning header,
+html.is-transitioning footer {
+  pointer-events: none;
+}
+
+html.is-transitioning {
+  -webkit-user-select: none;
+  user-select: none;
+}

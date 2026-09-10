@@ -1,0 +1,57 @@
+name: Publish preview to GitHub Pages
+
+# Every push to main or the active design branch builds the static export and
+# publishes it to the gh-pages branch. GitHub Pages serves that branch once
+# Pages is enabled for the repository (Settings → Pages → Build and deployment
+# → Source: "Deploy from a branch" → gh-pages / root). The site then lives at
+# https://<owner>.github.io/<repo>/.
+on:
+  push:
+    branches:
+      - main
+      - claude/fable-travels-webgl-design-u8hiyg
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+      - name: Resolve base path
+        id: base
+        run: |
+          name="${{ github.event.repository.name }}"
+          if [[ "$name" == *.github.io ]]; then echo "path=" >> "$GITHUB_OUTPUT"; else echo "path=/$name" >> "$GITHUB_OUTPUT"; fi
+      - name: Build static export
+        run: npm run build
+        env:
+          STATIC_EXPORT: "1"
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.base.outputs.path }}
+          NEXT_PUBLIC_DEMO_WALLETS: "1"
+      - name: Publish to gh-pages
+        run: |
+          set -euo pipefail
+          touch out/.nojekyll
+          cd out
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Publish ${GITHUB_SHA::7} from ${GITHUB_REF_NAME}"
+          git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

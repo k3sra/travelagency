@@ -1,0 +1,96 @@
+.section {
+  padding-top: var(--section);
+}
+
+.head {
+  display: grid;
+  gap: 1rem;
+  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.heading {
+  font-size: var(--text-h2);
+  max-width: 16ch;
+}
+
+.list {
+  list-style: none;
+}
+
+.chapter {
+  --chapter-ratio: 4 / 5;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 7rem);
+  align-items: start;
+  padding-block: clamp(3rem, 6vw, 6rem);
+  border-top: 1px solid var(--vellum-line);
+}
+
+.imageCol {
+  min-width: 0;
+}
+
+/* Sticky within its own block only, so the next chapter brings the next image. */
+.sticky {
+  position: sticky;
+  top: clamp(5rem, 12vh, 8rem);
+}
+
+.text {
+  display: grid;
+  align-content: center;
+  gap: 1rem;
+  min-width: 0;
+  min-height: min(84svh, 760px);
+}
+
+.numeral {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 11vw, 10rem);
+  line-height: 0.85;
+  color: rgba(45, 58, 58, 0.12);
+  margin-bottom: 0.5rem;
+  user-select: none;
+}
+
+.days {
+  margin-top: 0.25rem;
+}
+
+.title {
+  font-size: var(--text-h2);
+  max-width: 14ch;
+}
+
+.body {
+  max-width: var(--measure);
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .chapter {
+    --chapter-ratio: 4 / 5;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    padding-block: 3rem;
+  }
+
+  .sticky {
+    position: static;
+  }
+
+  .text {
+    min-height: 0;
+  }
+
+  .numeral {
+    font-size: clamp(4rem, 18vw, 6rem);
+  }
+}

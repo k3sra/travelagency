@@ -1,0 +1,25 @@
+.tag {
+  display: inline-block;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.urgent {
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .urgent {
+    animation: none;
+  }
+}

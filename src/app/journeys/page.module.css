@@ -1,0 +1,30 @@
+.main {
+  width: 100%;
+  padding-bottom: var(--section);
+}
+
+.header {
+  display: grid;
+  gap: clamp(1.1rem, 2vw, 1.6rem);
+  padding-top: calc(var(--section) + 2.5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.title {
+  font-size: var(--text-display);
+  max-width: 14ch;
+}
+
+.intro {
+  max-width: 40ch;
+}
+
+.list {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .title {
+    max-width: none;
+  }
+}

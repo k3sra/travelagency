@@ -1,0 +1,105 @@
+.section {
+  background: var(--vellum-deep);
+  overflow: hidden;
+}
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: clamp(2.5rem, 6vw, 5rem);
+}
+
+.eyebrow {
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+.title {
+  font-size: var(--text-h2);
+  max-width: 16ch;
+}
+
+.all {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  border-bottom: 1px solid var(--gold-dim);
+  transition: border-color var(--dur-tactile) var(--ease-fable);
+}
+
+.all:hover,
+.all:focus-visible {
+  border-color: var(--gold);
+}
+
+.row {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.2rem, 2.5vw, 2.5rem);
+  padding-inline: var(--gutter);
+}
+
+.card {
+  /* contact-sheet stagger */
+  padding-top: calc(var(--offset) * clamp(1.5rem, 5vw, 5rem));
+}
+
+.cardLink {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.frame {
+  margin-bottom: 0.6rem;
+  transition: transform var(--dur-tactile) var(--ease-fable);
+}
+
+.meta {
+  color: var(--gold);
+  font-size: 0.62rem;
+}
+
+.name {
+  font-size: var(--text-h3);
+}
+
+.price {
+  font-size: 0.62rem;
+}
+
+.spots {
+  font-size: 0.62rem;
+}
+
+@media (max-width: 1100px) {
+  .row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .row {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    padding-inline: var(--gutter);
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .row::-webkit-scrollbar {
+    display: none;
+  }
+  .card {
+    flex: 0 0 78vw;
+    scroll-snap-align: start;
+    padding-top: 0;
+  }
+}

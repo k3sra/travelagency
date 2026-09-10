@@ -1,0 +1,24 @@
+.section {
+  background: var(--vellum);
+}
+
+.inner {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.title {
+  font-size: var(--text-display);
+  max-width: 12ch;
+}
+
+.copy {
+  max-width: 36ch;
+  color: var(--vellum-ink);
+}
+
+.cta {
+  padding-top: 0.5rem;
+}

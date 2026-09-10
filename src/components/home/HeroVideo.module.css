@@ -1,0 +1,40 @@
+.root {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--forest-ink);
+}
+
+.blur,
+.still,
+.video {
+  position: absolute;
+  inset: -2%;
+  width: 104%;
+  height: 104%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 1.4s var(--ease-fable);
+}
+
+.still,
+.video {
+  opacity: 0;
+}
+
+.root[data-state="still"] .still {
+  opacity: 1;
+}
+
+.root[data-state="video"] .video {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blur,
+  .still,
+  .video {
+    transition: none;
+  }
+}

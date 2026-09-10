@@ -1,0 +1,17 @@
+.padlock {
+  display: block;
+  flex: none;
+  overflow: visible;
+  color: inherit;
+}
+
+.ring {
+  stroke: var(--gold);
+  stroke-width: 0.75;
+  opacity: 0;
+}
+
+.shackle,
+.body {
+  stroke: currentColor;
+}
