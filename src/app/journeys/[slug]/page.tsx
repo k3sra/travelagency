@@ -128,14 +128,14 @@ export default async function JourneyPage({ params }: Props) {
             parallax={0.1}
             plate="vellum"
           />
-          <span className={styles.nextCopy}>
+          <div className={styles.nextCopy}>
             <TextReveal as="h2" id="next-title" className={`t-display ${styles.nextTitle}`}>
               <JourneyTitle title={next.title} titleEm={next.titleEm} />
             </TextReveal>
             <span className={`t-caps t-muted ${styles.nextMeta}`}>
               {next.country} · {next.season} · {next.dates}
             </span>
-          </span>
+          </div>
         </TransitionLink>
       </section>
 
