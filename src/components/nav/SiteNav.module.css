@@ -113,13 +113,18 @@
   color: var(--forest-ink);
 }
 
+.linkLabel,
+.cta {
+  white-space: nowrap;
+}
+
 @media (max-width: 720px) {
-  .link:not(:first-child) {
+  /* Phones: wordmark + Journeys only. The hero and the closing carry the CTA. */
+  .link:not(:first-child),
+  .cta {
     display: none;
   }
-  .cta {
-    padding: 0.75em 1.1em;
-    font-size: 0.62rem;
-    letter-spacing: 0.24em;
+  .links {
+    gap: 1rem;
   }
 }
