@@ -49,14 +49,29 @@
   gap: var(--marquee-gap);
   height: clamp(520px, 80vh, 820px);
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0,
-    #000 14%,
-    #000 86%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 86%, transparent 100%);
+}
+
+/* Portraits emerge from and dissolve into the plate: two gradient veils
+   instead of a mask-image, which is far cheaper to composite while scrolling. */
+.marquee::before,
+.marquee::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 16%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.marquee::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--forest), rgba(45, 58, 58, 0));
+}
+
+.marquee::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--forest), rgba(45, 58, 58, 0));
 }
 
 .column {
@@ -163,8 +178,6 @@
   .marquee {
     display: block;
     height: auto;
-    -webkit-mask-image: none;
-    mask-image: none;
   }
 
   .slow,
