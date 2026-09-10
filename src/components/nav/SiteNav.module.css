@@ -2,9 +2,9 @@
   position: fixed;
   inset: 0 0 auto 0;
   z-index: var(--z-nav);
-  color: var(--vellum);
-  mix-blend-mode: difference;
+  color: var(--forest);
   pointer-events: none;
+  transition: color 0.5s var(--ease-fable);
   /* hidden until the page enters; GSAP reveals */
   opacity: 0;
   visibility: hidden;
@@ -99,9 +99,18 @@
 
 .cta:hover .linkLabel,
 .cta:focus-visible .linkLabel {
-  /* difference blend inverts this against the filled pill */
-  color: var(--forest-ink);
+  color: var(--vellum);
   transition: color var(--dur-tactile) var(--ease-fable);
+}
+
+/* Over a dark plate (hero, forest sections) the chrome turns to vellum. */
+.nav[data-theme="dark"] {
+  color: var(--vellum);
+}
+
+.nav[data-theme="dark"] .cta:hover .linkLabel,
+.nav[data-theme="dark"] .cta:focus-visible .linkLabel {
+  color: var(--forest-ink);
 }
 
 @media (max-width: 720px) {

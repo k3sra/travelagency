@@ -17,7 +17,7 @@ export function Footer() {
   };
 
   return (
-    <footer className={`${styles.footer} on-forest grain`} aria-labelledby="footer-title">
+    <footer className={`${styles.footer} on-forest grain`} aria-labelledby="footer-title" data-nav="dark">
       <div className={`container ${styles.inner}`}>
         <div className={styles.legend}>
           <p className="t-caps t-muted">Fable Travels</p>

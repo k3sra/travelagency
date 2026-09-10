@@ -119,7 +119,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section ref={root} className={styles.hero} aria-label="Fable Travels">
+    <section ref={root} className={styles.hero} aria-label="Fable Travels" data-nav="dark">
       <div className={styles.media} data-hero-media>
         <HeroVideo onReady={onVideoReady} />
       </div>

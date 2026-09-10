@@ -69,6 +69,25 @@ export function SiteNav() {
         hidden = true;
         gsap.to(el, { yPercent: -110, duration: 0.6, ease: "power3.in", overwrite: true });
       };
+      // Dark plates (hero, forest sections, footer) declare data-nav="dark";
+      // the chrome flips to vellum while any of them sits under the bar.
+      let darkCount = 0;
+      const setTheme = () => {
+        el.dataset.theme = darkCount > 0 ? "dark" : "light";
+      };
+      const plates = Array.from(document.querySelectorAll<HTMLElement>('[data-nav="dark"]'));
+      plates.forEach((plate) => {
+        ScrollTrigger.create({
+          trigger: plate,
+          start: "top 48px",
+          end: "bottom 48px",
+          onToggle: (self) => {
+            darkCount += self.isActive ? 1 : -1;
+            setTheme();
+          },
+        });
+      });
+      setTheme();
       ScrollTrigger.create({
         start: 0,
         end: "max",

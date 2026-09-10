@@ -10,7 +10,7 @@ export function CollectiveTeaser() {
   if (!kyoto) return null;
   const people = kyoto.travellers.slice(0, 6);
   return (
-    <section id="collective" className={`section on-forest grain ${styles.section}`} aria-labelledby="collective-title">
+    <section id="collective" className={`section on-forest grain ${styles.section}`} aria-labelledby="collective-title" data-nav="dark">
       <div className={`container ${styles.inner}`}>
         <div className={styles.copy}>
           <p className={`t-caps ${styles.eyebrow}`}>The Collective</p>
