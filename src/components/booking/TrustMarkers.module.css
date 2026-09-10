@@ -1,0 +1,67 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem 1.25rem;
+  list-style: none;
+  color: var(--on-forest);
+}
+
+.marker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.glyph {
+  display: flex;
+  width: 22px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+}
+
+.icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  overflow: visible;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.label {
+  font-size: 0.62rem;
+  letter-spacing: 0.26em;
+  color: var(--on-forest);
+}
+
+.body {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--on-forest-muted);
+  text-wrap: pretty;
+}
+
+@media (max-width: 480px) {
+  .list {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+
+  .marker {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .glyph {
+    margin-top: 0.1rem;
+  }
+}
