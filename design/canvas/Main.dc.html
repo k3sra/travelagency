@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap">
+  <style>
+    body { margin: 0; background: #fbf8f1; color: #2d3a3a; font-family: "Crimson Text", Georgia, serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; } a:hover { color: #d4af37; }
+    .caps { font-family: "Cinzel", "Times New Roman", serif; font-size: 11.5px; letter-spacing: 0.32em; text-transform: uppercase; line-height: 1.6; }
+    .display { font-family: "Playfair Display", Georgia, serif; font-weight: 400; line-height: 0.98; letter-spacing: -0.015em; }
+    .display em { font-style: italic; color: #d4af37; }
+    .body { font-family: "Crimson Text", Georgia, serif; font-size: 18px; line-height: 1.6; }
+    .lead { font-family: "Crimson Text", Georgia, serif; font-size: 22px; line-height: 1.45; }
+    .pill { display: inline-flex; align-items: center; justify-content: center; min-height: 60px; padding: 0 48px; border-radius: 999px; border: 1px solid rgba(251,248,241,0.45); font-family: "Cinzel", serif; font-size: 13.4px; letter-spacing: 0.32em; text-transform: uppercase; white-space: nowrap; }
+    .pill.gold { border-color: #d4af37; }
+    .pill.forest { background: #2d3a3a; color: #fbf8f1; border-color: #2d3a3a; }
+    .tag { font-family: "Cinzel", serif; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: #d4af37; }
+    .rule { height: 1px; background: rgba(45,58,58,0.14); }
+    .img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .grain { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"); }
+  </style>
+</helmet>
+
+<div style="width: 1440px; background: #fbf8f1; color: #2d3a3a; display: flex; flex-direction: column;">
+
+  <!-- Hero: video frame under the tagline, one door -->
+  <section style="position: relative; height: 900px; background: #121a1a; color: #fbf8f1; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end;">
+    <img src="hero-poster.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.92;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(18,26,26,0.88) 0%, rgba(18,26,26,0.45) 45%, rgba(18,26,26,0) 100%);"></div>
+    <div style="position: absolute; top: 0; left: 0; right: 0; height: 28%; background: linear-gradient(to bottom, rgba(18,26,26,0.55), rgba(18,26,26,0));"></div>
+    <header style="position: absolute; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; padding: 26px 64px; color: #fbf8f1;">
+      <div style="display: flex; align-items: baseline; gap: 10px; font-family: 'Cinzel', serif; text-transform: uppercase;">
+        <span style="font-size: 16.8px; letter-spacing: 0.34em; font-weight: 500;">Fable</span>
+        <span style="font-size: 9.3px; letter-spacing: 0.42em; opacity: 0.72;">Travels</span>
+      </div>
+      <nav style="display: flex; align-items: center; gap: 44px;">
+        <a class="caps" href="#" style="font-size: 11.5px;">Journeys</a>
+        <a class="caps" href="#" style="font-size: 11.5px;">The Collective</a>
+        <a class="caps" href="#" style="font-size: 11.5px; padding: 11px 26px; border: 1px solid #fbf8f1; border-radius: 999px;">Curate Your Journey</a>
+      </nav>
+    </header>
+    <div style="position: relative; display: flex; flex-direction: column; gap: 34px; padding: 0 64px 150px;">
+      <p class="caps" style="margin: 0; color: #d4af37;">Fable Travels · Small-group journeys for grown-ups</p>
+      <h1 class="display" style="margin: 0; font-size: 137px; max-width: 9ch; color: #fbf8f1;">Write your own <em>legend.</em></h1>
+      <div style="display: flex;"><a class="pill" href="#">Curate Your Journey</a></div>
+    </div>
+    <div style="position: absolute; right: 64px; bottom: 40px; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+      <span class="caps" style="font-size: 9.6px; color: rgba(251,248,241,0.58); writing-mode: vertical-rl;">Scroll</span>
+      <span style="width: 1px; height: 56px; background: #d4af37;"></span>
+    </div>
+  </section>
+
+  <!-- Manifesto -->
+  <section style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 86px; align-items: end; padding: 176px 64px;">
+    <p class="caps" style="grid-column: 1 / -1; margin: 0 0 40px; color: #d4af37;">How we travel</p>
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <p class="display" style="margin: 0; font-size: 64px; max-width: 22ch;">Ten travellers. Never more.</p>
+      <p class="display" style="margin: 0; font-size: 64px; max-width: 22ch; padding-left: 58px;">One host who lives there.</p>
+      <p class="display" style="margin: 0; font-size: 64px; max-width: 22ch;">No day begins before you are ready for it.</p>
+      <p class="display" style="margin: 0; font-size: 64px; max-width: 22ch; padding-left: 58px;">Every seat is a person we chose.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 26px; padding-bottom: 6px;">
+      <p class="lead" style="margin: 0; max-width: 34ch; color: rgba(45,58,58,0.72);">Fable is travel for adults who have done the coach tour and would rather not again. No name badges, no fixed menus, no forced fun. A small group, a host who knows the back door, and days shaped around the light rather than the schedule.</p>
+      <div class="rule"></div>
+      <p class="caps" style="margin: 0; font-size: 10px; color: rgba(45,58,58,0.72);">Four departures a year. Ten seats each.</p>
+    </div>
+  </section>
+
+  <!-- Destinations: blur-to-focus -->
+  <section style="display: flex; flex-direction: column; gap: 100px; padding: 0 0 176px;">
+    <div style="display: flex; flex-direction: column; gap: 22px; padding: 0 64px;">
+      <p class="caps" style="margin: 0; color: #d4af37;">Three doors</p>
+      <h2 class="display" style="margin: 0; font-size: 90px; max-width: 16ch;">Choose the one that <em>keeps you up at night.</em></h2>
+    </div>
+
+    <article style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 72px; align-items: center; padding: 0 64px;">
+      <div style="aspect-ratio: 16 / 10; overflow: hidden; background: #2d3a3a;"><img class="img" src="kyoto-hero.jpg" alt="Moss garden and maple in mist, Kyoto"></div>
+      <div style="display: flex; flex-direction: column; gap: 21px;">
+        <p class="caps" style="margin: 0; color: #d4af37;">Chapter I · Japan · Late autumn</p>
+        <h3 class="display" style="margin: 0; font-size: 64px; max-width: 14ch;">Kyoto, in <em>Silence</em></h3>
+        <p class="lead" style="margin: 0; max-width: 34ch; color: rgba(45,58,58,0.72);">We go in before the gates open and stay after they close. The city you have seen in photographs is not the one you will remember.</p>
+        <p class="caps" style="margin: 0; font-size: 10px; color: rgba(45,58,58,0.72);">9 days · Group of 10 · From $7,400</p>
+        <div style="display: flex; align-items: center; gap: 26px; padding-top: 10px;">
+          <span class="tag">[ 2 Spots Remaining ]</span>
+          <a class="caps" href="#" style="padding: 12px 0; border-bottom: 1px solid rgba(212,175,55,0.42);">View the journey</a>
+        </div>
+      </div>
+    </article>
+
+    <article style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 72px; align-items: center; padding: 0 64px;">
+      <div style="display: flex; flex-direction: column; gap: 21px; padding-left: 72px;">
+        <p class="caps" style="margin: 0; color: #d4af37;">Chapter II · Morocco · Autumn</p>
+        <h3 class="display" style="margin: 0; font-size: 64px; max-width: 14ch;">Sahara, Under <em>Glass</em></h3>
+        <p class="lead" style="margin: 0; max-width: 34ch; color: rgba(45,58,58,0.72);">Eight travellers. One night under a ceiling of glass with nothing between you and the Milky Way but a wool blanket.</p>
+        <p class="caps" style="margin: 0; font-size: 10px; color: rgba(45,58,58,0.72);">7 days · Group of 8 · From $5,900</p>
+        <div style="display: flex; align-items: center; gap: 26px; padding-top: 10px;">
+          <span class="tag">[ 1 Spot Remaining ]</span>
+          <a class="caps" href="#" style="padding: 12px 0; border-bottom: 1px solid rgba(212,175,55,0.42);">View the journey</a>
+        </div>
+      </div>
+      <div style="aspect-ratio: 4 / 5; overflow: hidden; background: #2d3a3a;"><img class="img" src="sahara-card.jpg" alt="A glass dome glowing under the desert stars"></div>
+    </article>
+
+    <article style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 72px; align-items: center; padding: 0 64px;">
+      <div style="aspect-ratio: 16 / 10; overflow: hidden; background: #2d3a3a;"><img class="img" src="patagonia-hero.jpg" alt="Granite towers above a glacial lake at first light"></div>
+      <div style="display: flex; flex-direction: column; gap: 21px;">
+        <p class="caps" style="margin: 0; color: #d4af37;">Chapter III · Chile &amp; Argentina · Late summer</p>
+        <h3 class="display" style="margin: 0; font-size: 64px; max-width: 14ch;">Patagonia, <em>Unhurried</em></h3>
+        <p class="lead" style="margin: 0; max-width: 34ch; color: rgba(45,58,58,0.72);">No itinerary survives the wind here, so we wrote one that bends. Twelve people, two guides, and the largest sky you will ever stand under.</p>
+        <p class="caps" style="margin: 0; font-size: 10px; color: rgba(45,58,58,0.72);">11 days · Group of 12 · From $9,200</p>
+        <div style="display: flex; align-items: center; gap: 26px; padding-top: 10px;">
+          <span class="tag">[ 4 Spots Remaining ]</span>
+          <a class="caps" href="#" style="padding: 12px 0; border-bottom: 1px solid rgba(212,175,55,0.42);">View the journey</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- All departures -->
+  <section style="background: #f1ebdc; padding: 176px 64px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; margin-bottom: 64px;">
+      <div style="display: flex; flex-direction: column; gap: 19px;">
+        <p class="caps" style="margin: 0; color: #d4af37;">All departures · 2026 – 2027</p>
+        <h2 class="display" style="margin: 0; font-size: 64px; max-width: 16ch;">Four doors. <em>Ten seats</em> behind each.</h2>
+      </div>
+      <a class="caps" href="#" style="padding: 12px 0; border-bottom: 1px solid rgba(212,175,55,0.42);">See every journey</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 36px;">
+      <div style="display: flex; flex-direction: column; gap: 13px;">
+        <div style="aspect-ratio: 4 / 5; overflow: hidden; background: #2d3a3a;"><img class="img" src="kyoto-card.jpg" alt=""></div>
+        <p class="caps" style="margin: 0; font-size: 10px; color: #d4af37;">Japan · 21 – 29 Nov 2026</p>
+        <h3 class="display" style="margin: 0; font-size: 36px;">Kyoto, in <em>Silence</em></h3>
+        <p class="caps" style="margin: 0; font-size: 10px; color: rgba(45,58,58,0.72);">From $7,400</p>
+        <span class="tag" style="font-size: 10px;">[ 2 Spots Remaining ]</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 13px; padding-top: 72px;">
+        <div style="aspect-ratio: 4 / 5; overflow: hidden; background: #2d3a3a;"><img class="img" src="patagonia-card.jpg" alt=""></div>
+        <p class="caps" style="margin: 0; font-size: 10px; color: #d4af37;">Chile &amp; Argentina · 6 – 16 Mar 2027</p>
+        <h3 class="display" style="margin: 0; font-size: 36px;">Patagonia, <em>Unhurried</em></h3>
+        <p class="caps" style="margin: 0; font-size: 10px; color: rgba(45,58,58,0.72);">From $9,200</p>
+        <span class="tag" style="font-size: 10px;">[ 4 Spots Remaining ]</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 13px;">
+        <div style="aspect-ratio: 4 / 5; overflow: hidden; background: #2d3a3a;"><img class="img" src="sahara-card.jpg" alt=""></div>
+        <p class="caps" style="margin: 0; font-size: 10px; color: #d4af37;">Morocco · 10 – 16 Oct 2026</p>
+        <h3 class="display" style="margin: 0; font-size: 36px;">Sahara, Under <em>Glass</em></h3>
+        <p class="caps" style="margin: 0; font-size: 10px; color: rgba(45,58,58,0.72);">From $5,900</p>
+        <span class="tag" style="font-size: 10px;">[ 1 Spot Remaining ]</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 13px; padding-top: 72px;">
+        <div style="aspect-ratio: 4 / 5; overflow: hidden; background: #2d3a3a;"><img class="img" src="iceland-card.jpg" alt=""></div>
+        <p class="caps" style="margin: 0; font-size: 10px; color: #d4af37;">Iceland · 12 – 19 Feb 2027</p>
+        <h3 class="display" style="margin: 0; font-size: 36px;">Iceland, at the Edge of <em>Light</em></h3>
+        <p class="caps" style="margin: 0; font-size: 10px; color: rgba(45,58,58,0.72);">From $6,800</p>
+        <span class="tag" style="font-size: 10px;">[ 5 Spots Remaining ]</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Collective teaser -->
+  <section class="grain" style="background: #2d3a3a; color: rgba(251,248,241,0.92); display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 100px; align-items: center; padding: 176px 64px;">
+    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 26px;">
+      <p class="caps" style="margin: 0; color: #d4af37;">The Collective</p>
+      <h2 class="display" style="margin: 0; font-size: 64px; max-width: 14ch;">You will travel with people you <em>would have chosen.</em></h2>
+      <p class="lead" style="margin: 0; max-width: 36ch; color: rgba(251,248,241,0.58);">Before a seat is confirmed, every traveller answers twelve questions about how they like a day to go. The group forms around alignment, not age. Your host reads the answers before dinner on the first night.</p>
+      <div style="display: grid; grid-template-columns: repeat(3, auto); gap: 24px 48px; padding: 16px 0 8px;">
+        <div style="display: flex; flex-direction: column; gap: 8px;"><span class="caps" style="font-size: 9.3px; color: rgba(251,248,241,0.58);">Group size</span><span class="display" style="font-size: 27px;">8 – 12</span></div>
+        <div style="display: flex; flex-direction: column; gap: 8px;"><span class="caps" style="font-size: 9.3px; color: rgba(251,248,241,0.58);">Average alignment</span><span class="display" style="font-size: 27px;">86%</span></div>
+        <div style="display: flex; flex-direction: column; gap: 8px;"><span class="caps" style="font-size: 9.3px; color: rgba(251,248,241,0.58);">Return travellers</span><span class="display" style="font-size: 27px;">1 in 3</span></div>
+      </div>
+      <a class="pill" href="#" style="min-height: 52px; padding: 0 38px; font-size: 11.5px;">Meet the Kyoto ten</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px;">
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="aspect-ratio: 3 / 4; overflow: hidden; background: #1c2626;"><img class="img" src="portrait-01.jpg" alt="" style="filter: grayscale(1) contrast(1.05);"></div><span class="caps" style="font-size: 9.3px;">Amara · Lagos → London</span><span class="caps" style="font-size: 9.3px; color: #d4af37;">94% aligned</span></div>
+      <div style="display: flex; flex-direction: column; gap: 8px; transform: translateY(36px);"><div style="aspect-ratio: 3 / 4; overflow: hidden; background: #1c2626;"><img class="img" src="portrait-02.jpg" alt="" style="filter: grayscale(1) contrast(1.05);"></div><span class="caps" style="font-size: 9.3px;">Tomas · Lisbon</span><span class="caps" style="font-size: 9.3px; color: #d4af37;">91% aligned</span></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="aspect-ratio: 3 / 4; overflow: hidden; background: #1c2626;"><img class="img" src="portrait-03.jpg" alt="" style="filter: grayscale(1) contrast(1.05);"></div><span class="caps" style="font-size: 9.3px;">Priya · Mumbai → Berlin</span><span class="caps" style="font-size: 9.3px; color: #d4af37;">88% aligned</span></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="aspect-ratio: 3 / 4; overflow: hidden; background: #1c2626;"><img class="img" src="portrait-04.jpg" alt="" style="filter: grayscale(1) contrast(1.05);"></div><span class="caps" style="font-size: 9.3px;">Leonie · Zürich</span><span class="caps" style="font-size: 9.3px; color: #d4af37;">87% aligned</span></div>
+      <div style="display: flex; flex-direction: column; gap: 8px; transform: translateY(36px);"><div style="aspect-ratio: 3 / 4; overflow: hidden; background: #1c2626;"><img class="img" src="portrait-05.jpg" alt="" style="filter: grayscale(1) contrast(1.05);"></div><span class="caps" style="font-size: 9.3px;">Marcus · Chicago</span><span class="caps" style="font-size: 9.3px; color: #d4af37;">85% aligned</span></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="aspect-ratio: 3 / 4; overflow: hidden; background: #1c2626;"><img class="img" src="portrait-06.jpg" alt="" style="filter: grayscale(1) contrast(1.05);"></div><span class="caps" style="font-size: 9.3px;">Ingrid · Oslo</span><span class="caps" style="font-size: 9.3px; color: #d4af37;">83% aligned</span></div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section style="display: flex; flex-direction: column; align-items: center; gap: 32px; text-align: center; padding: 176px 64px;">
+    <h2 class="display" style="margin: 0; font-size: 90px; max-width: 12ch;">Write your own <em>legend.</em></h2>
+    <p class="lead" style="margin: 0; max-width: 36ch; color: rgba(45,58,58,0.72);">A deposit holds your place. It is refundable for fourteen days, which is longer than it takes to know.</p>
+    <a class="pill forest" href="#">Curate Your Journey</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="grain" style="background: #2d3a3a; color: rgba(251,248,241,0.92); display: flex; flex-direction: column; gap: 72px; padding: 150px 64px 44px;">
+    <div style="display: flex; flex-direction: column; gap: 22px;">
+      <p class="caps" style="margin: 0; color: rgba(251,248,241,0.58);">Fable Travels</p>
+      <h2 class="display" style="margin: 0; font-size: 90px; max-width: 12ch;">Write your own <em>legend.</em></h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 72px; padding-top: 44px; border-top: 1px solid rgba(251,248,241,0.14);">
+      <div style="display: flex; flex-direction: column; gap: 22px;">
+        <p class="caps" style="margin: 0; color: #d4af37;">Departures</p>
+        <a href="#" style="font-family: 'Playfair Display', serif; font-size: 20px;">Kyoto, in Silence</a>
+        <a href="#" style="font-family: 'Playfair Display', serif; font-size: 20px;">Patagonia, Unhurried</a>
+        <a href="#" style="font-family: 'Playfair Display', serif; font-size: 20px;">Sahara, Under Glass</a>
+        <a href="#" style="font-family: 'Playfair Display', serif; font-size: 20px;">Iceland, at the Edge of Light</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 22px;">
+        <p class="caps" style="margin: 0; color: #d4af37;">The House</p>
+        <a href="#" style="font-family: 'Playfair Display', serif; font-size: 20px;">All journeys</a>
+        <a href="#" style="font-family: 'Playfair Display', serif; font-size: 20px;">The Collective</a>
+        <a href="#" style="font-family: 'Playfair Display', serif; font-size: 20px;">How we travel</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 22px;">
+        <p class="caps" style="margin: 0; color: #d4af37;">Letters from the road</p>
+        <p class="body" style="margin: 0; max-width: 30ch; color: rgba(251,248,241,0.58);">One letter a month. A place, a person, a reason to go. Nothing else.</p>
+        <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(251,248,241,0.14);">
+          <span class="body" style="color: rgba(251,248,241,0.58);">Your email</span>
+          <span class="caps" style="color: #d4af37;">Subscribe</span>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 24px; border-top: 1px solid rgba(251,248,241,0.14);">
+      <span style="font-family: 'Cinzel', serif; font-size: 16.8px; letter-spacing: 0.34em; text-transform: uppercase; opacity: 0.8;">Fable</span>
+      <span class="caps" style="font-size: 10px; color: rgba(251,248,241,0.58);">Small groups. Grown-up travel. © 2026 Fable Travels</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>

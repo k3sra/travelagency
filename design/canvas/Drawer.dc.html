@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Cinzel:wght@400;500&family=Crimson+Text:ital,wght@0,400;0,600&display=swap">
+  <style>
+    body { margin: 0; background: #2d3a3a; font-family: "Crimson Text", Georgia, serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; } a:hover { color: #d4af37; }
+    .caps { font-family: "Cinzel", "Times New Roman", serif; font-size: 11.5px; letter-spacing: 0.32em; text-transform: uppercase; line-height: 1.6; }
+    .display { font-family: "Playfair Display", Georgia, serif; font-weight: 400; line-height: 0.98; letter-spacing: -0.015em; }
+    .display em { font-style: italic; color: #d4af37; }
+    .row { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 18px 0; border-bottom: 1px solid rgba(251,248,241,0.14); }
+    .label { font-size: 18px; color: rgba(251,248,241,0.72); }
+    .value { font-family: "Playfair Display", serif; font-size: 26px; color: #fbf8f1; }
+    .field { display: flex; flex-direction: column; gap: 14px; }
+    .input { height: 44px; border-bottom: 1px solid rgba(251,248,241,0.3); }
+    .wallet { display: flex; align-items: center; justify-content: center; height: 52px; border-radius: 999px; background: #000; color: #fff; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 18px; font-weight: 600; }
+    .pill { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 38px; border-radius: 999px; border: 1px solid rgba(251,248,241,0.45); color: #fbf8f1; font-family: "Cinzel", serif; font-size: 11.5px; letter-spacing: 0.32em; text-transform: uppercase; white-space: nowrap; }
+    .trust { display: flex; flex-direction: column; gap: 10px; }
+    .trust svg { width: 20px; height: 20px; fill: none; stroke: #d4af37; stroke-width: 1.25; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: #2d3a3a;">
+  <!-- The page behind, under heavy blur -->
+  <img src="kyoto-hero.jpg" alt="" style="position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); object-fit: cover; filter: blur(24px); opacity: 0.55;">
+  <div style="position: absolute; inset: 0; background: rgba(28,38,38,0.55);"></div>
+
+  <!-- The drawer -->
+  <aside style="position: absolute; top: 0; right: 0; bottom: 0; width: 600px; background: #2d3a3a; color: rgba(251,248,241,0.92); border-left: 1px solid rgba(212,175,55,0.65); display: flex; flex-direction: column; gap: 26px; padding: 40px 56px 48px; overflow: hidden;">
+    <div style="display: flex; justify-content: flex-end;"><a class="caps" href="#" style="display: inline-flex; align-items: center; gap: 14px; min-height: 44px; color: rgba(251,248,241,0.72);"><svg width="14" height="14" viewBox="0 0 14 14" style="stroke: currentColor; stroke-width: 1.25; fill: none;"><path d="M1 1l12 12M13 1L1 13"/></svg>Close</a></div>
+    <p class="caps" style="margin: 0; color: #d4af37;">Secure your place</p>
+    <h2 class="display" style="margin: -8px 0 0; font-size: 64px;">Kyoto, in <em>Silence</em></h2>
+    <p style="margin: -10px 0 0; font-size: 18px; color: rgba(251,248,241,0.72);">21 – 29 Nov 2026 · 9 days · Group of 10</p>
+    <span class="caps" style="font-size: 10px; color: #d4af37; animation: pulse 2.4s ease-in-out infinite;">[ 2 Spots Remaining ]</span>
+    <div style="display: flex; flex-direction: column;">
+      <div class="row"><span class="label">Price per traveller</span><span class="value">$7,400</span></div>
+      <div class="row"><span class="label">Deposit today</span><span class="value" style="color: #d4af37;">$900</span></div>
+      <div class="row"><span class="label">Balance due 60 days before departure</span><span class="value">$6,500</span></div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+      <div class="field"><span class="caps" style="font-size: 10px; color: rgba(251,248,241,0.72);">Full name</span><div class="input"></div></div>
+      <div class="field"><span class="caps" style="font-size: 10px; color: rgba(251,248,241,0.72);">Email</span><div class="input"></div></div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+      <div class="wallet">Pay with Apple Pay</div>
+      <div class="wallet"><span style="display: inline-flex; align-items: center; gap: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9z"/><path fill="#EA4335" d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3.1 7.5l3.3 2.6C7.2 7.7 9.4 5.9 12 5.9z"/></svg>Pay</span></div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px;"><span style="flex: 1; height: 1px; background: rgba(251,248,241,0.14);"></span><span class="caps" style="font-size: 9.3px; color: rgba(251,248,241,0.58);">or</span><span style="flex: 1; height: 1px; background: rgba(251,248,241,0.14);"></span></div>
+    <a class="pill" href="#">Reserve with card · $900</a>
+    <div style="height: 1px; background: rgba(251,248,241,0.14);"></div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+      <div class="trust"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span class="caps" style="font-size: 9.3px;">Encrypted checkout</span><span style="font-size: 14px; color: rgba(251,248,241,0.58);">256-bit TLS, card details never touch our servers</span></div>
+      <div class="trust"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="caps" style="font-size: 9.3px;">14-day refund</span><span style="font-size: 14px; color: rgba(251,248,241,0.58);">Change your mind, keep every cent</span></div>
+      <div class="trust"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M9 15l2 2 4-4"/></svg><span class="caps" style="font-size: 9.3px;">Small group, confirmed</span><span style="font-size: 14px; color: rgba(251,248,241,0.58);">Departures run at 6 travellers or more</span></div>
+    </div>
+    <p style="margin: 0; font-size: 15px; color: rgba(251,248,241,0.58);">Your deposit holds one of the remaining places. Fully refundable for 14 days.</p>
+  </aside>
+</div>
+<style>@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }</style>
+</x-dc>
+</body>
+</html>
