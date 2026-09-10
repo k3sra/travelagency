@@ -12,17 +12,16 @@
  * zoom to scale(1.06) over 0.3 s while the element is hovered; put the
  * attribute on a wrapper, not on an element GSAP already transforms.
  *
- * React 19: the child must accept `ref`; its own ref is merged and preserved.
+ * React 19: the child must accept `ref`; its own ref still receives the node.
  */
 
 import {
-  cloneElement,
-  useCallback,
   useEffect,
+  useImperativeHandle,
   useRef,
+  type ElementType,
   type ReactElement,
   type Ref,
-  type RefCallback,
 } from "react";
 import { gsap, ScrollTrigger, setupGsap } from "./gsapSetup";
 
@@ -40,30 +39,10 @@ const MEDIA_TRANSITION = "transform var(--dur-tactile, 0.3s) var(--ease-fable)";
 
 export function Magnetic({ children, strength = 0.35, radius = 110 }: MagneticProps) {
   const elRef = useRef<HTMLElement | null>(null);
-  const childCleanup = useRef<(() => void) | null>(null);
-  const childRef = children.props.ref;
 
-  // Merged ref: keep our handle and honour the child's own ref, including a
-  // callback ref that returns a cleanup (React 19 semantics).
-  const setRef = useCallback<RefCallback<HTMLElement>>(
-    (node) => {
-      elRef.current = node;
-      if (typeof childRef === "function") {
-        if (node) {
-          const out = childRef(node);
-          childCleanup.current = typeof out === "function" ? out : null;
-        } else if (childCleanup.current) {
-          childCleanup.current();
-          childCleanup.current = null;
-        } else {
-          childRef(null);
-        }
-      } else if (childRef) {
-        childRef.current = node;
-      }
-    },
-    [childRef],
-  );
+  // The child's own ref (object or callback, with cleanup) receives the same
+  // node through React rather than by hand.
+  useImperativeHandle(children.props.ref, () => elRef.current as HTMLElement);
 
   useEffect(() => {
     const el = elRef.current;
@@ -191,5 +170,8 @@ export function Magnetic({ children, strength = 0.35, radius = 110 }: MagneticPr
     return () => mm.revert();
   }, [strength, radius]);
 
-  return cloneElement(children, { ref: setRef });
+  // Re-render the child's element type with our ref as a JSX attribute; the
+  // element's own props and key are preserved.
+  const Child = children.type as ElementType;
+  return <Child key={children.key} {...children.props} ref={elRef} />;
 }

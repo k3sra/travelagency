@@ -30,7 +30,7 @@
    3 s safety net so copy is never lost if scripting fails. Reduced motion
    never hides anything. */
 @media (prefers-reduced-motion: no-preference) {
-  .pending .visual {
+  .visual.pending {
     visibility: hidden;
     animation: text-reveal-unhide 0s linear 3s forwards;
   }

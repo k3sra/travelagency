@@ -68,7 +68,10 @@ const DEFAULT_STAGGER: Record<SplitMode, number> = {
 // Display type sits at line-height 0.98, so glyphs overflow their line box.
 // The mask clips with a clip-path that reaches past the box (compositor-only)
 // instead of SplitText's overflow: clip, which would shear descenders at rest.
-const MASK_CLIP = "inset(-0.12em -0.06em -0.22em -0.06em)";
+// The bottom reach (0.19em) clears Playfair's descenders yet stays short of
+// the ascender tops of a fragment parked at yPercent 110, so nothing peeks
+// before the rise.
+const MASK_CLIP = "inset(-0.12em -0.06em -0.19em -0.06em)";
 
 export function TextReveal({
   as = "p",
@@ -82,7 +85,6 @@ export function TextReveal({
   duration,
   ref,
 }: TextRevealProps) {
-  const rootRef = useRef<HTMLElement | null>(null);
   const visualRef = useRef<HTMLSpanElement | null>(null);
   const tweenRef = useRef<gsap.core.Tween | null>(null);
   const playedRef = useRef(false);
@@ -104,15 +106,15 @@ export function TextReveal({
   );
 
   useLayoutEffect(() => {
-    const root = rootRef.current;
     const visual = visualRef.current;
-    if (!root || !visual) return;
+    if (!visual) return;
 
     // The CSS `pending` state keeps the unsplit copy invisible until the
     // (synchronous) split has pushed every fragment below its mask, so there
-    // is never a painted frame of unmasked text.
+    // is never a painted frame of unmasked text. The inline style survives
+    // React re-applying className on later renders.
     const show = () => {
-      root.classList.remove(styles.pending);
+      visual.classList.remove(styles.pending);
       visual.style.visibility = "visible";
     };
 
@@ -125,10 +127,12 @@ export function TextReveal({
     const each = stagger ?? DEFAULT_STAGGER[split];
     const dur = duration ?? DUR.line;
 
+    // The visual span is a block filling the root, so it doubles as the
+    // ScrollTrigger element and the context scope.
     const ctx = gsap.context(() => {
       if (trigger === "scroll") {
         ScrollTrigger.create({
-          trigger: root,
+          trigger: visual,
           start,
           once: true,
           onEnter: () => {
@@ -164,7 +168,7 @@ export function TextReveal({
           return tween;
         },
       });
-    }, root);
+    }, visual);
 
     show();
 
@@ -175,19 +179,18 @@ export function TextReveal({
   }, [split, trigger, start, delay, stagger, duration, reduced]);
 
   const Tag: ElementType = as;
-  const classes = [
-    styles.root,
-    styles.pending,
-    as === "span" ? styles.inline : "",
-    className ?? "",
-  ]
+  const classes = [styles.root, as === "span" ? styles.inline : "", className ?? ""]
     .filter(Boolean)
     .join(" ");
 
   return (
-    <Tag ref={rootRef} className={classes}>
+    <Tag className={classes}>
       <span className={styles.srOnly}>{children}</span>
-      <span ref={visualRef} className={styles.visual} aria-hidden="true">
+      <span
+        ref={visualRef}
+        className={`${styles.visual} ${styles.pending}`}
+        aria-hidden="true"
+      >
         {children}
       </span>
     </Tag>

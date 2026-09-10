@@ -250,10 +250,10 @@ export class TransitionLayer {
 
   private async load(slot: Slot, url: string | null): Promise<void> {
     const token = ++this.tokens[slot];
-    if (!url) {
-      this.apply(slot, null);
-      return;
-    }
+    // Clear the slot first: a slow load shows the plate, never the previous
+    // transition's image. A cache hit resolves before the next frame anyway.
+    this.apply(slot, null);
+    if (!url) return;
     const loaded = await loadTexture(url);
     if (this.disposed || token !== this.tokens[slot]) return;
     this.apply(slot, loaded.plate ? null : loaded);

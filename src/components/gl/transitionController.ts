@@ -87,6 +87,7 @@ export function normalizePathname(pathname: string): string {
 
 interface ParsedHref {
   pathname: string;
+  search: string;
   hash: string;
 }
 
@@ -101,7 +102,7 @@ function parseHref(href: string): ParsedHref | null {
     return null;
   }
   if (url.origin !== base) return null;
-  return { pathname: normalizePathname(url.pathname), hash: url.hash };
+  return { pathname: normalizePathname(url.pathname), search: url.search, hash: url.hash };
 }
 
 function readHeroUrl(): string | null {
@@ -341,9 +342,11 @@ async function navigate(href: string, opts: NavigateOptions = {}): Promise<void>
   }
 
   if (currentPathname !== null && target.pathname === currentPathname) {
-    // Same page: no transition, just the anchor (URL updated so history matches).
+    // Same route: no curtain. A changed query re-renders in place; a hash just
+    // scrolls. Either way the URL is pushed so history stays truthful.
+    const searchChanged = target.search !== window.location.search;
+    if (searchChanged || target.hash) router?.push(href, { scroll: false });
     if (target.hash) {
-      router?.push(href, { scroll: false });
       const el = document.getElementById(decodeURIComponent(target.hash.slice(1)));
       if (el) scrollControl.scrollTo(el, { immediate: prefersReducedMotion() });
     }

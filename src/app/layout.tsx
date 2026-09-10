@@ -1,5 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { Cinzel, Crimson_Text, Playfair_Display } from "next/font/google";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
+import { Cursor } from "@/components/motion/Cursor";
+import { GLStage } from "@/components/gl/GLStage";
+import { TransitionProvider } from "@/components/gl/TransitionProvider";
+import { BookingProvider } from "@/components/booking/BookingProvider";
+import { SiteNav } from "@/components/nav/SiteNav";
+import { Footer } from "@/components/nav/Footer";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -25,6 +32,8 @@ const crimson = Crimson_Text({
   display: "swap",
 });
 
+const SITE_URL = "https://k3sra.github.io/travelagency";
+
 export const metadata: Metadata = {
   title: {
     default: "Fable Travels — Write your own legend.",
@@ -32,7 +41,7 @@ export const metadata: Metadata = {
   },
   description:
     "Small-group journeys for grown-ups who travel slowly. Kyoto, Patagonia, the Sahara, Iceland. Ten travellers, one host, no itinerary you have seen before.",
-  metadataBase: new URL("https://fabletravels.com"),
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     siteName: "Fable Travels",
     type: "website",
@@ -42,12 +51,27 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: "#2D3A3A",
   colorScheme: "light",
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${playfair.variable} ${cinzel.variable} ${crimson.variable}`}>
-      <body>{children}</body>
+      <body>
+        <SmoothScroll>
+          <TransitionProvider>
+            <BookingProvider>
+              <SiteNav />
+              {children}
+              <Footer />
+            </BookingProvider>
+          </TransitionProvider>
+        </SmoothScroll>
+        <GLStage />
+        <Cursor />
+      </body>
     </html>
   );
 }

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { gsap, ScrollTrigger, setupGsap } from "@/components/motion/gsapSetup";
 import { TransitionLink } from "@/components/gl/TransitionLink";
 import { usePageEnter } from "@/components/gl/transitionController";
-import { useStore } from "@/lib/store";
+import { getState, subscribe, useStore } from "@/lib/store";
 import { prefersReducedMotion } from "@/lib/useReducedMotion";
 import { EASE_FABLE } from "@/lib/easing";
 import { Wordmark } from "./Wordmark";
@@ -21,16 +21,35 @@ export function SiteNav() {
   const pathname = usePathname();
   const drawerOpen = useStore((s) => s.drawerOpen);
 
-  // Reveal after the page enters (first load: after the intro; navigations: when the curtain lifts).
+  // Reveal after the page enters. On the home page the hero owns the first
+  // moments: the chrome waits for the intro (store.introDone) before it appears.
   usePageEnter(() => {
     const el = root.current;
     if (!el) return;
     setupGsap();
-    if (prefersReducedMotion()) {
-      gsap.set(el, { autoAlpha: 1, yPercent: 0 });
+    const reveal = () => {
+      if (prefersReducedMotion()) {
+        gsap.set(el, { autoAlpha: 1, yPercent: 0 });
+        return;
+      }
+      gsap.to(el, { autoAlpha: 1, yPercent: 0, duration: 1.2, ease: EASE_FABLE, overwrite: true });
+    };
+    // usePathname is base-path-free; the static export adds a trailing slash.
+    const onHome = pathname.replace(/\/$/, "") === "";
+    if (!onHome || getState().introDone) {
+      reveal();
       return;
     }
-    gsap.to(el, { autoAlpha: 1, yPercent: 0, duration: 1.2, ease: EASE_FABLE, overwrite: true });
+    const unsubscribe = subscribe(() => {
+      if (!getState().introDone) return;
+      unsubscribe();
+      reveal();
+    });
+    // Never strand the chrome if the intro never reports (video stalls, tab hidden).
+    window.setTimeout(() => {
+      unsubscribe();
+      reveal();
+    }, 4500);
   });
 
   // Hide on scroll-down, show on scroll-up.
