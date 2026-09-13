@@ -52,17 +52,32 @@ export function Film({ film, poster, narrowBelow = 700, className = "", onReady,
 
     const narrow = window.innerWidth < narrowBelow;
     el.dataset.cut = narrow && poster.tall ? "tall" : "wide";
+
+    // The sharp still resolves the moment it has loaded, whatever the film
+    // does: a slow or dropped stream must never leave the frame out of focus.
+    const stillUrl = narrow && poster.tall ? poster.tall : poster.wide;
+    const still = new Image();
+    const onStill = () => { el.dataset.still = "ready"; };
+    still.addEventListener("load", onStill);
+    still.addEventListener("error", onStill);
+    still.src = stillUrl;
+    if (still.complete) onStill();
     const source = narrow && film?.tall ? film.tall : film?.wide;
     const saveData = Boolean((navigator as SaveDataNavigator).connection?.saveData);
     if (!source || prefersReducedMotion() || saveData) {
       settle("still");
-      return;
+      return () => {
+        still.removeEventListener("load", onStill);
+        still.removeEventListener("error", onStill);
+      };
     }
 
     const onPlaying = () => settle("film");
     const onError = () => settle("still");
     v.addEventListener("playing", onPlaying);
     v.addEventListener("error", onError, true);
+    v.addEventListener("stalled", onError);
+    v.addEventListener("abort", onError);
     v.src = narrow || window.innerWidth < 1100 ? source.sd : source.hd;
     v.load();
     const attempt = v.play();
@@ -73,11 +88,15 @@ export function Film({ film, poster, narrowBelow = 700, className = "", onReady,
       window.clearTimeout(timeout);
       v.removeEventListener("playing", onPlaying);
       v.removeEventListener("error", onError, true);
+      v.removeEventListener("stalled", onError);
+      v.removeEventListener("abort", onError);
+      still.removeEventListener("load", onStill);
+      still.removeEventListener("error", onStill);
       v.pause();
       v.removeAttribute("src");
       v.load();
     };
-  }, [film, poster.tall, narrowBelow]);
+  }, [film, poster.wide, poster.tall, narrowBelow]);
 
   return (
     <div ref={root} className={`${styles.root} ${className}`} data-state="loading" data-cut="wide" aria-hidden="true">

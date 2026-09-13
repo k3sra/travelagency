@@ -46,7 +46,8 @@
   }
 }
 
-.root[data-state="still"] .still {
+.root[data-state="still"] .still,
+.root[data-still="ready"] .still {
   opacity: 1;
 }
 
