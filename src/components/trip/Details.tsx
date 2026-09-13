@@ -38,26 +38,54 @@ export function Details({ trip }: { trip: Journey }) {
   return (
     <section ref={root} id="details" className={`section ${styles.details}`} aria-labelledby="details-title">
       <div className={`container ${styles.grid}`}>
-        <div>
-          <p className="t-label t-sun">Included</p>
-          <h2 id="details-title" className={`t-h2 ${styles.title}`}>What is in.</h2>
-          <ul className={styles.list}>
-            {trip.inclusions.map((line) => (
-              <li key={line} className={styles.item} data-item>
-                <svg className={styles.check} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M4 12.5l5 5L20 6.5" strokeDasharray={24} data-check />
-                </svg>
-                <span className="t-lead">{line}</span>
-              </li>
-            ))}
-          </ul>
+        <div className={styles.lists}>
+          <div>
+            <p className="t-label t-sun">The short version</p>
+            <h2 id="details-title" className={`t-h2 ${styles.title}`}>Three things you will actually do.</h2>
+            <ul className={styles.list}>
+              {trip.highlights.map((line) => (
+                <li key={line} className={styles.item} data-item>
+                  <svg className={styles.check} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M4 12.5l5 5L20 6.5" strokeDasharray={24} data-check />
+                  </svg>
+                  <span className="t-lead">{line}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className={styles.cols}>
+            <div>
+              <h3 className={`t-h3 ${styles.subhead}`}>What is included</h3>
+              <ul className={styles.plain}>
+                {trip.inclusions.map((line) => (
+                  <li key={line} className={styles.plainItem} data-item>
+                    <span className={styles.tick} aria-hidden="true" />
+                    <span className="t-body">{line}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className={`t-h3 ${styles.subhead}`}>What is not</h3>
+              <ul className={styles.plain}>
+                {trip.notIncluded.map((line) => (
+                  <li key={line} className={styles.plainItem} data-item>
+                    <span className={`${styles.tick} ${styles.cross}`} aria-hidden="true" />
+                    <span className={`t-body ${styles.muted}`}>{line}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
         <aside className={styles.panel} aria-label="Price">
-          <p className={`t-label ${styles.muted}`}>Per person</p>
+          <p className={`t-label ${styles.panelMuted}`}>{trip.dates} · {trip.durationDays} days</p>
           <p className={`t-display ${styles.price}`}>{formatPrice(trip.price.amount)}</p>
+          <p className={styles.line}>per person, own room, everything at the table included</p>
           <hr className={styles.rule} />
-          <p className={styles.line}>Deposit {formatPrice(trip.price.deposit)} today</p>
-          <p className={styles.line}>Balance 60 days before</p>
+          <p className={styles.line}>Deposit {formatPrice(trip.price.deposit)} to hold your seat</p>
+          <p className={styles.line}>Balance {formatPrice(trip.price.amount - trip.price.deposit)} due 60 days before departure</p>
+          <p className={styles.line}>Group of {trip.groupMax} · ages 25 to 40 · hosted by {trip.curator.name}</p>
           <p className={`t-label ${styles.risk}`}>Free cancellation for 14 days · No booking fees</p>
           <Magnetic>
             <button type="button" className={`btn btn--sun btn--lg ${styles.cta}`} onClick={() => booking.open(trip.slug)}>Secure your seat</button>

@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { TransitionLink } from "@/components/gl/TransitionLink";
 import { gsap, setupGsap } from "@/components/motion/gsapSetup";
+import { CONTACT } from "@/lib/content";
 import { getTrips } from "@/lib/journeys";
 import { prefersReducedMotion } from "@/lib/useReducedMotion";
 import styles from "./Footer.module.css";
@@ -47,18 +48,20 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <p className={`t-label ${styles.head}`}>Follow</p>
+          <p className={`t-label ${styles.head}`}>Talk to a person</p>
           <ul className={styles.list}>
-            <li><a href="https://instagram.com" target="_blank" rel="noreferrer" className={styles.link}>Instagram</a></li>
-            <li><a href="https://tiktok.com" target="_blank" rel="noreferrer" className={styles.link}>TikTok</a></li>
+            <li><a href={`mailto:${CONTACT.email}`} className={styles.link}>{CONTACT.email}</a></li>
+            <li><a href={`https://wa.me/${CONTACT.whatsapp.replace(/[^0-9]/g, "")}`} target="_blank" rel="noreferrer" className={styles.link}>WhatsApp {CONTACT.whatsapp}</a></li>
+            <li><a href={CONTACT.instagram} target="_blank" rel="noreferrer" className={styles.link}>Instagram</a></li>
+            <li><a href={CONTACT.tiktok} target="_blank" rel="noreferrer" className={styles.link}>TikTok</a></li>
           </ul>
         </div>
       </div>
       <div className={`container ${styles.foot}`}>
         <hr className="rule" />
         <div className={styles.footRow}>
-          <span className="t-label">FABLE</span>
-          <span className={`t-label ${styles.muted}`}>Twelve people. Never more.</span>
+          <span className={`t-label ${styles.muted}`}>FABLE · Hosted group weeks for 25 to 40 year olds</span>
+          <span className={`t-label ${styles.muted}`}>Deposits refundable for 14 days · Balance due 60 days before departure</span>
         </div>
       </div>
     </footer>

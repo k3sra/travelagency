@@ -6,6 +6,10 @@ import { HowItWorks } from "@/components/home/HowItWorks";
 import { Faces } from "@/components/home/Faces";
 import { Reel } from "@/components/home/Reel";
 import { Closing } from "@/components/home/Closing";
+import { WhyUs } from "@/components/home/WhyUs";
+import { Reviews } from "@/components/home/Reviews";
+import { Faq } from "@/components/home/Faq";
+import { MobileCta } from "@/components/home/MobileCta";
 
 const organisation = {
   "@context": "https://schema.org",
@@ -22,11 +26,15 @@ export default function Home() {
       <Hero />
       <Hook />
       <TripsRail />
+      <WhyUs />
       <Wall />
       <HowItWorks />
+      <Reviews />
       <Faces />
       <Reel />
+      <Faq />
       <Closing />
+      <MobileCta />
     </main>
   );
 }

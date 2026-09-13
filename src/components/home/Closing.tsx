@@ -33,10 +33,11 @@ export function Closing() {
         </div>
       </div>
       <div className={`container ${styles.inner}`}>
-        <h2 id="closing-title" className={`t-hero ${styles.big}`} data-big>Your week<br />starts here</h2>
+        <h2 id="closing-title" className={`t-hero ${styles.big}`} data-big>Your week starts with a two-minute application.</h2>
+        <p className={`t-lead ${styles.reassure}`}>No payment to apply. A deposit only once you are in, refundable for fourteen days.</p>
         <div className={styles.cta}>
           <Magnetic>
-            <TransitionLink href="/trips" kind="dissolve" className="btn btn--lg">Apply now</TransitionLink>
+            <TransitionLink href="/trips" kind="dissolve" className="btn btn--lg">Pick a week</TransitionLink>
           </Magnetic>
           <p className={`t-label ${styles.next}`}>Next departure · {trips[0].title}, {trips[0].dates}</p>
         </div>

@@ -49,6 +49,7 @@ export function TripHero({ trip }: { trip: Journey }) {
             <span className={styles.mask}><span data-line className={styles.line}>{trip.title}</span></span>
           </h1>
           <p className={`t-lead ${styles.sub}`} data-rise>{trip.subtitle}</p>
+          <p className={`t-body ${styles.who}`} data-rise>{trip.forWho}</p>
           <ul className={styles.chips} data-rise aria-label="Key facts">
             <li className={styles.chip}>{trip.dates}</li>
             <li className={styles.chip}>{trip.durationDays} days</li>

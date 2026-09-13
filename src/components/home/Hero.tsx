@@ -6,12 +6,13 @@ import { TransitionLink } from "@/components/gl/TransitionLink";
 import { Film } from "@/components/motion/Film";
 import { Magnetic } from "@/components/motion/Magnetic";
 import { gsap, setupGsap } from "@/components/motion/gsapSetup";
+import { TRUST } from "@/lib/content";
 import { HERO_FILM, HERO_POSTER } from "@/lib/media";
 import { useStore } from "@/lib/store";
 import { prefersReducedMotion } from "@/lib/useReducedMotion";
 import styles from "./Hero.module.css";
 
-const LINES = ["Best", "week", "of your year"];
+const LINES = ["The best week of your year,", "with twelve people who get it."];
 
 export function Hero() {
   const root = useRef<HTMLElement>(null);
@@ -29,11 +30,10 @@ export function Hero() {
         return;
       }
       gsap.timeline()
-        .fromTo(lines, { yPercent: 110, y: 0 }, { yPercent: 0, y: 0, duration: 1.1, ease: "fable", stagger: 0.09 }, 0.1)
-        .fromTo(rest, { yPercent: 40, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.9, ease: "fable", stagger: 0.08 }, 0.5);
-      // Leaving: the film shrinks into a rounded frame and the copy drifts up.
-      gsap.fromTo(el.querySelector("[data-frame]"), { scale: 1, borderRadius: 0 }, { scale: 0.86, borderRadius: 28, ease: "none", scrollTrigger: { trigger: el, start: "top top", end: "bottom top", scrub: 0.6 } });
-      gsap.to(el.querySelector("[data-copy]"), { yPercent: -25, opacity: 0, ease: "none", scrollTrigger: { trigger: el, start: "top top", end: "70% top", scrub: 0.6 } });
+        .fromTo(lines, { yPercent: 110, y: 0 }, { yPercent: 0, y: 0, duration: 1.1, ease: "fable", stagger: 0.1 }, 0.1)
+        .fromTo(rest, { yPercent: 30, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.9, ease: "fable", stagger: 0.07 }, 0.45);
+      gsap.fromTo(el.querySelector("[data-frame]"), { scale: 1, borderRadius: 0 }, { scale: 0.9, borderRadius: 28, ease: "none", scrollTrigger: { trigger: el, start: "top top", end: "bottom top", scrub: 0.6 } });
+      gsap.to(el.querySelector("[data-copy]"), { yPercent: -18, opacity: 0, ease: "none", scrollTrigger: { trigger: el, start: "top top", end: "70% top", scrub: 0.6 } });
     }, el);
     return () => ctx.revert();
   }, [introDone]);
@@ -45,27 +45,31 @@ export function Hero() {
         <div className={styles.scrim} aria-hidden="true" />
       </div>
       <div className={`container ${styles.copy}`} data-copy>
-        <p className={`t-label ${styles.eyebrow}`} data-rise>Bali · Thailand · Cape Town · Rio</p>
+        <p className={`t-label ${styles.eyebrow}`} data-rise>Hosted group weeks · Bali · Thailand · Cape Town · Rio</p>
         <h1 className={`t-hero ${styles.title}`}>
-          {LINES.map((l, i) => (
+          {LINES.map((l) => (
             <span key={l} className={styles.mask}>
-              <span data-line className={`${styles.line} ${i === LINES.length - 1 ? "t-sun" : ""}`}>{l}</span>
+              <span data-line className={styles.line}>{l}</span>
             </span>
           ))}
         </h1>
-        <div className={styles.actions}>
-          <div data-rise>
-            <Magnetic>
-              <TransitionLink href="/trips" kind="dissolve" className="btn btn--light btn--lg">Apply now</TransitionLink>
-            </Magnetic>
-          </div>
-          <div data-rise>
-            <Link href="/#how" className={`btn btn--lg ${styles.ghost}`}>How it works</Link>
-          </div>
+        <p className={`t-lead ${styles.sub}`} data-rise>
+          One villa, one host who lives there, and eleven other travellers aged 25 to 40. Boat days, beach clubs and the nights in between, with everything at the table included.
+        </p>
+        <div className={styles.actions} data-rise>
+          <Magnetic>
+            <TransitionLink href="/trips" kind="dissolve" className="btn btn--light btn--lg">See the four weeks</TransitionLink>
+          </Magnetic>
+          <Link href="/#how" className={`btn btn--lg ${styles.ghost}`}>How it works</Link>
         </div>
-      </div>
-      <div className={styles.cue} aria-hidden="true">
-        <span className={styles.cueLine} />
+        <ul className={styles.trust} data-rise aria-label="Why people trust us">
+          {TRUST.map((t) => (
+            <li key={t.label} className={styles.trustItem}>
+              <span className={styles.trustValue}>{t.value}</span>
+              <span className={styles.trustLabel}>{t.label}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

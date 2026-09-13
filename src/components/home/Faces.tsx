@@ -56,6 +56,7 @@ export function Faces() {
       <div className={`container ${styles.head}`}>
         <p className="t-label t-sun">Who comes</p>
         <h2 id="faces-title" className={`t-h2 ${styles.title}`}>Twelve people who move like you.</h2>
+        <p className={`t-body ${styles.lead}`}>Every application is read by a person. We build each group around energy and pace, not age or job title, and we say no when a week is not the right fit.</p>
       </div>
       <dl className={`container ${styles.stats}`}>
         {STATS.map((s) => (

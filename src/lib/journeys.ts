@@ -49,6 +49,9 @@ export const journeys: Journey[] = [
     travellers: pool([1, "Amara", "London", 94], [2, "Tomas", "Lisbon", 91], [3, "Priya", "Berlin", 88], [4, "Leonie", "Zürich", 87], [5, "Marcus", "Chicago", 85], [6, "Ingrid", "Oslo", 83], [7, "Kenji", "Melbourne", 82], [8, "Sofia", "Buenos Aires", 79], [9, "Dev", "Toronto", 78], [10, "Chloé", "Lyon", 76]),
     curator: { name: "Nadia", role: "Your host · ran a beach bar in Canggu for six years", bio: "Knows every boat captain by first name, and which one waits for the late sleepers.", portrait: curatorPortrait(1) },
     inclusions: ["7 nights, 3 villas", "Private boat day", "Every meal and drink at the table", "Airport transfers and a driver all week", "Twelve people. Never more."],
+    notIncluded: ["Flights to Denpasar","Travel insurance (required)","Surf lessons and spa treatments","Drinks after the group has gone to bed"],
+    highlights: ["A cliff villa in Uluwatu with a pool over the ocean","A private wooden boat to Nusa Penida, mantas if they show","Canggu on scooters, a beach club by three, no alarm set"],
+    forWho: "Best if it is your first week with us, or your first time in Asia. Pool days with a proper night or two.",
   },
   {
     slug: "thailand",
@@ -82,6 +85,9 @@ export const journeys: Journey[] = [
     travellers: pool([9, "Dev", "Toronto", 92], [3, "Priya", "Berlin", 90], [11, "Yara", "Paris", 89], [12, "Luca", "Milan", 86], [5, "Marcus", "Chicago", 84], [13, "Hugo", "Copenhagen", 83], [14, "Nour", "Dubai", 81], [6, "Ingrid", "Oslo", 79], [15, "Jonah", "Tel Aviv", 78], [16, "Wren", "Portland", 77]),
     curator: { name: "Ploy", role: "Your host · Bangkok born, ten seasons on the islands", bio: "Has never queued for a boat and does not plan to start with you.", portrait: curatorPortrait(2) },
     inclusions: ["7 nights, city hotel and beach villa", "Private longtail day", "Every meal and drink at the table, two nights with the table booked", "Flights between city and islands", "Twelve people. Never more."],
+    notIncluded: ["Flights to Bangkok","Travel insurance (required)","Massages and dive certifications","Drinks after the group has gone to bed"],
+    highlights: ["A rooftop over the Chao Phraya on the first night","A private longtail to Phi Phi with lunch on a sandbar","The beach party with the table already booked"],
+    forWho: "For people who want the loudest nights on the calendar and a long lazy boat day to recover on.",
   },
   {
     slug: "cape-town",
@@ -115,6 +121,9 @@ export const journeys: Journey[] = [
     travellers: pool([13, "Hugo", "Copenhagen", 91], [2, "Tomas", "Lisbon", 87], [16, "Wren", "Portland", 86], [8, "Sofia", "Buenos Aires", 80], [11, "Yara", "Paris", 78], [4, "Leonie", "Zürich", 77], [9, "Dev", "Toronto", 75]),
     curator: { name: "Thandi", role: "Your host · Capetonian, mountain guide, best braai on the Atlantic", bio: "One rule: nobody leaves without a day they will talk about for a decade.", portrait: curatorPortrait(4) },
     inclusions: ["7 nights in one villa in Camps Bay", "Guided hike, winelands day, sunset catamaran", "Every meal and drink at the table", "Airport transfers and a minibus all week", "Twelve people. Never more."],
+    notIncluded: ["Flights to Cape Town","Travel insurance (required)","Shark cage diving and paragliding (bookable on request)","Drinks after the group has gone to bed"],
+    highlights: ["One villa in Camps Bay facing the sunset all week","Table Mountain on foot, then the winelands for one long lunch","A sunset catamaran with the whole group on the net"],
+    forWho: "For big days out and long lunches, with a birthday in the group more often than not.",
   },
   {
     slug: "rio",
@@ -148,6 +157,9 @@ export const journeys: Journey[] = [
     travellers: pool([16, "Wren", "Portland", 93], [12, "Luca", "Milan", 88], [1, "Amara", "London", 86], [14, "Nour", "Dubai", 85], [7, "Kenji", "Melbourne", 82], [10, "Chloé", "Lyon", 80], [15, "Jonah", "Tel Aviv", 79], [8, "Sofia", "Buenos Aires", 77]),
     curator: { name: "Mateus", role: "Your host · carioca, former lifeguard, knows every bloco", bio: "Has never missed a sunset at Arpoador and will not let you either.", portrait: curatorPortrait(3) },
     inclusions: ["7 nights, city house and beach pousada", "Boat day in Búzios", "Every meal and drink at the table, one night with the table booked", "Airport transfers and a driver all week", "Twelve people. Never more."],
+    notIncluded: ["Flights to Rio de Janeiro","Travel insurance (required)","Hang gliding and football tickets (bookable on request)","Drinks after the group has gone to bed"],
+    highlights: ["A house in Santa Teresa with a rooftop pool over the city","Ipanema by day, a Lapa street party by night","Two nights in Búzios with a boat and a bay to yourselves"],
+    forWho: "Best for solo travellers. Half the group comes alone and it stops mattering by the second night.",
   },
 ];
 

@@ -4,15 +4,12 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { TransitionLink } from "@/components/gl/TransitionLink";
 import { gsap, ScrollTrigger, setupGsap } from "@/components/motion/gsapSetup";
+import { STEPS as COPY } from "@/lib/content";
 import { TILES } from "@/lib/media";
 import { prefersReducedMotion } from "@/lib/useReducedMotion";
 import styles from "./HowItWorks.module.css";
 
-const STEPS = [
-  { n: "01", title: "Apply", line: "Two minutes. Tell us how you like a day to go.", tile: TILES[1], cls: "night" },
-  { n: "02", title: "We match you", line: "Twelve people who move like you. A host who runs it.", tile: TILES[4], cls: "sun" },
-  { n: "03", title: "Show up", line: "Land. Drop the bags. Straight into the pool.", tile: TILES[7], cls: "sea" },
-];
+const STEPS = COPY.map((s, i) => ({ ...s, tile: [TILES[1], TILES[4], TILES[7]][i], cls: ["night", "sun", "sea"][i] }));
 
 export function HowItWorks() {
   const root = useRef<HTMLElement>(null);
@@ -45,7 +42,7 @@ export function HowItWorks() {
       <div className={styles.stage} data-stage>
         <div className={`container ${styles.head}`}>
           <p className="t-label t-sun">How it works</p>
-          <h2 id="how-title" className="visually-hidden">How it works</h2>
+          <h2 id="how-title" className={`t-h2 ${styles.heading}`}>Three steps. No forms longer than a text message.</h2>
         </div>
         <div className={styles.deck}>
           {STEPS.map((s, i) => (
@@ -53,9 +50,9 @@ export function HowItWorks() {
               <span className={`t-hero ${styles.index}`} aria-hidden="true">{s.n}</span>
               <div className={styles.body}>
                 <h3 className={`t-display ${styles.title}`}>{s.title}</h3>
-                <p className={`t-lead ${styles.line}`}>{s.line}</p>
+                <p className={`t-lead ${styles.line}`}>{s.body}</p>
                 {i === STEPS.length - 1 ? (
-                  <TransitionLink href="/trips" kind="dissolve" className="btn btn--light btn--lg">Apply now</TransitionLink>
+                  <TransitionLink href="/trips" kind="dissolve" className="btn btn--light btn--lg">Pick a week and apply</TransitionLink>
                 ) : null}
               </div>
               <div className={styles.tile}>

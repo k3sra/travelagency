@@ -10,7 +10,12 @@
 }
 
 .title {
-  max-width: 14ch;
+  max-width: 18ch;
+}
+
+.lead {
+  color: var(--ink-2);
+  max-width: 56ch;
 }
 
 .stats {

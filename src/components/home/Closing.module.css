@@ -16,14 +16,14 @@
   right: 0;
   transform: translateY(-50%);
   overflow: hidden;
-  opacity: 0.35;
+  opacity: 0.2;
   pointer-events: none;
 }
 
 .track {
   display: flex;
   width: max-content;
-  animation: marquee-x 26s linear infinite;
+  animation: marquee-x 30s linear infinite;
   will-change: transform;
 }
 
@@ -54,7 +54,13 @@
 }
 
 .big {
+  max-width: 18ch;
   will-change: transform, opacity;
+}
+
+.reassure {
+  max-width: 40ch;
+  color: rgba(10, 10, 10, 0.75);
 }
 
 .cta {

@@ -29,6 +29,11 @@ export function TripCard({ trip, index }: { trip: Journey; index: number }) {
         <p className={`t-label ${styles.meta}`}>{trip.country} · {trip.season} · {trip.dates}</p>
         <TextReveal as="h2" className={`t-display ${styles.title}`}>{trip.title}</TextReveal>
         <TextReveal as="p" className={`t-lead ${styles.sub}`}>{trip.subtitle}</TextReveal>
+        <ul className={styles.highlights}>
+          {trip.highlights.map((h) => (
+            <li key={h} className={styles.highlight}>{h}</li>
+          ))}
+        </ul>
         <ul className={styles.chips} aria-label="Vibe">
           <li className={`${styles.chip} ${styles.intent}`}>{trip.intent}</li>
           {trip.vibe.map((v) => (
@@ -37,7 +42,7 @@ export function TripCard({ trip, index }: { trip: Journey; index: number }) {
         </ul>
         <p className={`t-label ${styles.facts}`}>{trip.durationDays} days · 12 people · from {formatPrice(trip.price.amount)}</p>
         <p className={`t-label ${styles.spots} ${trip.spotsRemaining <= 2 ? styles.pulse : ""}`}>[ {trip.spotsRemaining} {trip.spotsRemaining === 1 ? "spot" : "spots"} left ]</p>
-        <TransitionLink {...link} className="btn">See the week</TransitionLink>
+        <TransitionLink {...link} className="btn">See the full week</TransitionLink>
       </div>
     </article>
   );

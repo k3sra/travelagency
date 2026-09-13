@@ -5,6 +5,11 @@
   padding-block: var(--section) clamp(6rem, 12vw, 12rem);
 }
 
+.lead {
+  color: var(--ink-2);
+  max-width: 44ch;
+}
+
 .head {
   display: grid;
   gap: 0.8rem;

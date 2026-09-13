@@ -1,6 +1,6 @@
 .hook {
   position: relative;
-  height: 300svh;
+  height: 260svh;
   background: var(--bg);
 }
 
@@ -14,25 +14,25 @@
   isolation: isolate;
 }
 
-.text {
+.inner {
   position: relative;
   z-index: 2;
-  max-width: min(14ch, 62vw);
+  display: grid;
+  gap: 1.2rem;
+  max-width: min(30ch, 70vw);
   text-align: center;
-  text-transform: none;
-  letter-spacing: -0.035em;
+  justify-items: center;
+}
+
+.text {
+  font-size: clamp(1.6rem, 3.4vw, 3.2rem);
+  line-height: 1.18;
+  letter-spacing: -0.025em;
 }
 
 .word {
   color: var(--ink-3);
-  opacity: 0.7;
-}
-
-.sun {
-  background: var(--grad-sun);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  opacity: 0.65;
 }
 
 .float {
@@ -42,7 +42,7 @@
   overflow: hidden;
   transform: rotate(var(--r));
   will-change: transform;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.16);
 }
 
 .float img {
@@ -64,31 +64,31 @@
 
 .c {
   width: 13vw;
-  left: 4vw;
+  left: 5vw;
   bottom: 6vh;
 }
 
 @media (max-width: 899px) {
-  .text {
-    max-width: 12ch;
+  .inner {
+    max-width: 92vw;
   }
   .text {
-    max-width: 12ch;
+    font-size: clamp(1.45rem, 6vw, 2rem);
   }
   .a {
-    width: 28vw;
+    width: 26vw;
     left: auto;
     right: 4vw;
-    top: 4vh;
+    top: 3vh;
   }
   .b {
-    width: 24vw;
+    width: 22vw;
     right: auto;
     left: 3vw;
-    top: 8vh;
+    top: 7vh;
   }
   .c {
-    width: 30vw;
+    width: 28vw;
     left: auto;
     right: 6vw;
     bottom: 3vh;
@@ -102,7 +102,7 @@
   }
   .stage {
     height: auto;
-    min-height: 70svh;
+    min-height: 60svh;
   }
   .word {
     color: var(--ink);

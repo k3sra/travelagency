@@ -61,7 +61,13 @@
 }
 
 .sub {
-  max-width: 30ch;
+  max-width: 34ch;
+  opacity: 0;
+}
+
+.who {
+  max-width: 48ch;
+  color: rgba(255, 255, 255, 0.82);
   opacity: 0;
 }
 
@@ -123,6 +129,7 @@
   }
   .eyebrow,
   .sub,
+  .who,
   .chips,
   .cta {
     opacity: 1;

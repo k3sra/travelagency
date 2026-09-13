@@ -40,7 +40,8 @@ export function TripsRail() {
       <div className={styles.stage} data-stage>
         <div className={`container ${styles.head}`}>
           <p className="t-label t-sun">Four weeks a year</p>
-          <h2 id="trips-title" className={`t-h2 ${styles.title}`}>Pick your week</h2>
+          <h2 id="trips-title" className={`t-h2 ${styles.title}`}>Pick your week.</h2>
+          <p className={`t-body ${styles.lead}`}>Eight days, twelve travellers, one host. Everything at the table is included. Tap a week for the full day by day.</p>
           <div className={styles.progress} aria-hidden="true"><span className={styles.bar} data-bar /></div>
           <p className={`t-label ${styles.hint}`}>Swipe</p>
         </div>
@@ -67,7 +68,9 @@ export function TripsRail() {
                 <span className={`t-label ${styles.spots} ${t.spotsRemaining <= 2 ? styles.pulse : ""}`}>[ {t.spotsRemaining} {t.spotsRemaining === 1 ? "spot" : "spots"} left ]</span>
                 <span className={styles.copy}>
                   <span className={`t-display ${styles.name}`}>{t.title}</span>
+                  <span className={styles.sub}>{t.subtitle}</span>
                   <span className={`t-label ${styles.meta}`}>{t.dates} · {t.durationDays} days · from {formatPrice(t.price.amount)}</span>
+                  <span className={styles.more}>See the full week</span>
                 </span>
               </TransitionLink>
             </li>

@@ -31,7 +31,6 @@
   background: #fff;
   color: var(--ink);
   border-left: 1px solid var(--line);
-  transform: translate3d(100%, 0, 0);
   will-change: transform;
   overflow: hidden;
 }

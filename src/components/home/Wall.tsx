@@ -59,7 +59,8 @@ export function Wall() {
     <section ref={root} className={styles.wall} aria-label="Real weeks">
       <div className={`container ${styles.head}`}>
         <p className="t-label t-sun">Real weeks, real people</p>
-        <h2 className={`t-h2 ${styles.title}`}>This is day four.</h2>
+        <h2 className={`t-h2 ${styles.title}`}>This is what day four looks like.</h2>
+        <p className={`t-body ${styles.lead}`}>Shot on phones by people on the trip, not by an agency. Nobody was asked to pose.</p>
       </div>
       <div className={styles.rows}>
         <Row tiles={TILES.slice(0, 6)} idx={0} />

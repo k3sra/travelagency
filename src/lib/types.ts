@@ -61,6 +61,11 @@ export interface Journey {
   travellers: Traveller[];
   curator: Curator;
   inclusions: string[];
+  notIncluded: string[];
+  /** Three things you will actually do. */
+  highlights: string[];
+  /** One honest line on who this week suits. */
+  forWho: string;
   transition: TransitionKind;
   promise: string;
 }

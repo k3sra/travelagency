@@ -48,8 +48,9 @@
   min-height: 44px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
   letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
 }
 
 .link::after {
@@ -76,7 +77,8 @@
 .footRow {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
   padding-top: 1.2rem;
 }
 

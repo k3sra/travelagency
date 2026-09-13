@@ -16,7 +16,7 @@
 .head {
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-areas: "label hint" "title hint" "bar bar";
+  grid-template-areas: "label hint" "title hint" "lead lead" "bar bar";
   gap: 0.6rem 1rem;
   align-items: end;
 }
@@ -27,6 +27,12 @@
 
 .title {
   grid-area: title;
+}
+
+.lead {
+  grid-area: lead;
+  color: var(--ink-2);
+  max-width: 52ch;
 }
 
 .progress {
@@ -142,7 +148,27 @@
 }
 
 .name {
-  font-size: clamp(2.6rem, 6vw, 7rem);
+  font-size: clamp(2rem, 3.6vw, 3.6rem);
+}
+
+.sub {
+  font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 34ch;
+}
+
+.more {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 2.4rem;
+  margin-top: 0.4rem;
+  padding: 0 1rem;
+  border-radius: var(--pill);
+  background: #fff;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.82rem;
 }
 
 .meta {
