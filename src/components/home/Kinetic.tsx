@@ -10,7 +10,7 @@ import { gsap, setupGsap } from "@/components/motion/gsapSetup";
 import { prefersReducedMotion } from "@/lib/useReducedMotion";
 import styles from "./Kinetic.module.css";
 
-const NAMES = ["Kyoto", "Patagonia", "Sahara", "Iceland"];
+const NAMES = ["Bali", "Mykonos", "Tulum", "Cape Town"];
 
 export function Kinetic() {
   const root = useRef<HTMLDivElement>(null);

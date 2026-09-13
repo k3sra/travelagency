@@ -2,7 +2,7 @@ import { TextReveal } from "@/components/motion/TextReveal";
 import styles from "./Manifesto.module.css";
 
 const LINES = [
-  "Ten strangers. A group chat by dinner.",
+  "Twelve strangers. A group chat by dinner.",
   "One host who knows where the night goes.",
   "Mornings start when the pool does.",
   "Every seat is someone we would travel with.",
@@ -30,7 +30,7 @@ export function Manifesto() {
             people you will actually keep.
           </TextReveal>
           <hr className="rule" />
-          <p className={`t-caps t-muted ${styles.note}`}>Ages 25 to 42 last season. Four departures a year. Ten seats each.</p>
+          <p className={`t-caps t-muted ${styles.note}`}>Ages 25 to 42 last season. Four departures a year. Twelve seats each.</p>
         </div>
       </div>
     </section>

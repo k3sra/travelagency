@@ -1,458 +1,510 @@
 {
-  "journeys/kyoto-in-silence/hero.jpg": {
-    "id": 19701493,
-    "photographer": "BabijaPhoto JB",
-    "photographerUrl": "https://www.pexels.com/@babijaphoto",
-    "url": "https://www.pexels.com/photo/view-of-a-garden-and-a-traditional-japanese-temple-19701493/",
-    "alt": "Lush greenery surrounds Kyoto's traditional pagoda, offering serene garden views amidst Japanese architecture."
-  },
-  "journeys/kyoto-in-silence/hero-tall.jpg": {
-    "id": 19035799,
-    "photographer": "Sachith Ravishka Kodikara",
-    "photographerUrl": "https://www.pexels.com/@srkportraits",
-    "url": "https://www.pexels.com/photo/daigo-ji-temple-in-kyoto-in-japan-19035799/",
-    "alt": "Explore the vibrant autumn colors at Daigo-ji Temple in Kyoto, featuring traditional Japanese architecture."
-  },
-  "journeys/kyoto-in-silence/card.jpg": {
-    "id": 39469545,
-    "photographer": "Tugce Turan",
-    "photographerUrl": "https://www.pexels.com/@tugce-turan-275581022",
-    "url": "https://www.pexels.com/photo/night-street-scene-with-lantern-in-kyoto-japan-39469545/",
-    "alt": "Dramatic street view at night featuring a glowing lantern and street signs in Kyoto, Japan."
-  },
-  "journeys/kyoto-in-silence/chapter-01.jpg": {
-    "id": 3011702,
-    "photographer": "Satoshi Hirayama",
-    "photographerUrl": "https://www.pexels.com/@satoshi",
-    "url": "https://www.pexels.com/photo/two-women-wearing-kimono-3011702/",
-    "alt": "Geishas in traditional attire walking down a historic street in Kyoto, Japan."
-  },
-  "journeys/kyoto-in-silence/chapter-02.jpg": {
-    "id": 18867922,
-    "photographer": "Eugenio Felix",
-    "photographerUrl": "https://www.pexels.com/@eugeniofr",
-    "url": "https://www.pexels.com/photo/wooden-arched-footbridge-in-kyoto-gyoen-national-garden-18867922/",
-    "alt": "A peaceful arched bridge surrounded by lush greenery in a traditional Kyoto garden."
-  },
-  "journeys/kyoto-in-silence/chapter-03.jpg": {
-    "id": 37919989,
-    "photographer": "Iban Lopez Luna",
-    "photographerUrl": "https://www.pexels.com/@iban-lopez-luna-2159602676",
-    "url": "https://www.pexels.com/photo/authentic-tokyo-izakaya-scene-with-lanterns-37919989/",
-    "alt": "Cozy Tokyo izakaya with traditional lanterns and a customer enjoying a meal."
-  },
-  "journeys/kyoto-in-silence/chapter-04.jpg": {
-    "id": 19022628,
-    "photographer": "L M",
-    "photographerUrl": "https://www.pexels.com/@l-m-782818427",
-    "url": "https://www.pexels.com/photo/people-walking-in-kifune-shrine-in-kyoto-japan-19022628/",
-    "alt": "Visitors descend the stone steps of Kifune Shrine in Kyoto, surrounded by lush greenery and traditional architecture."
-  },
-  "journeys/kyoto-in-silence/chapter-05.jpg": {
-    "id": 13505281,
-    "photographer": "Han Sen",
-    "photographerUrl": "https://www.pexels.com/@imageriesnap",
-    "url": "https://www.pexels.com/photo/bamboo-trees-in-the-forest-13505281/",
-    "alt": "Discover the tranquil beauty of a bamboo forest pathway in Beppu, Japan during fall."
-  },
-  "journeys/patagonia-unhurried/hero.jpg": {
-    "id": 4599300,
-    "photographer": "Alejandro Mallea",
-    "photographerUrl": "https://www.pexels.com/@alejandro-mallea-3033503",
-    "url": "https://www.pexels.com/photo/a-snow-capped-rocky-mountain-near-lake-4599300/",
-    "alt": "Breathtaking view of Torres del Paine's snow-capped peaks and turquoise lake. Ideal for nature photography enthusiasts."
-  },
-  "journeys/patagonia-unhurried/hero-tall.jpg": {
-    "id": 13947045,
-    "photographer": "Nicolás Donatte",
-    "photographerUrl": "https://www.pexels.com/@nicolas-donatte-2178584",
-    "url": "https://www.pexels.com/photo/glacier-on-water-under-the-cloudy-sky-13947045/",
-    "alt": "Stunning view of towering blue glaciers in Torres del Paine, Chile under cloudy skies."
-  },
-  "journeys/patagonia-unhurried/card.jpg": {
-    "id": 34790995,
-    "photographer": "Imad Clicks",
-    "photographerUrl": "https://www.pexels.com/@imadclicks",
-    "url": "https://www.pexels.com/photo/hiker-celebrating-triumph-on-snowy-mountain-summit-34790995/",
-    "alt": "A triumphant hiker raises arms on a snowy mountain peak during a sunny day in the Forest Block region."
-  },
-  "journeys/patagonia-unhurried/chapter-01.jpg": {
-    "id": 9260962,
-    "photographer": "photovic_1",
-    "photographerUrl": "https://www.pexels.com/@photovic_1-3809842",
-    "url": "https://www.pexels.com/photo/dirt-road-near-the-lake-and-snow-covered-mountains-9260962/",
-    "alt": "Snow-capped mountains and serene lake along a dirt road under cloudy skies."
-  },
-  "journeys/patagonia-unhurried/chapter-02.jpg": {
-    "id": 26893847,
-    "photographer": "Luciano Corrêa Teixeira",
-    "photographerUrl": "https://www.pexels.com/@luciano-correa-teixeira-612400392",
-    "url": "https://www.pexels.com/photo/glacier-descending-to-sea-26893847/",
-    "alt": "Stunning view of the Perito Moreno Glacier with snowcapped Andes in El Calafate, Argentina."
-  },
-  "journeys/patagonia-unhurried/chapter-03.jpg": {
-    "id": 12446438,
-    "photographer": "Matheus Bertelli",
-    "photographerUrl": "https://www.pexels.com/@bertellifotografia",
-    "url": "https://www.pexels.com/photo/people-by-bonfire-at-night-12446438/",
-    "alt": "Three friends laughing and enjoying a bonfire at night, surrounded by warm firelight."
-  },
-  "journeys/patagonia-unhurried/chapter-04.jpg": {
-    "id": 37104146,
-    "photographer": "Jose Luis  Vanasco",
-    "photographerUrl": "https://www.pexels.com/@jose-luis-vanasco-2155044313",
-    "url": "https://www.pexels.com/photo/dramatic-snow-capped-mountain-peaks-in-clouds-37104146/",
-    "alt": "A breathtaking view of snow-covered mountain peaks shrouded in clouds, capturing the awe of nature's majesty."
-  },
-  "journeys/patagonia-unhurried/chapter-05.jpg": {
-    "id": 37104136,
-    "photographer": "Jose Luis  Vanasco",
-    "photographerUrl": "https://www.pexels.com/@jose-luis-vanasco-2155044313",
-    "url": "https://www.pexels.com/photo/stunning-mountain-view-in-santa-cruz-argentina-37104136/",
-    "alt": "Breathtaking landscape of mountains and forest in Santa Cruz, Patagonia, Argentina."
-  },
-  "journeys/sahara-under-glass/hero.jpg": {
-    "id": 28829633,
-    "photographer": "NaturEye Conservation",
-    "photographerUrl": "https://www.pexels.com/@natureye",
-    "url": "https://www.pexels.com/photo/majestic-sand-dunes-at-sunset-in-sahara-desert-28829633/",
-    "alt": "Golden sand dunes in the Sahara Desert at sunset with small figures in the distance."
-  },
-  "journeys/sahara-under-glass/hero-tall.jpg": {
-    "id": 3889916,
-    "photographer": "Taryn Elliott",
-    "photographerUrl": "https://www.pexels.com/@taryn-elliott",
-    "url": "https://www.pexels.com/photo/man-standing-on-sand-dune-3889916/",
-    "alt": "A lone figure stands atop a sand dune under a vast blue sky in the Egyptian desert."
-  },
-  "journeys/sahara-under-glass/card.jpg": {
-    "id": 19637639,
-    "photographer": "Plastic Lines",
-    "photographerUrl": "https://www.pexels.com/@plasticlines",
-    "url": "https://www.pexels.com/photo/residential-houses-at-dusk-with-star-field-in-the-sky-19637639/",
-    "alt": "A mesmerizing night sky view over a Bedouin camp in Wadi Rum, Jordan."
-  },
-  "journeys/sahara-under-glass/chapter-01.jpg": {
-    "id": 4880398,
-    "photographer": "cottonbro studio",
-    "photographerUrl": "https://www.pexels.com/@cottonbro",
-    "url": "https://www.pexels.com/photo/people-standing-on-top-of-building-4880398/",
-    "alt": "A group of friends enjoying a rooftop view in the city during a sunny summer day."
-  },
-  "journeys/sahara-under-glass/chapter-02.jpg": {
-    "id": 37684083,
-    "photographer": "pierre matile",
-    "photographerUrl": "https://www.pexels.com/@open-borders",
-    "url": "https://www.pexels.com/photo/scenic-view-of-moroccan-canyon-landscape-37684083/",
-    "alt": "Breathtaking view of a canyon in Morocco with red earth and green vegetation."
-  },
-  "journeys/sahara-under-glass/chapter-03.jpg": {
-    "id": 37684113,
-    "photographer": "pierre matile",
-    "photographerUrl": "https://www.pexels.com/@open-borders",
-    "url": "https://www.pexels.com/photo/traditional-berber-village-in-moroccan-atlas-mountains-37684113/",
-    "alt": "Picturesque view of a traditional Berber village with palm trees in the Atlas Mountains, Morocco."
-  },
-  "journeys/sahara-under-glass/chapter-04.jpg": {
-    "id": 28639031,
-    "photographer": "Stephen Leonardi",
-    "photographerUrl": "https://www.pexels.com/@stephen-leonardi-587681991",
-    "url": "https://www.pexels.com/photo/nighttime-camping-scene-with-campfire-and-van-28639031/",
-    "alt": "Starlit camping scene with people around a campfire near a van in a rocky desert."
-  },
-  "journeys/sahara-under-glass/chapter-05.jpg": {
-    "id": 37441665,
-    "photographer": "Cornelis Johannes (Kees) van Leeuwen",
-    "photographerUrl": "https://www.pexels.com/@cornelis-johannes-kees-van-leeuwen-1472565790",
-    "url": "https://www.pexels.com/photo/dramatic-sky-over-merzouga-sand-dunes-37441665/",
-    "alt": "Vast landscape of Merzouga's sand dunes under a dramatic cloudy sky at twilight."
-  },
-  "journeys/iceland-edge-of-light/hero.jpg": {
-    "id": 10050925,
-    "photographer": "Marek Piwnicki",
-    "photographerUrl": "https://www.pexels.com/@marek-piwnicki-3907296",
-    "url": "https://www.pexels.com/photo/a-man-looking-at-the-aurora-borealis-10050925/",
-    "alt": "A man in a field under the mesmerizing aurora borealis in Iceland's night sky."
-  },
-  "journeys/iceland-edge-of-light/hero-tall.jpg": {
-    "id": 18643228,
-    "photographer": "Luca Severin",
-    "photographerUrl": "https://www.pexels.com/@luca-severin-748412253",
-    "url": "https://www.pexels.com/photo/northern-lights-in-starry-sky-18643228/",
-    "alt": "Breathtaking view of aurora borealis illuminating the starry night sky over forest silhouette."
-  },
-  "journeys/iceland-edge-of-light/card.jpg": {
-    "id": 33351561,
-    "photographer": "Stijn Nuttin",
-    "photographerUrl": "https://www.pexels.com/@stijnn",
-    "url": "https://www.pexels.com/photo/steaming-geothermal-landscape-in-thingeyjarsveit-33351561/",
-    "alt": "Explore the steaming geothermal terrain of Þingeyjarsveit, Iceland's natural wonder."
-  },
-  "journeys/iceland-edge-of-light/chapter-01.jpg": {
-    "id": 34331035,
-    "photographer": "Phil Evenden",
-    "photographerUrl": "https://www.pexels.com/@philevenphotos",
-    "url": "https://www.pexels.com/photo/sun-voyager-sculpture-in-reykjavik-iceland-34331035/",
-    "alt": "Black and white image of the iconic Sun Voyager sculpture in Reykjavík."
-  },
-  "journeys/iceland-edge-of-light/chapter-02.jpg": {
-    "id": 31851520,
-    "photographer": "Alec Doualetas",
-    "photographerUrl": "https://www.pexels.com/@alecdoua",
-    "url": "https://www.pexels.com/photo/scenic-black-sand-beach-with-basalt-columns-in-iceland-31851520/",
-    "alt": "Beautiful view of Reynisfjara Beach in Iceland, featuring black sand and striking basalt columns against the blue ocean."
-  },
-  "journeys/iceland-edge-of-light/chapter-03.jpg": {
-    "id": 22944463,
-    "photographer": "Han-Chieh Lee",
-    "photographerUrl": "https://www.pexels.com/@han-chieh-lee-1234591373",
-    "url": "https://www.pexels.com/photo/cave-in-glacier-22944463/",
-    "alt": "Explore the stunning interior of an Icelandic ice cave with mesmerizing blue hues and frozen textures."
-  },
-  "journeys/iceland-edge-of-light/chapter-04.jpg": {
-    "id": 6383231,
-    "photographer": "Liza Summer",
-    "photographerUrl": "https://www.pexels.com/@liza-summer",
-    "url": "https://www.pexels.com/photo/cheerful-women-playing-snowballs-on-street-6383231/",
-    "alt": "Cheerful ethnic woman and faceless girlfriend in warm clothes playing snowballs while standing near stone wall on snowy street in winter day"
-  },
-  "journeys/iceland-edge-of-light/chapter-05.jpg": {
-    "id": 17959889,
-    "photographer": "Gabriele Niek",
-    "photographerUrl": "https://www.pexels.com/@gabriele-niek-688131453",
-    "url": "https://www.pexels.com/photo/a-glacier-is-seen-in-iceland-17959889/",
-    "alt": "Dramatic icy landscape of Jökulsárlón Glacier Lagoon in Iceland under a cinematic sky."
-  },
   "portraits/p01.jpg": {
-    "id": 35155020,
-    "photographer": "Manuel Schlichter",
-    "photographerUrl": "https://www.pexels.com/@manuel-schlichter-753068368",
-    "url": "https://www.pexels.com/photo/stylish-woman-posing-in-urban-setting-35155020/",
-    "alt": "Black and white portrait of a woman posing confidently in an urban environment."
+    "provider": "pexels",
+    "id": 36825446,
+    "photographer": "alameen .ng",
+    "photographerUrl": "https://www.pexels.com/@alameenng",
+    "url": "https://www.pexels.com/photo/joyful-woman-in-striped-dress-laughing-36825446/",
+    "alt": "Black and white portrait of a woman laughing in a striped dress, conveying joy.",
+    "license": "Pexels"
   },
   "portraits/p02.jpg": {
-    "id": 19583977,
-    "photographer": "khezez  | خزاز",
-    "photographerUrl": "https://www.pexels.com/@khezez",
-    "url": "https://www.pexels.com/photo/brunette-man-with-beard-and-mustache-19583977/",
-    "alt": "A dramatic black and white portrait of a bearded man with a contemplative gaze."
+    "provider": "pexels",
+    "id": 4433109,
+    "photographer": "Matt Jerome Connor",
+    "photographerUrl": "https://www.pexels.com/@matt-jerome-connor-1428905",
+    "url": "https://www.pexels.com/photo/cheerful-ethnic-man-in-cap-near-brick-wall-4433109/",
+    "alt": "From below of young happy ethnic male in eyeglasses and casual wear standing with closed eyes",
+    "license": "Pexels"
   },
   "portraits/p03.jpg": {
-    "id": 5456333,
-    "photographer": "Renan Lima",
-    "photographerUrl": "https://www.pexels.com/@renan-lima-1322164",
-    "url": "https://www.pexels.com/photo/back-view-of-woman-5456333/",
-    "alt": "A serene moment captured during sunset, highlighting long hair and warm sunrays."
+    "provider": "pexels",
+    "id": 12998525,
+    "photographer": "Atahan Demir",
+    "photographerUrl": "https://www.pexels.com/@atahandemir",
+    "url": "https://www.pexels.com/photo/woman-in-white-shirt-covering-her-face-12998525/",
+    "alt": "Close-up of a smiling woman covering her mouth with her hand, expressing shyness and playfulness.",
+    "license": "Pexels"
   },
   "portraits/p04.jpg": {
-    "id": 31295146,
-    "photographer": "Natalia Olivera",
-    "photographerUrl": "https://www.pexels.com/@nataliaolivera",
-    "url": "https://www.pexels.com/photo/pensive-elderly-man-in-black-and-white-portrait-31295146/",
-    "alt": "Thoughtful elderly man captured in a dramatic black and white portrait, conveying deep emotion."
+    "provider": "pexels",
+    "id": 4534205,
+    "photographer": "ArtHouse Studio",
+    "photographerUrl": "https://www.pexels.com/@arthousestudio",
+    "url": "https://www.pexels.com/photo/cheerful-young-man-in-outdoor-cafe-in-summer-4534205/",
+    "alt": "Black and white shot of young positive skinny male in henley top laughing and looking away standing against blurred outdoor cafe",
+    "license": "Pexels"
   },
   "portraits/p05.jpg": {
-    "id": 38057777,
+    "provider": "pexels",
+    "id": 18392646,
     "photographer": "Alexander Krivitskiy",
     "photographerUrl": "https://www.pexels.com/@krivitskiy",
-    "url": "https://www.pexels.com/photo/close-up-black-and-white-portrait-of-smiling-woman-38057777/",
-    "alt": "Black and white portrait of a young woman smiling with a playful expression."
+    "url": "https://www.pexels.com/photo/smiling-face-of-woman-with-brown-hair-18392646/",
+    "alt": "Close-up of a woman smiling with brown hair, capturing joy and natural beauty.",
+    "license": "Pexels"
   },
   "portraits/p06.jpg": {
-    "id": 14160122,
-    "photographer": "Taher Hassan",
-    "photographerUrl": "https://www.pexels.com/@taher-hassan-156926759",
-    "url": "https://www.pexels.com/photo/man-in-black-polo-shirt-wearing-black-framed-sunglasses-standing-by-the-glass-window-14160122/",
-    "alt": "Portrait of a confident man with sunglasses by a glass window indoors."
+    "provider": "pexels",
+    "id": 9720624,
+    "photographer": "Simon Reza",
+    "photographerUrl": "https://www.pexels.com/@simonreza",
+    "url": "https://www.pexels.com/photo/a-portrait-of-a-bearded-man-9720624/",
+    "alt": "Portrait of an adult man smiling in front of a metal shutter.",
+    "license": "Pexels"
   },
   "portraits/p07.jpg": {
-    "id": 10104712,
-    "photographer": "Mari Korz",
-    "photographerUrl": "https://www.pexels.com/@mari-korz-130170605",
-    "url": "https://www.pexels.com/photo/woman-with-hands-on-head-10104712/",
-    "alt": "Woman with tattoos and long hair outside, facing the wind, hands on head."
+    "provider": "pexels",
+    "id": 8784608,
+    "photographer": "Los Muertos Crew",
+    "photographerUrl": "https://www.pexels.com/@cristian-rojas",
+    "url": "https://www.pexels.com/photo/happy-woman-in-white-tank-top-sitting-on-chair-8784608/",
+    "alt": "Smiling woman with notebook and vintage camera in outdoor cafe setting.",
+    "license": "Pexels"
   },
   "portraits/p08.jpg": {
-    "id": 32021392,
-    "photographer": "Sóc Năng Động",
-    "photographerUrl": "https://www.pexels.com/@soc-nang-d-ng-2150345854",
-    "url": "https://www.pexels.com/photo/casual-portrait-of-man-with-sunglasses-32021392/",
-    "alt": "Relaxed man sitting outdoors wearing sunglasses and smiling"
+    "provider": "pexels",
+    "id": 11091224,
+    "photographer": "Rupinder Singh",
+    "photographerUrl": "https://www.pexels.com/@rupinder-singh-2744173",
+    "url": "https://www.pexels.com/photo/smiling-man-face-11091224/",
+    "alt": "Close-up of a young man in an orange hoodie smiling, showcasing a natural candid expression.",
+    "license": "Pexels"
   },
   "portraits/p09.jpg": {
-    "id": 38692806,
-    "photographer": "Alexander Krivitskiy",
-    "photographerUrl": "https://www.pexels.com/@krivitskiy",
-    "url": "https://www.pexels.com/photo/moody-portrait-of-a-woman-in-a-dark-hat-38692806/",
-    "alt": "Mysterious woman in shadow with dark hat creating dramatic effect."
+    "provider": "pexels",
+    "id": 33669427,
+    "photographer": "Mert Coşkun",
+    "photographerUrl": "https://www.pexels.com/@mertcoskunraw",
+    "url": "https://www.pexels.com/photo/joyful-woman-in-polka-dot-dress-and-hat-33669427/",
+    "alt": "Cheerful woman laughing with hands raised, wearing polka dot dress and hat.",
+    "license": "Pexels"
   },
   "portraits/p10.jpg": {
-    "id": 37159572,
-    "photographer": "hartono subagio",
-    "photographerUrl": "https://www.pexels.com/@hartonosbg",
-    "url": "https://www.pexels.com/photo/smiling-young-man-in-red-shirt-portrait-37159572/",
-    "alt": "Portrait of a cheerful young man in a red shirt against a simple background."
+    "provider": "pexels",
+    "id": 14762121,
+    "photographer": "Brooke Laven",
+    "photographerUrl": "https://www.pexels.com/@brooke-laven-238543175",
+    "url": "https://www.pexels.com/photo/smiling-man-with-drink-in-jar-14762121/",
+    "alt": "Man with glasses and jacket joyfully sipping a drink indoors in Santiago, Chile.",
+    "license": "Pexels"
   },
   "portraits/p11.jpg": {
-    "id": 30805619,
-    "photographer": "Tolga Akman",
-    "photographerUrl": "https://www.pexels.com/@tolgaakman",
-    "url": "https://www.pexels.com/photo/portrait-of-an-elderly-man-in-turkiye-30805619/",
-    "alt": "Elderly man sitting outdoors in Türkiye, exuding warmth and nostalgia."
+    "provider": "pexels",
+    "id": 32938408,
+    "photographer": "Majkel Berger",
+    "photographerUrl": "https://www.pexels.com/@majkel-berger-1699317211",
+    "url": "https://www.pexels.com/photo/portrait-of-a-senior-man-with-long-white-beard-32938408/",
+    "alt": "Profile of a senior man with a long white beard wearing a cap and jacket outdoors.",
+    "license": "Pexels"
   },
   "portraits/p12.jpg": {
-    "id": 6874470,
-    "photographer": "Teona Swift",
-    "photographerUrl": "https://www.pexels.com/@teona-swift",
-    "url": "https://www.pexels.com/photo/portrait-of-old-woman-thinking-6874470/",
-    "alt": "Portrait of a serious senior woman in a thoughtful pose indoors."
+    "provider": "pexels",
+    "id": 17894396,
+    "photographer": "Alexander Krivitskiy",
+    "photographerUrl": "https://www.pexels.com/@krivitskiy",
+    "url": "https://www.pexels.com/photo/laughing-blonde-woman-with-pearls-earrings-17894396/",
+    "alt": "Black and white portrait of a senior woman laughing, showcasing joy and wisdom.",
+    "license": "Pexels"
   },
   "portraits/p13.jpg": {
-    "id": 17191680,
-    "photographer": "Esra Erdem",
-    "photographerUrl": "https://www.pexels.com/@esrakorkmaz",
-    "url": "https://www.pexels.com/photo/portrait-of-a-woman-with-curly-hair-and-a-mole-17191680/",
-    "alt": "Portrait of a woman with curly hair and a thoughtful expression, illuminated by soft bokeh lights."
+    "provider": "pexels",
+    "id": 31689192,
+    "photographer": "Ersin",
+    "photographerUrl": "https://www.pexels.com/@ersin-1398102958",
+    "url": "https://www.pexels.com/photo/joyful-woman-expressing-happiness-indoors-31689192/",
+    "alt": "Happy woman with curly hair laughing joyously in a relaxed indoor setting.",
+    "license": "Pexels"
   },
   "portraits/p14.jpg": {
-    "id": 35879175,
-    "photographer": "Eugene Samoilov",
-    "photographerUrl": "https://www.pexels.com/@eugene-samoilov-2156768826",
-    "url": "https://www.pexels.com/photo/side-profile-of-pensive-young-man-outdoors-35879175/",
-    "alt": "Close-up side profile of a young man in winter clothing outdoors, contemplating something."
+    "provider": "pexels",
+    "id": 14280464,
+    "photographer": "Mason McCall",
+    "photographerUrl": "https://www.pexels.com/@masonamccall",
+    "url": "https://www.pexels.com/photo/man-laughing-and-covering-face-14280464/",
+    "alt": "Man laughing with eyeglasses, hand over mouth, casual indoor setting.",
+    "license": "Pexels"
   },
   "portraits/p15.jpg": {
-    "id": 31653967,
-    "photographer": "Mad Knoxx Deluxe",
-    "photographerUrl": "https://www.pexels.com/@madknoxxdeluxe",
-    "url": "https://www.pexels.com/photo/stylish-woman-with-long-braided-hair-posing-31653967/",
-    "alt": "Woman in casual outfit posing with long braided hair against a blue background."
+    "provider": "pexels",
+    "id": 8910368,
+    "photographer": "ANTONI SHKRABA production",
+    "photographerUrl": "https://www.pexels.com/@anthonyshkraba-production",
+    "url": "https://www.pexels.com/photo/people-partying-in-a-park-and-table-with-fruits-and-flowers-in-foreground-8910368/",
+    "alt": "Friends enjoying a cheerful outdoor gathering with laughter and gifts in nature.",
+    "license": "Pexels"
   },
   "portraits/p16.jpg": {
-    "id": 38872747,
-    "photographer": "Cheer Miron Asso",
-    "photographerUrl": "https://www.pexels.com/@cheer-miron-asso-2152270905",
-    "url": "https://www.pexels.com/photo/joyful-young-woman-in-colorful-poncho-outdoors-38872747/",
-    "alt": "A young woman laughing with joy, wearing a colorful poncho outdoors."
+    "provider": "pexels",
+    "id": 34367741,
+    "photographer": "Vladislav Lolenko",
+    "photographerUrl": "https://www.pexels.com/@bobelnuk",
+    "url": "https://www.pexels.com/photo/smiling-woman-in-red-coat-by-a-doorway-34367741/",
+    "alt": "Stylish woman wearing sunglasses and a red coat, smiling in front of a door.",
+    "license": "Pexels"
   },
   "curators/c01.jpg": {
-    "id": 8503239,
-    "photographer": "Serkan Bayraktar",
-    "photographerUrl": "https://www.pexels.com/@bayraktarserkan",
-    "url": "https://www.pexels.com/photo/grayscale-photo-of-a-man-smoking-a-cigarette-8503239/",
-    "alt": "Back view of a man smoking with a hat, captured in monochrome."
+    "provider": "pexels",
+    "id": 1267341,
+    "photographer": "ELEVATE",
+    "photographerUrl": "https://www.pexels.com/@elevate",
+    "url": "https://www.pexels.com/photo/man-carrying-sack-near-white-wall-1267341/",
+    "alt": "A happy worker in a black shirt and cap carrying a heavy sack indoors, smiling and laughing.",
+    "license": "Pexels"
   },
   "curators/c02.jpg": {
-    "id": 33444227,
-    "photographer": "Eric Moura",
-    "photographerUrl": "https://www.pexels.com/@eric-moura-859101902",
-    "url": "https://www.pexels.com/photo/dramatic-portrait-of-woman-in-low-light-33444227/",
-    "alt": "Artistic low light portrait of a woman with curly hair in a contemplative pose."
+    "provider": "pexels",
+    "id": 20381683,
+    "photographer": "Rules Effects",
+    "photographerUrl": "https://www.pexels.com/@rules-effects-875275396",
+    "url": "https://www.pexels.com/photo/smiling-woman-with-hairband-20381683/",
+    "alt": "Portrait of a smiling woman in a colorful market setting, conveying joy and vibrant culture.",
+    "license": "Pexels"
   },
   "curators/c03.jpg": {
-    "id": 20380590,
-    "photographer": "Sabine Meier",
-    "photographerUrl": "https://www.pexels.com/@sabine-meier-818963894",
-    "url": "https://www.pexels.com/photo/side-view-of-a-shirtless-man-standing-next-to-a-window-20380590/",
-    "alt": "A shirtless man stands by a window, deep in thought with his reflection visible."
+    "provider": "pexels",
+    "id": 30259163,
+    "photographer": "Chitrakaksha _",
+    "photographerUrl": "https://www.pexels.com/@chitrakaksha",
+    "url": "https://www.pexels.com/photo/thoughtful-man-gazing-through-train-window-30259163/",
+    "alt": "Elderly man in train, lost in thought, gazes out the window during daytime travel.",
+    "license": "Pexels"
   },
   "curators/c04.jpg": {
-    "id": 39388729,
-    "photographer": "quang vinh",
-    "photographerUrl": "https://www.pexels.com/@v1nhdotcom",
-    "url": "https://www.pexels.com/photo/elegant-portrait-of-a-woman-in-white-attire-39388729/",
-    "alt": "A stylish adult woman in traditional attire posing confidently outdoors."
+    "provider": "pexels",
+    "id": 16255222,
+    "photographer": "Andy Coffie",
+    "photographerUrl": "https://www.pexels.com/@kema",
+    "url": "https://www.pexels.com/photo/portrait-of-laughing-woman-wearing-heavy-beaded-neckla-16255222/",
+    "alt": "Joyful woman adorned with colorful beaded necklaces and headband, smiling outdoors.",
+    "license": "Pexels"
   },
   "hero/film": {
-    "id": 31715186,
-    "photographer": "João  Pavese",
-    "url": "https://www.pexels.com/video/scenic-yacht-adventure-with-people-jumping-into-water-31715186/",
-    "tall": "https://www.pexels.com/video/aerial-view-of-cliff-divers-in-crystal-blue-sea-38161870/"
-  },
-  "journeys/kyoto-in-silence/film": {
-    "id": 34209362,
-    "photographer": "LayG Traveller",
-    "url": "https://www.pexels.com/video/stunning-nanjing-lantern-lit-alleyway-tour-34209362/",
-    "tall": "https://www.pexels.com/video/stunning-view-of-kinkaku-ji-temple-in-kyoto-37901319/"
-  },
-  "journeys/patagonia-unhurried/film": {
-    "id": 33197882,
-    "photographer": "Sergey Guk",
-    "url": "https://www.pexels.com/video/breathtaking-aerial-view-of-fitz-roy-mountains-33197882/",
-    "tall": "https://www.pexels.com/video/over-the-lakes-20549731/"
-  },
-  "journeys/sahara-under-glass/film": {
-    "id": 17629657,
-    "photographer": "So Kenobi",
-    "url": "https://www.pexels.com/video/aerial-sahara-view-17629657/",
-    "tall": "https://www.pexels.com/video/sand-ripples-in-the-desert-8865368/"
-  },
-  "journeys/iceland-edge-of-light/film": {
-    "id": 35092214,
-    "photographer": "Ken Cheung",
-    "url": "https://www.pexels.com/video/breathtaking-northern-lights-over-iceland-s-winter-landscape-35092214/",
-    "tall": "https://www.pexels.com/video/the-aurora-bore-is-shown-in-this-photo-25988225/"
+    "id": 9974882,
+    "photographer": "Ron Lach",
+    "url": "https://www.pexels.com/video/a-man-riding-a-floater-9974882/",
+    "tall": "https://www.pexels.com/video/young-women-dancing-by-the-pool-9872704/"
   },
   "moments/m01.jpg": {
-    "id": 28751534,
-    "photographer": "Engin Akyurt",
-    "photographerUrl": "https://www.pexels.com/@enginakyurt",
-    "url": "https://www.pexels.com/photo/female-diver-mid-air-over-deep-blue-sea-28751534/",
-    "alt": "Aerial shot of a female diver in red swimwear diving into a deep blue ocean, showcasing freedom and skill."
+    "provider": "openverse",
+    "id": "9c7dbf1f-b085-4cee-9263-122fa3b5b86f",
+    "src": "https://live.staticflickr.com/26/48198536_c6db506398_b.jpg",
+    "photographer": "Photo Monkey",
+    "photographerUrl": "https://www.flickr.com/photos/87374213@N00",
+    "url": "https://www.flickr.com/photos/87374213@N00/48198536",
+    "alt": "Jump!",
+    "license": "BY",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
   },
   "moments/m02.jpg": {
-    "id": 5054617,
-    "photographer": "Ketut Subiyanto",
-    "photographerUrl": "https://www.pexels.com/@ketut-subiyanto",
-    "url": "https://www.pexels.com/photo/a-group-of-friends-toasting-beer-bottles-5054617/",
-    "alt": "Diverse group of friends toasting with beers on a rooftop gathering, enjoying a sunny day."
+    "provider": "pexels",
+    "id": 3851925,
+    "photographer": "Andrea Piacquadio",
+    "photographerUrl": "https://www.pexels.com/@olly",
+    "url": "https://www.pexels.com/photo/a-group-of-friends-3851925/",
+    "alt": "Group of happy friends laughing in swimwear under a clear sky, embracing summer joy.",
+    "license": "Pexels"
   },
   "moments/m03.jpg": {
-    "id": 5080853,
-    "photographer": "cottonbro studio",
-    "photographerUrl": "https://www.pexels.com/@cottonbro",
-    "url": "https://www.pexels.com/photo/man-and-woman-sitting-on-car-5080853/",
-    "alt": "Group of friends enjoying a summer road trip with an SUV, relaxing outdoors and having fun."
+    "provider": "pexels",
+    "id": 21959402,
+    "photographer": "MUHAMMAD ZACK",
+    "photographerUrl": "https://www.pexels.com/@muhammad-zack-706122725",
+    "url": "https://www.pexels.com/photo/two-women-riding-on-a-scooter-21959402/",
+    "alt": "Two young women on a scooter, enjoying a city ride wearing helmets.",
+    "license": "Pexels"
   },
   "moments/m04.jpg": {
-    "id": 18999513,
-    "photographer": "Matheus Bertelli",
-    "photographerUrl": "https://www.pexels.com/@bertellifotografia",
-    "url": "https://www.pexels.com/photo/group-of-people-during-party-18999513/",
-    "alt": "A group of diverse friends laughing and enjoying snacks and drinks on a boat."
+    "provider": "pexels",
+    "id": 8936777,
+    "photographer": "Ilya Perelude",
+    "photographerUrl": "https://www.pexels.com/@ilya-perelude-85999447",
+    "url": "https://www.pexels.com/photo/people-on-a-boat-8936777/",
+    "alt": "A group of adults sailing on the open sea, enjoying teamwork and adventure.",
+    "license": "Pexels"
   },
   "moments/m05.jpg": {
-    "id": 7510830,
-    "photographer": "Matheus Bertelli",
-    "photographerUrl": "https://www.pexels.com/@bertellifotografia",
-    "url": "https://www.pexels.com/photo/cheerful-friends-roasting-marshmallows-on-bonfire-7510830/",
-    "alt": "Happy girlfriends in warm clothes roasting yummy marshmallow on fire while smiling and sitting near fireplace in yard at night"
+    "provider": "pexels",
+    "id": 19551018,
+    "photographer": "Isabella Mendes",
+    "photographerUrl": "https://www.pexels.com/@isabella-mendes-107313",
+    "url": "https://www.pexels.com/photo/people-in-a-club-19551018/",
+    "alt": "Lively group of friends enjoying a vibrant night out at a club, capturing youthful energy.",
+    "license": "Pexels"
   },
   "moments/m06.jpg": {
+    "provider": "pexels",
+    "id": 5118054,
+    "photographer": "Quang Nguyen Vinh",
+    "photographerUrl": "https://www.pexels.com/@quang-nguyen-vinh-222549",
+    "url": "https://www.pexels.com/photo/anonymous-woman-standing-with-arms-raised-on-seacoast-cliff-5118054/",
+    "alt": "Full body faceless person standing with arms raised in excitement on rough cliff on seashore beneath clear blue sky",
+    "license": "Pexels"
+  },
+  "moments/m07.jpg": {
+    "provider": "openverse",
+    "id": "312d8ec5-5fd3-49df-97a5-a726334df800",
+    "src": "https://live.staticflickr.com/5065/5586290779_d5cee403a2_b.jpg",
+    "photographer": "mendhak",
+    "photographerUrl": "https://www.flickr.com/photos/69135870@N00",
+    "url": "https://www.flickr.com/photos/69135870@N00/5586290779",
+    "alt": "Friendship is like watching a sunset",
+    "license": "BY-SA",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+  },
+  "moments/m08.jpg": {
+    "provider": "pexels",
+    "id": 3938961,
+    "photographer": "Andrea Piacquadio",
+    "photographerUrl": "https://www.pexels.com/@olly",
+    "url": "https://www.pexels.com/photo/women-having-dinner-3938961/",
+    "alt": "A group of diverse friends enjoying a candlelit dinner, sharing laughter and wine, indoors.",
+    "license": "Pexels"
+  },
+  "moments/film": {
+    "id": 9872853,
+    "photographer": "KoolShooters",
+    "url": "https://www.pexels.com/video/an-underwater-footage-of-women-sitting-on-a-poolside-while-throwing-an-inflatable-balls-9872853/",
+    "tall": "https://www.pexels.com/video/party-people-dancing-in-a-club-7722385/"
+  },
+  "journeys/bali-in-full-colour/card.jpg": {
+    "provider": "pexels",
+    "id": 33832441,
+    "photographer": "photobydela",
+    "photographerUrl": "https://www.pexels.com/@photobydela-2155632563",
+    "url": "https://www.pexels.com/photo/summer-pool-party-with-friends-and-water-guns-33832441/",
+    "alt": "Adults enjoying a fun and vibrant pool party with water guns on a sunny day.",
+    "license": "Pexels"
+  },
+  "journeys/bali-in-full-colour/chapter-01.jpg": {
+    "provider": "pexels",
+    "id": 9003000,
+    "photographer": "Yan Krukau",
+    "photographerUrl": "https://www.pexels.com/@yankrukov",
+    "url": "https://www.pexels.com/photo/a-man-and-a-woman-dancing-in-a-night-club-9003000/",
+    "alt": "A lively group of young adults dancing at an indoor party. Vibrant lights and energetic atmosphere.",
+    "license": "Pexels"
+  },
+  "journeys/bali-in-full-colour/chapter-02.jpg": {
+    "provider": "pexels",
+    "id": 5232197,
+    "photographer": "Jess Loiterton",
+    "photographerUrl": "https://www.pexels.com/@jess-vide",
+    "url": "https://www.pexels.com/photo/people-jumping-from-pier-into-turquoise-ocean-5232197/",
+    "alt": "Bird's eye view of people swimming and relaxing at a tropical beach on a sunny day.",
+    "license": "Pexels"
+  },
+  "journeys/bali-in-full-colour/chapter-03.jpg": {
+    "provider": "pexels",
+    "id": 31772665,
+    "photographer": "setengah lima sore",
+    "photographerUrl": "https://www.pexels.com/@setengah-lima-sore-1061582751",
+    "url": "https://www.pexels.com/photo/joyful-motorcycle-ride-in-east-java-31772665/",
+    "alt": "A group of friends enjoying a fun motorcycle ride in East Java, Indonesia.",
+    "license": "Pexels"
+  },
+  "journeys/bali-in-full-colour/chapter-04.jpg": {
+    "provider": "pexels",
+    "id": 16166124,
+    "photographer": "firman malewa",
+    "photographerUrl": "https://www.pexels.com/@firman-malewa-509072024",
+    "url": "https://www.pexels.com/photo/people-rafting-on-gusty-river-16166124/",
+    "alt": "Thrilling white-water rafting experience in a lush forest setting with a group of adventurous adults.",
+    "license": "Pexels"
+  },
+  "journeys/bali-in-full-colour/chapter-05.jpg": {
+    "provider": "pexels",
+    "id": 18704290,
+    "photographer": "QVEVRI  TBILISI",
+    "photographerUrl": "https://www.pexels.com/@bestgeorgianfood",
+    "url": "https://www.pexels.com/photo/friends-having-fun-together-at-the-disco-18704290/",
+    "alt": "Young adults dancing and enjoying a lively night at a vibrant nightclub.",
+    "license": "Pexels"
+  },
+  "journeys/mykonos-after-dark/card.jpg": {
+    "provider": "pexels",
+    "id": 20796993,
+    "photographer": "Victor Soto",
+    "photographerUrl": "https://www.pexels.com/@victor-soto-3277586",
+    "url": "https://www.pexels.com/photo/woman-hands-with-glass-of-drink-20796993/",
+    "alt": "A vibrant outdoor scene of two people toasting with colorful cocktails, capturing a lively social moment.",
+    "license": "Pexels"
+  },
+  "journeys/mykonos-after-dark/chapter-01.jpg": {
+    "provider": "pexels",
+    "id": 12266701,
+    "photographer": "Arbi Nina",
+    "photographerUrl": "https://www.pexels.com/@arbi-nina-239927551",
+    "url": "https://www.pexels.com/photo/silhouettes-of-people-walking-near-the-sea-12266701/",
+    "alt": "Silhouettes walking along a pier with a street lamp at sunset in Peraia, Greece.",
+    "license": "Pexels"
+  },
+  "journeys/mykonos-after-dark/chapter-02.jpg": {
+    "provider": "pexels",
+    "id": 35907570,
+    "photographer": "Noel Snpr",
+    "photographerUrl": "https://www.pexels.com/@noel-snpr-2148726663",
+    "url": "https://www.pexels.com/photo/group-of-kids-jumping-into-the-ocean-on-a-sunny-day-35907570/",
+    "alt": "Joyful children diving into crystal clear ocean waters, enjoying summer fun outdoors.",
+    "license": "Pexels"
+  },
+  "journeys/mykonos-after-dark/chapter-03.jpg": {
+    "provider": "pexels",
+    "id": 26568793,
+    "photographer": "Christian  Alemu",
+    "photographerUrl": "https://www.pexels.com/@christian-alemu-127251395",
+    "url": "https://www.pexels.com/photo/man-and-people-on-quads-on-desert-26568793/",
+    "alt": "Group riding quads in a vast desert landscape, exuding adventure and excitement.",
+    "license": "Pexels"
+  },
+  "journeys/mykonos-after-dark/chapter-04.jpg": {
+    "provider": "pexels",
+    "id": 17801375,
+    "photographer": "FOERDER ZONE",
+    "photographerUrl": "https://www.pexels.com/@foerder-zone-441814813",
+    "url": "https://www.pexels.com/photo/woman-in-white-shirt-standing-with-arm-raised-among-people-17801375/",
+    "alt": "Vibrant party atmosphere with people dancing and enjoying a lively event.",
+    "license": "Pexels"
+  },
+  "journeys/mykonos-after-dark/chapter-05.jpg": {
+    "provider": "pexels",
+    "id": 3851408,
+    "photographer": "Andrea Piacquadio",
+    "photographerUrl": "https://www.pexels.com/@olly",
+    "url": "https://www.pexels.com/photo/joyful-young-group-of-tourists-taking-selfie-on-loungers-3851408/",
+    "alt": "Smiling young people in sunglasses and swimsuits sitting and taking selfie on mobile phone while relaxing together on sunny day",
+    "license": "Pexels"
+  },
+  "journeys/tulum-slow-heat/card.jpg": {
+    "provider": "pexels",
+    "id": 18356773,
+    "photographer": "Riccardo Vespa",
+    "photographerUrl": "https://www.pexels.com/@riccardo-vespa-594469796",
+    "url": "https://www.pexels.com/photo/boy-jumping-into-water-18356773/",
+    "alt": "A young boy jumps into clear blue waters surrounded by rocky cliffs, embodying summer fun and adventure.",
+    "license": "Pexels"
+  },
+  "journeys/tulum-slow-heat/chapter-01.jpg": {
+    "provider": "pexels",
+    "id": 9872445,
+    "photographer": "KoolShooters",
+    "photographerUrl": "https://www.pexels.com/@koolshooters",
+    "url": "https://www.pexels.com/photo/women-wearing-bikinis-sitting-by-the-pool-9872445/",
+    "alt": "Three women in swimwear taking a selfie by a swimming pool during a summer day.",
+    "license": "Pexels"
+  },
+  "journeys/tulum-slow-heat/chapter-02.jpg": {
+    "provider": "pexels",
+    "id": 38477814,
+    "photographer": "Nothing Ahead",
+    "photographerUrl": "https://www.pexels.com/@ian-panelo",
+    "url": "https://www.pexels.com/photo/family-swimming-adventure-in-blue-ocean-38477814/",
+    "alt": "Aerial view of three people swimming in the ocean on a sunny day.",
+    "license": "Pexels"
+  },
+  "journeys/tulum-slow-heat/chapter-03.jpg": {
+    "provider": "pexels",
+    "id": 35042240,
+    "photographer": "Nguyen Ngoc Tien",
+    "photographerUrl": "https://www.pexels.com/@nguyen-ngoc-tien-1321490019",
+    "url": "https://www.pexels.com/photo/group-enjoying-boat-ride-on-scenic-river-35042240/",
+    "alt": "A group of friends wearing life jackets enjoys a boat ride on a lush, scenic river.",
+    "license": "Pexels"
+  },
+  "journeys/tulum-slow-heat/chapter-04.jpg": {
+    "provider": "pexels",
+    "id": 18999489,
+    "photographer": "Matheus Bertelli",
+    "photographerUrl": "https://www.pexels.com/@bertellifotografia",
+    "url": "https://www.pexels.com/photo/group-of-people-sitting-at-a-table-during-a-party-18999489/",
+    "alt": "A social scene indoors at a bar with friends enjoying drinks and conversation.",
+    "license": "Pexels"
+  },
+  "journeys/tulum-slow-heat/chapter-05.jpg": {
+    "provider": "pexels",
+    "id": 12421287,
+    "photographer": "Anthony Brown",
+    "photographerUrl": "https://www.pexels.com/@anthony-brown-41922",
+    "url": "https://www.pexels.com/photo/people-swimming-on-the-beach-12421287/",
+    "alt": "Enjoy a vibrant beach scene with people swimming in clear turquoise waters.",
+    "license": "Pexels"
+  },
+  "journeys/cape-town-two-oceans/card.jpg": {
+    "provider": "pexels",
+    "id": 12465629,
+    "photographer": "Imad Clicks",
+    "photographerUrl": "https://www.pexels.com/@imadclicks",
+    "url": "https://www.pexels.com/photo/person-posing-on-mountain-against-lake-12465629/",
+    "alt": "Man with open arms standing on a mountain overlooking a lake and peaks, symbolizing freedom and adventure.",
+    "license": "Pexels"
+  },
+  "journeys/cape-town-two-oceans/chapter-01.jpg": {
+    "provider": "pexels",
+    "id": 12645180,
+    "photographer": "Denys Gromov",
+    "photographerUrl": "https://www.pexels.com/@jdgromov",
+    "url": "https://www.pexels.com/photo/friends-drinking-cocktails-on-a-terrace-12645180/",
+    "alt": "Group of friends enjoying cocktails and appetizers on a Dubai terrace, capturing a lively and social atmosphere.",
+    "license": "Pexels"
+  },
+  "journeys/cape-town-two-oceans/chapter-02.jpg": {
+    "provider": "pexels",
     "id": 34402264,
     "photographer": "Gabin Cobret",
     "photographerUrl": "https://www.pexels.com/@gabin-cobret-430175667",
     "url": "https://www.pexels.com/photo/hiking-group-enjoying-sunset-at-le-grand-bornand-34402264/",
-    "alt": "A group of hikers relaxing and capturing the sunset over mountains in Le Grand-Bornand, France."
+    "alt": "A group of hikers relaxing and capturing the sunset over mountains in Le Grand-Bornand, France.",
+    "license": "Pexels"
   },
-  "moments/m07.jpg": {
-    "id": 13562772,
-    "photographer": "Umut Gültekin",
-    "photographerUrl": "https://www.pexels.com/@umutgultekin",
-    "url": "https://www.pexels.com/photo/house-reflection-over-a-swimming-pool-13562772/",
-    "alt": "Beautiful villa reflected in pool under a clear, starry night sky."
+  "journeys/cape-town-two-oceans/chapter-03.jpg": {
+    "provider": "pexels",
+    "id": 8841464,
+    "photographer": "Julia M Cameron",
+    "photographerUrl": "https://www.pexels.com/@julia-m-cameron",
+    "url": "https://www.pexels.com/photo/a-family-eating-at-the-backyard-8841464/",
+    "alt": "A family enjoying a cheerful meal together outdoors in a sunny backyard setting.",
+    "license": "Pexels"
   },
-  "moments/m08.jpg": {
-    "id": 4877864,
-    "photographer": "cottonbro studio",
-    "photographerUrl": "https://www.pexels.com/@cottonbro",
-    "url": "https://www.pexels.com/photo/man-in-gray-crew-neck-t-shirt-sitting-beside-woman-in-gray-sleeveless-shirt-4877864/",
-    "alt": "A vibrant rooftop summer gathering with friends enjoying food and drinks."
+  "journeys/cape-town-two-oceans/chapter-04.jpg": {
+    "provider": "pexels",
+    "id": 33268360,
+    "photographer": "Quang Nguyen Vinh",
+    "photographerUrl": "https://www.pexels.com/@quang-nguyen-vinh-222549",
+    "url": "https://www.pexels.com/photo/serene-sunset-fishing-silhouettes-on-calm-waters-33268360/",
+    "alt": "Three silhouetted fishermen with nets during a stunning sunset on calm waters, creating a serene seascape.",
+    "license": "Pexels"
   },
-  "moments/film": {
-    "id": 5935470,
+  "journeys/cape-town-two-oceans/chapter-05.jpg": {
+    "provider": "pexels",
+    "id": 19581397,
+    "photographer": "Cord Allman",
+    "photographerUrl": "https://www.pexels.com/@cord-allman-852631891",
+    "url": "https://www.pexels.com/photo/woman-wearing-sari-blowing-out-a-candle-from-a-cake-19581397/",
+    "alt": "A joyful woman celebrating her birthday with a sparkler candle and dessert indoors in Toronto.",
+    "license": "Pexels"
+  },
+  "journeys/bali-in-full-colour/film": {
+    "id": 5933318,
+    "photographer": "Anna Shvets",
+    "url": "https://www.pexels.com/video/two-girls-swimming-on-a-pool-5933318/",
+    "tall": "https://www.pexels.com/video/friends-chatting-in-the-swimming-pool-7293549/"
+  },
+  "journeys/mykonos-after-dark/film": {
+    "id": 7885037,
     "photographer": "Kampus Production",
-    "url": "https://www.pexels.com/video/friends-dancing-together-5935470/",
-    "tall": "https://www.pexels.com/video/women-having-fun-7147762/"
+    "url": "https://www.pexels.com/video/people-having-a-good-time-7885037/",
+    "tall": "https://www.pexels.com/video/a-couple-dancing-together-8039127/"
+  },
+  "journeys/tulum-slow-heat/film": {
+    "id": 17259130,
+    "photographer": "Serg Alesenko",
+    "url": "https://www.pexels.com/video/people-swimming-in-a-waterfall-in-the-jungle-17259130/",
+    "tall": "https://www.pexels.com/video/underwater-adventure-scuba-divers-exploring-32313712/"
+  },
+  "journeys/cape-town-two-oceans/film": {
+    "id": 10494881,
+    "photographer": "Ron Lach",
+    "url": "https://www.pexels.com/video/friends-bonding-together-and-swimming-in-the-beach-10494881/",
+    "tall": "https://www.pexels.com/video/silhouettes-of-young-people-enjoying-sunset-at-the-beach-8695010/"
   }
 }

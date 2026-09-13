@@ -6,7 +6,7 @@ import { PillLink } from "@/components/ui/PillLink";
 import styles from "./CollectiveTeaser.module.css";
 
 export function CollectiveTeaser() {
-  const kyoto = getJourney("kyoto-in-silence");
+  const kyoto = getJourney("bali-in-full-colour");
   if (!kyoto) return null;
   const people = kyoto.travellers.slice(0, 6);
   return (
@@ -41,11 +41,11 @@ export function CollectiveTeaser() {
             kind={kyoto.transition}
             to={kyoto.hero.src} toNarrow={kyoto.heroTall.src}
             variant="ghost"
-            label="Meet the Kyoto ten"
+            label="Meet the Bali twelve"
           />
         </div>
 
-        <ul className={styles.grid} aria-label="Travellers already confirmed for Kyoto">
+        <ul className={styles.grid} aria-label="Travellers already confirmed for Bali">
           {people.map((p, i) => (
             <li key={p.id} className={styles.cell} style={{ "--i": String(i) } as React.CSSProperties}>
               <TransitionLink

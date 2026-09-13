@@ -7,7 +7,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Journeys",
   description:
-    "Four small-group departures for 2026 and 2027: Kyoto, Patagonia, the Sahara and Iceland. One host, one table, never more than twelve.",
+    "Four small-group departures for 2026 and 2027: Bali, Mykonos, Tulum and Cape Town. One host, one table, never more than twelve.",
 };
 
 export default function JourneysPage() {

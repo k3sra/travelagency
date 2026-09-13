@@ -17,7 +17,7 @@ export function JourneyIndex() {
         <div>
           <p className={`t-caps ${styles.eyebrow}`}>All departures · 2026 – 2027</p>
           <TextReveal as="h2" id="index-title" className={`t-display ${styles.title}`}>
-            Four doors. <em>Ten seats</em> behind each.
+            Four doors. <em>Twelve seats</em> behind each.
           </TextReveal>
         </div>
         <TransitionLink href="/journeys" kind="dissolve" className={`t-caps ${styles.all}`}>

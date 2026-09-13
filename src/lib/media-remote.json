@@ -1,124 +1,124 @@
 {
   "heroVideo": {
     "wide": {
-      "hd": "https://videos.pexels.com/video-files/31715186/13512931_1920_1080_24fps.mp4",
-      "sd": "https://videos.pexels.com/video-files/31715186/13512930_1280_720_24fps.mp4",
-      "width": 1920,
-      "height": 1080,
-      "duration": 16,
-      "url": "https://www.pexels.com/video/scenic-yacht-adventure-with-people-jumping-into-water-31715186/",
-      "credit": "João  Pavese"
+      "hd": "https://videos.pexels.com/video-files/9974882/9974882-hd_1366_720_25fps.mp4",
+      "sd": "https://videos.pexels.com/video-files/9974882/9974882-sd_960_506_25fps.mp4",
+      "width": 1366,
+      "height": 720,
+      "duration": 17,
+      "url": "https://www.pexels.com/video/a-man-riding-a-floater-9974882/",
+      "credit": "Ron Lach"
     },
     "tall": {
-      "hd": "https://videos.pexels.com/video-files/38161870/16202184_1080_1920_60fps.mp4",
-      "sd": "https://videos.pexels.com/video-files/38161870/16202182_720_1280_60fps.mp4",
+      "hd": "https://videos.pexels.com/video-files/9872704/9872704-hd_1080_1920_24fps.mp4",
+      "sd": "https://videos.pexels.com/video-files/9872704/9872704-hd_720_1280_24fps.mp4",
       "width": 1080,
       "height": 1920,
-      "duration": 8,
-      "url": "https://www.pexels.com/video/aerial-view-of-cliff-divers-in-crystal-blue-sea-38161870/",
-      "credit": "Rüveyda Akkaya"
-    }
-  },
-  "journeys": {
-    "kyoto-in-silence": {
-      "wide": {
-        "hd": "https://videos.pexels.com/video-files/34209362/14500286_1920_1080_60fps.mp4",
-        "sd": "https://videos.pexels.com/video-files/34209362/14500285_1280_720_60fps.mp4",
-        "width": 1920,
-        "height": 1080,
-        "duration": 12,
-        "url": "https://www.pexels.com/video/stunning-nanjing-lantern-lit-alleyway-tour-34209362/",
-        "credit": "LayG Traveller"
-      },
-      "tall": {
-        "hd": "https://videos.pexels.com/video-files/37901319/16080690_1080_1920_24fps.mp4",
-        "sd": "https://videos.pexels.com/video-files/37901319/16080688_720_1280_24fps.mp4",
-        "width": 1080,
-        "height": 1920,
-        "duration": 15,
-        "url": "https://www.pexels.com/video/stunning-view-of-kinkaku-ji-temple-in-kyoto-37901319/",
-        "credit": "Stephan Leuzinger"
-      }
-    },
-    "patagonia-unhurried": {
-      "wide": {
-        "hd": "https://videos.pexels.com/video-files/33197882/14148108_1920_1080_60fps.mp4",
-        "sd": "https://videos.pexels.com/video-files/33197882/14148107_1280_720_60fps.mp4",
-        "width": 1920,
-        "height": 1080,
-        "duration": 20,
-        "url": "https://www.pexels.com/video/breathtaking-aerial-view-of-fitz-roy-mountains-33197882/",
-        "credit": "Sergey Guk"
-      },
-      "tall": {
-        "hd": "https://videos.pexels.com/video-files/20549731/20549731-hd_1080_1920_30fps.mp4",
-        "sd": "https://videos.pexels.com/video-files/20549731/20549731-hd_720_1280_30fps.mp4",
-        "width": 1080,
-        "height": 1920,
-        "duration": 10,
-        "url": "https://www.pexels.com/video/over-the-lakes-20549731/",
-        "credit": "Vasilis Karkalas"
-      }
-    },
-    "sahara-under-glass": {
-      "wide": {
-        "hd": "https://videos.pexels.com/video-files/17629657/17629657-hd_1920_1080_25fps.mp4",
-        "sd": "https://videos.pexels.com/video-files/17629657/17629657-hd_1280_720_25fps.mp4",
-        "width": 1920,
-        "height": 1080,
-        "duration": 17,
-        "url": "https://www.pexels.com/video/aerial-sahara-view-17629657/",
-        "credit": "So Kenobi"
-      },
-      "tall": {
-        "hd": "https://videos.pexels.com/video-files/8865368/8865368-hd_720_1366_25fps.mp4",
-        "sd": "https://videos.pexels.com/video-files/8865368/8865368-sd_506_960_25fps.mp4",
-        "width": 720,
-        "height": 1366,
-        "duration": 10,
-        "url": "https://www.pexels.com/video/sand-ripples-in-the-desert-8865368/",
-        "credit": "MART  PRODUCTION"
-      }
-    },
-    "iceland-edge-of-light": {
-      "wide": {
-        "hd": "https://videos.pexels.com/video-files/35092214/14866547_1920_1080_25fps.mp4",
-        "sd": "https://videos.pexels.com/video-files/35092214/14866546_1280_720_25fps.mp4",
-        "width": 1920,
-        "height": 1080,
-        "duration": 9,
-        "url": "https://www.pexels.com/video/breathtaking-northern-lights-over-iceland-s-winter-landscape-35092214/",
-        "credit": "Ken Cheung"
-      },
-      "tall": {
-        "hd": "https://videos.pexels.com/video-files/25988225/11925565_1080_1920_25fps.mp4",
-        "sd": "https://videos.pexels.com/video-files/25988225/11925561_720_1280_25fps.mp4",
-        "width": 1080,
-        "height": 1920,
-        "duration": 8,
-        "url": "https://www.pexels.com/video/the-aurora-bore-is-shown-in-this-photo-25988225/",
-        "credit": "Mohammed Abubakr"
-      }
+      "duration": 12,
+      "url": "https://www.pexels.com/video/young-women-dancing-by-the-pool-9872704/",
+      "credit": "KoolShooters"
     }
   },
   "moments": {
     "wide": {
-      "hd": "https://videos.pexels.com/video-files/5935470/5935470-hd_1920_1080_25fps.mp4",
-      "sd": "https://videos.pexels.com/video-files/5935470/5935470-hd_1280_720_25fps.mp4",
+      "hd": "https://videos.pexels.com/video-files/9872853/9872853-hd_1920_1080_25fps.mp4",
+      "sd": "https://videos.pexels.com/video-files/9872853/9872853-hd_1280_720_25fps.mp4",
       "width": 1920,
       "height": 1080,
-      "duration": 20,
-      "url": "https://www.pexels.com/video/friends-dancing-together-5935470/",
-      "credit": "Kampus Production"
+      "duration": 8,
+      "url": "https://www.pexels.com/video/an-underwater-footage-of-women-sitting-on-a-poolside-while-throwing-an-inflatable-balls-9872853/",
+      "credit": "KoolShooters"
     },
     "tall": {
-      "hd": "https://videos.pexels.com/video-files/7147762/7147762-hd_1080_1920_30fps.mp4",
-      "sd": "https://videos.pexels.com/video-files/7147762/7147762-hd_720_1280_30fps.mp4",
+      "hd": "https://videos.pexels.com/video-files/7722385/7722385-hd_1080_1920_25fps.mp4",
+      "sd": "https://videos.pexels.com/video-files/7722385/7722385-hd_720_1280_25fps.mp4",
       "width": 1080,
       "height": 1920,
-      "duration": 13,
-      "url": "https://www.pexels.com/video/women-having-fun-7147762/",
-      "credit": "Kindel Media"
+      "duration": 8,
+      "url": "https://www.pexels.com/video/party-people-dancing-in-a-club-7722385/",
+      "credit": "Alena Darmel"
+    }
+  },
+  "journeys": {
+    "bali-in-full-colour": {
+      "wide": {
+        "hd": "https://videos.pexels.com/video-files/5933318/5933318-hd_1920_1080_30fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/5933318/5933318-hd_1280_720_60fps.mp4",
+        "width": 1920,
+        "height": 1080,
+        "duration": 25,
+        "url": "https://www.pexels.com/video/two-girls-swimming-on-a-pool-5933318/",
+        "credit": "Anna Shvets"
+      },
+      "tall": {
+        "hd": "https://videos.pexels.com/video-files/7293549/7293549-hd_1080_1920_30fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/7293549/7293549-hd_720_1280_30fps.mp4",
+        "width": 1080,
+        "height": 1920,
+        "duration": 8,
+        "url": "https://www.pexels.com/video/friends-chatting-in-the-swimming-pool-7293549/",
+        "credit": "Kindel Media"
+      }
+    },
+    "mykonos-after-dark": {
+      "wide": {
+        "hd": "https://videos.pexels.com/video-files/7885037/7885037-hd_1920_1080_25fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/7885037/7885037-hd_1280_720_25fps.mp4",
+        "width": 1920,
+        "height": 1080,
+        "duration": 13,
+        "url": "https://www.pexels.com/video/people-having-a-good-time-7885037/",
+        "credit": "Kampus Production"
+      },
+      "tall": {
+        "hd": "https://videos.pexels.com/video-files/8039127/8039127-hd_720_1366_25fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/8039127/8039127-sd_506_960_25fps.mp4",
+        "width": 720,
+        "height": 1366,
+        "duration": 15,
+        "url": "https://www.pexels.com/video/a-couple-dancing-together-8039127/",
+        "credit": "ANTONI SHKRABA production"
+      }
+    },
+    "tulum-slow-heat": {
+      "wide": {
+        "hd": "https://videos.pexels.com/video-files/17259130/17259130-hd_1920_1080_60fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/17259130/17259130-hd_1280_720_60fps.mp4",
+        "width": 1920,
+        "height": 1080,
+        "duration": 34,
+        "url": "https://www.pexels.com/video/people-swimming-in-a-waterfall-in-the-jungle-17259130/",
+        "credit": "Serg Alesenko"
+      },
+      "tall": {
+        "hd": "https://videos.pexels.com/video-files/32313712/13781758_1080_1920_60fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/32313712/13781753_720_1280_60fps.mp4",
+        "width": 1080,
+        "height": 1920,
+        "duration": 9,
+        "url": "https://www.pexels.com/video/underwater-adventure-scuba-divers-exploring-32313712/",
+        "credit": "JUN HO LEE"
+      }
+    },
+    "cape-town-two-oceans": {
+      "wide": {
+        "hd": "https://videos.pexels.com/video-files/10494881/10494881-hd_1366_720_25fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/10494881/10494881-sd_960_506_25fps.mp4",
+        "width": 1366,
+        "height": 720,
+        "duration": 10,
+        "url": "https://www.pexels.com/video/friends-bonding-together-and-swimming-in-the-beach-10494881/",
+        "credit": "Ron Lach"
+      },
+      "tall": {
+        "hd": "https://videos.pexels.com/video-files/8695010/8695010-hd_720_1366_24fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/8695010/8695010-sd_506_960_24fps.mp4",
+        "width": 720,
+        "height": 1366,
+        "duration": 12,
+        "url": "https://www.pexels.com/video/silhouettes-of-young-people-enjoying-sunset-at-the-beach-8695010/",
+        "credit": "Yaroslav Shuraev"
+      }
     }
   }
 }

@@ -16,8 +16,8 @@ const ANSWERS = [
     a: "Last season: twenty-five to forty-two, half solo, half in twos, from nineteen cities. Nobody arrives knowing everyone. Everybody leaves knowing everyone.",
   },
   {
-    q: "What is the house like?",
-    a: "We stay in places we have slept in ourselves. If a photo on this site is not of the actual house, the caption says so.",
+    q: "What is the villa like?",
+    a: "One house for the whole group, a pool, a view, a room each unless you asked to share. We have slept in every one of them ourselves.",
   },
   {
     q: "How rushed is a day?",

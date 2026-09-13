@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     template: "%s — Fable Travels",
   },
   description:
-    "Hosted small-group weeks for people who do not do tours. Ten travellers, one host, four departures a year.",
+    "Hosted small-group weeks for people who do not do tours. Twelve travellers, one villa, one host, four departures a year.",
   metadataBase: new URL(SITE_URL),
   openGraph: {
     siteName: "Fable Travels",

@@ -16,19 +16,19 @@ import { prefersReducedMotion } from "@/lib/useReducedMotion";
 import styles from "./Moments.module.css";
 
 const MOMENTS = [
-  { n: 1, wide: false, day: "Day 2", line: "Off the back of the boat, in that order." },
-  { n: 2, wide: true, day: "Day 3", line: "The rooftop nobody wanted to leave." },
-  { n: 3, wide: false, day: "Day 4", line: "Windows down. Playlist argued over." },
+  { n: 1, wide: false, day: "Day 2", line: "Off the roof of the boat, in that order." },
+  { n: 2, wide: true, day: "Day 3", line: "The pool at the hour it turns gold." },
+  { n: 3, wide: false, day: "Day 4", line: "Scooters. Playlist argued over." },
   { n: 4, wide: true, day: "Day 5", line: "Somebody's birthday. Nobody's plan." },
-  { n: 5, wide: false, day: "Day 6", line: "The fire went on until it didn't." },
-  { n: 6, wide: true, day: "Day 7", line: "Top of the world, on foot, before ten." },
-  { n: 7, wide: false, day: "Day 8", line: "The pool at the hour it turns gold." },
+  { n: 5, wide: false, day: "Day 6", line: "The beach club, feet still in the sand at midnight." },
+  { n: 6, wide: true, day: "Day 7", line: "Top of the mountain, before the heat." },
+  { n: 7, wide: false, day: "Day 8", line: "The sunset everyone stopped talking for." },
   { n: 8, wide: true, day: "Last night", line: "One long table. Next trip already named." },
 ];
 
 const PROOF = [
   { value: "32", label: "Average age, last season" },
-  { value: "10", label: "Seats per departure" },
+  { value: "12", label: "Seats per departure" },
   { value: "1 in 3", label: "Book again within a year" },
   { value: "0", label: "Name badges, ever" },
 ];

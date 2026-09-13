@@ -2,69 +2,61 @@
 
 All imagery and film is from Pexels (https://www.pexels.com/license/). Travellers and hosts on the site are fictional personas; the portraits are stock photographs.
 
-- `journeys/kyoto-in-silence/hero.jpg` — BabijaPhoto JB · https://www.pexels.com/photo/view-of-a-garden-and-a-traditional-japanese-temple-19701493/
-- `journeys/kyoto-in-silence/hero-tall.jpg` — Sachith Ravishka Kodikara · https://www.pexels.com/photo/daigo-ji-temple-in-kyoto-in-japan-19035799/
-- `journeys/kyoto-in-silence/card.jpg` — Tugce Turan · https://www.pexels.com/photo/night-street-scene-with-lantern-in-kyoto-japan-39469545/
-- `journeys/kyoto-in-silence/chapter-01.jpg` — Satoshi Hirayama · https://www.pexels.com/photo/two-women-wearing-kimono-3011702/
-- `journeys/kyoto-in-silence/chapter-02.jpg` — Eugenio Felix · https://www.pexels.com/photo/wooden-arched-footbridge-in-kyoto-gyoen-national-garden-18867922/
-- `journeys/kyoto-in-silence/chapter-03.jpg` — Iban Lopez Luna · https://www.pexels.com/photo/authentic-tokyo-izakaya-scene-with-lanterns-37919989/
-- `journeys/kyoto-in-silence/chapter-04.jpg` — L M · https://www.pexels.com/photo/people-walking-in-kifune-shrine-in-kyoto-japan-19022628/
-- `journeys/kyoto-in-silence/chapter-05.jpg` — Han Sen · https://www.pexels.com/photo/bamboo-trees-in-the-forest-13505281/
-- `journeys/patagonia-unhurried/hero.jpg` — Alejandro Mallea · https://www.pexels.com/photo/a-snow-capped-rocky-mountain-near-lake-4599300/
-- `journeys/patagonia-unhurried/hero-tall.jpg` — Nicolás Donatte · https://www.pexels.com/photo/glacier-on-water-under-the-cloudy-sky-13947045/
-- `journeys/patagonia-unhurried/card.jpg` — Imad Clicks · https://www.pexels.com/photo/hiker-celebrating-triumph-on-snowy-mountain-summit-34790995/
-- `journeys/patagonia-unhurried/chapter-01.jpg` — photovic_1 · https://www.pexels.com/photo/dirt-road-near-the-lake-and-snow-covered-mountains-9260962/
-- `journeys/patagonia-unhurried/chapter-02.jpg` — Luciano Corrêa Teixeira · https://www.pexels.com/photo/glacier-descending-to-sea-26893847/
-- `journeys/patagonia-unhurried/chapter-03.jpg` — Matheus Bertelli · https://www.pexels.com/photo/people-by-bonfire-at-night-12446438/
-- `journeys/patagonia-unhurried/chapter-04.jpg` — Jose Luis  Vanasco · https://www.pexels.com/photo/dramatic-snow-capped-mountain-peaks-in-clouds-37104146/
-- `journeys/patagonia-unhurried/chapter-05.jpg` — Jose Luis  Vanasco · https://www.pexels.com/photo/stunning-mountain-view-in-santa-cruz-argentina-37104136/
-- `journeys/sahara-under-glass/hero.jpg` — NaturEye Conservation · https://www.pexels.com/photo/majestic-sand-dunes-at-sunset-in-sahara-desert-28829633/
-- `journeys/sahara-under-glass/hero-tall.jpg` — Taryn Elliott · https://www.pexels.com/photo/man-standing-on-sand-dune-3889916/
-- `journeys/sahara-under-glass/card.jpg` — Plastic Lines · https://www.pexels.com/photo/residential-houses-at-dusk-with-star-field-in-the-sky-19637639/
-- `journeys/sahara-under-glass/chapter-01.jpg` — cottonbro studio · https://www.pexels.com/photo/people-standing-on-top-of-building-4880398/
-- `journeys/sahara-under-glass/chapter-02.jpg` — pierre matile · https://www.pexels.com/photo/scenic-view-of-moroccan-canyon-landscape-37684083/
-- `journeys/sahara-under-glass/chapter-03.jpg` — pierre matile · https://www.pexels.com/photo/traditional-berber-village-in-moroccan-atlas-mountains-37684113/
-- `journeys/sahara-under-glass/chapter-04.jpg` — Stephen Leonardi · https://www.pexels.com/photo/nighttime-camping-scene-with-campfire-and-van-28639031/
-- `journeys/sahara-under-glass/chapter-05.jpg` — Cornelis Johannes (Kees) van Leeuwen · https://www.pexels.com/photo/dramatic-sky-over-merzouga-sand-dunes-37441665/
-- `journeys/iceland-edge-of-light/hero.jpg` — Marek Piwnicki · https://www.pexels.com/photo/a-man-looking-at-the-aurora-borealis-10050925/
-- `journeys/iceland-edge-of-light/hero-tall.jpg` — Luca Severin · https://www.pexels.com/photo/northern-lights-in-starry-sky-18643228/
-- `journeys/iceland-edge-of-light/card.jpg` — Stijn Nuttin · https://www.pexels.com/photo/steaming-geothermal-landscape-in-thingeyjarsveit-33351561/
-- `journeys/iceland-edge-of-light/chapter-01.jpg` — Phil Evenden · https://www.pexels.com/photo/sun-voyager-sculpture-in-reykjavik-iceland-34331035/
-- `journeys/iceland-edge-of-light/chapter-02.jpg` — Alec Doualetas · https://www.pexels.com/photo/scenic-black-sand-beach-with-basalt-columns-in-iceland-31851520/
-- `journeys/iceland-edge-of-light/chapter-03.jpg` — Han-Chieh Lee · https://www.pexels.com/photo/cave-in-glacier-22944463/
-- `journeys/iceland-edge-of-light/chapter-04.jpg` — Liza Summer · https://www.pexels.com/photo/cheerful-women-playing-snowballs-on-street-6383231/
-- `journeys/iceland-edge-of-light/chapter-05.jpg` — Gabriele Niek · https://www.pexels.com/photo/a-glacier-is-seen-in-iceland-17959889/
-- `portraits/p01.jpg` — Manuel Schlichter · https://www.pexels.com/photo/stylish-woman-posing-in-urban-setting-35155020/
-- `portraits/p02.jpg` — khezez  | خزاز · https://www.pexels.com/photo/brunette-man-with-beard-and-mustache-19583977/
-- `portraits/p03.jpg` — Renan Lima · https://www.pexels.com/photo/back-view-of-woman-5456333/
-- `portraits/p04.jpg` — Natalia Olivera · https://www.pexels.com/photo/pensive-elderly-man-in-black-and-white-portrait-31295146/
-- `portraits/p05.jpg` — Alexander Krivitskiy · https://www.pexels.com/photo/close-up-black-and-white-portrait-of-smiling-woman-38057777/
-- `portraits/p06.jpg` — Taher Hassan · https://www.pexels.com/photo/man-in-black-polo-shirt-wearing-black-framed-sunglasses-standing-by-the-glass-window-14160122/
-- `portraits/p07.jpg` — Mari Korz · https://www.pexels.com/photo/woman-with-hands-on-head-10104712/
-- `portraits/p08.jpg` — Sóc Năng Động · https://www.pexels.com/photo/casual-portrait-of-man-with-sunglasses-32021392/
-- `portraits/p09.jpg` — Alexander Krivitskiy · https://www.pexels.com/photo/moody-portrait-of-a-woman-in-a-dark-hat-38692806/
-- `portraits/p10.jpg` — hartono subagio · https://www.pexels.com/photo/smiling-young-man-in-red-shirt-portrait-37159572/
-- `portraits/p11.jpg` — Tolga Akman · https://www.pexels.com/photo/portrait-of-an-elderly-man-in-turkiye-30805619/
-- `portraits/p12.jpg` — Teona Swift · https://www.pexels.com/photo/portrait-of-old-woman-thinking-6874470/
-- `portraits/p13.jpg` — Esra Erdem · https://www.pexels.com/photo/portrait-of-a-woman-with-curly-hair-and-a-mole-17191680/
-- `portraits/p14.jpg` — Eugene Samoilov · https://www.pexels.com/photo/side-profile-of-pensive-young-man-outdoors-35879175/
-- `portraits/p15.jpg` — Mad Knoxx Deluxe · https://www.pexels.com/photo/stylish-woman-with-long-braided-hair-posing-31653967/
-- `portraits/p16.jpg` — Cheer Miron Asso · https://www.pexels.com/photo/joyful-young-woman-in-colorful-poncho-outdoors-38872747/
-- `curators/c01.jpg` — Serkan Bayraktar · https://www.pexels.com/photo/grayscale-photo-of-a-man-smoking-a-cigarette-8503239/
-- `curators/c02.jpg` — Eric Moura · https://www.pexels.com/photo/dramatic-portrait-of-woman-in-low-light-33444227/
-- `curators/c03.jpg` — Sabine Meier · https://www.pexels.com/photo/side-view-of-a-shirtless-man-standing-next-to-a-window-20380590/
-- `curators/c04.jpg` — quang vinh · https://www.pexels.com/photo/elegant-portrait-of-a-woman-in-white-attire-39388729/
-- `hero/film` — João  Pavese · https://www.pexels.com/video/scenic-yacht-adventure-with-people-jumping-into-water-31715186/
-- `journeys/kyoto-in-silence/film` — LayG Traveller · https://www.pexels.com/video/stunning-nanjing-lantern-lit-alleyway-tour-34209362/
-- `journeys/patagonia-unhurried/film` — Sergey Guk · https://www.pexels.com/video/breathtaking-aerial-view-of-fitz-roy-mountains-33197882/
-- `journeys/sahara-under-glass/film` — So Kenobi · https://www.pexels.com/video/aerial-sahara-view-17629657/
-- `journeys/iceland-edge-of-light/film` — Ken Cheung · https://www.pexels.com/video/breathtaking-northern-lights-over-iceland-s-winter-landscape-35092214/
-- `moments/m01.jpg` — Engin Akyurt · https://www.pexels.com/photo/female-diver-mid-air-over-deep-blue-sea-28751534/
-- `moments/m02.jpg` — Ketut Subiyanto · https://www.pexels.com/photo/a-group-of-friends-toasting-beer-bottles-5054617/
-- `moments/m03.jpg` — cottonbro studio · https://www.pexels.com/photo/man-and-woman-sitting-on-car-5080853/
-- `moments/m04.jpg` — Matheus Bertelli · https://www.pexels.com/photo/group-of-people-during-party-18999513/
-- `moments/m05.jpg` — Matheus Bertelli · https://www.pexels.com/photo/cheerful-friends-roasting-marshmallows-on-bonfire-7510830/
-- `moments/m06.jpg` — Gabin Cobret · https://www.pexels.com/photo/hiking-group-enjoying-sunset-at-le-grand-bornand-34402264/
-- `moments/m07.jpg` — Umut Gültekin · https://www.pexels.com/photo/house-reflection-over-a-swimming-pool-13562772/
-- `moments/m08.jpg` — cottonbro studio · https://www.pexels.com/photo/man-in-gray-crew-neck-t-shirt-sitting-beside-woman-in-gray-sleeveless-shirt-4877864/
-- `moments/film` — Kampus Production · https://www.pexels.com/video/friends-dancing-together-5935470/
+- `portraits/p01.jpg` — alameen .ng · https://www.pexels.com/photo/joyful-woman-in-striped-dress-laughing-36825446/
+- `portraits/p02.jpg` — Matt Jerome Connor · https://www.pexels.com/photo/cheerful-ethnic-man-in-cap-near-brick-wall-4433109/
+- `portraits/p03.jpg` — Atahan Demir · https://www.pexels.com/photo/woman-in-white-shirt-covering-her-face-12998525/
+- `portraits/p04.jpg` — ArtHouse Studio · https://www.pexels.com/photo/cheerful-young-man-in-outdoor-cafe-in-summer-4534205/
+- `portraits/p05.jpg` — Alexander Krivitskiy · https://www.pexels.com/photo/smiling-face-of-woman-with-brown-hair-18392646/
+- `portraits/p06.jpg` — Simon Reza · https://www.pexels.com/photo/a-portrait-of-a-bearded-man-9720624/
+- `portraits/p07.jpg` — Los Muertos Crew · https://www.pexels.com/photo/happy-woman-in-white-tank-top-sitting-on-chair-8784608/
+- `portraits/p08.jpg` — Rupinder Singh · https://www.pexels.com/photo/smiling-man-face-11091224/
+- `portraits/p09.jpg` — Mert Coşkun · https://www.pexels.com/photo/joyful-woman-in-polka-dot-dress-and-hat-33669427/
+- `portraits/p10.jpg` — Brooke Laven · https://www.pexels.com/photo/smiling-man-with-drink-in-jar-14762121/
+- `portraits/p11.jpg` — Majkel Berger · https://www.pexels.com/photo/portrait-of-a-senior-man-with-long-white-beard-32938408/
+- `portraits/p12.jpg` — Alexander Krivitskiy · https://www.pexels.com/photo/laughing-blonde-woman-with-pearls-earrings-17894396/
+- `portraits/p13.jpg` — Ersin · https://www.pexels.com/photo/joyful-woman-expressing-happiness-indoors-31689192/
+- `portraits/p14.jpg` — Mason McCall · https://www.pexels.com/photo/man-laughing-and-covering-face-14280464/
+- `portraits/p15.jpg` — ANTONI SHKRABA production · https://www.pexels.com/photo/people-partying-in-a-park-and-table-with-fruits-and-flowers-in-foreground-8910368/
+- `portraits/p16.jpg` — Vladislav Lolenko · https://www.pexels.com/photo/smiling-woman-in-red-coat-by-a-doorway-34367741/
+- `curators/c01.jpg` — ELEVATE · https://www.pexels.com/photo/man-carrying-sack-near-white-wall-1267341/
+- `curators/c02.jpg` — Rules Effects · https://www.pexels.com/photo/smiling-woman-with-hairband-20381683/
+- `curators/c03.jpg` — Chitrakaksha _ · https://www.pexels.com/photo/thoughtful-man-gazing-through-train-window-30259163/
+- `curators/c04.jpg` — Andy Coffie · https://www.pexels.com/photo/portrait-of-laughing-woman-wearing-heavy-beaded-neckla-16255222/
+- `hero/film` — Ron Lach · https://www.pexels.com/video/a-man-riding-a-floater-9974882/
+- `moments/m01.jpg` — Photo Monkey · https://www.flickr.com/photos/87374213@N00/48198536
+- `moments/m02.jpg` — Andrea Piacquadio · https://www.pexels.com/photo/a-group-of-friends-3851925/
+- `moments/m03.jpg` — MUHAMMAD ZACK · https://www.pexels.com/photo/two-women-riding-on-a-scooter-21959402/
+- `moments/m04.jpg` — Ilya Perelude · https://www.pexels.com/photo/people-on-a-boat-8936777/
+- `moments/m05.jpg` — Isabella Mendes · https://www.pexels.com/photo/people-in-a-club-19551018/
+- `moments/m06.jpg` — Quang Nguyen Vinh · https://www.pexels.com/photo/anonymous-woman-standing-with-arms-raised-on-seacoast-cliff-5118054/
+- `moments/m07.jpg` — mendhak · https://www.flickr.com/photos/69135870@N00/5586290779
+- `moments/m08.jpg` — Andrea Piacquadio · https://www.pexels.com/photo/women-having-dinner-3938961/
+- `moments/film` — KoolShooters · https://www.pexels.com/video/an-underwater-footage-of-women-sitting-on-a-poolside-while-throwing-an-inflatable-balls-9872853/
+- `journeys/bali-in-full-colour/card.jpg` — photobydela · https://www.pexels.com/photo/summer-pool-party-with-friends-and-water-guns-33832441/
+- `journeys/bali-in-full-colour/chapter-01.jpg` — Yan Krukau · https://www.pexels.com/photo/a-man-and-a-woman-dancing-in-a-night-club-9003000/
+- `journeys/bali-in-full-colour/chapter-02.jpg` — Jess Loiterton · https://www.pexels.com/photo/people-jumping-from-pier-into-turquoise-ocean-5232197/
+- `journeys/bali-in-full-colour/chapter-03.jpg` — setengah lima sore · https://www.pexels.com/photo/joyful-motorcycle-ride-in-east-java-31772665/
+- `journeys/bali-in-full-colour/chapter-04.jpg` — firman malewa · https://www.pexels.com/photo/people-rafting-on-gusty-river-16166124/
+- `journeys/bali-in-full-colour/chapter-05.jpg` — QVEVRI  TBILISI · https://www.pexels.com/photo/friends-having-fun-together-at-the-disco-18704290/
+- `journeys/mykonos-after-dark/card.jpg` — Victor Soto · https://www.pexels.com/photo/woman-hands-with-glass-of-drink-20796993/
+- `journeys/mykonos-after-dark/chapter-01.jpg` — Arbi Nina · https://www.pexels.com/photo/silhouettes-of-people-walking-near-the-sea-12266701/
+- `journeys/mykonos-after-dark/chapter-02.jpg` — Noel Snpr · https://www.pexels.com/photo/group-of-kids-jumping-into-the-ocean-on-a-sunny-day-35907570/
+- `journeys/mykonos-after-dark/chapter-03.jpg` — Christian  Alemu · https://www.pexels.com/photo/man-and-people-on-quads-on-desert-26568793/
+- `journeys/mykonos-after-dark/chapter-04.jpg` — FOERDER ZONE · https://www.pexels.com/photo/woman-in-white-shirt-standing-with-arm-raised-among-people-17801375/
+- `journeys/mykonos-after-dark/chapter-05.jpg` — Andrea Piacquadio · https://www.pexels.com/photo/joyful-young-group-of-tourists-taking-selfie-on-loungers-3851408/
+- `journeys/tulum-slow-heat/card.jpg` — Riccardo Vespa · https://www.pexels.com/photo/boy-jumping-into-water-18356773/
+- `journeys/tulum-slow-heat/chapter-01.jpg` — KoolShooters · https://www.pexels.com/photo/women-wearing-bikinis-sitting-by-the-pool-9872445/
+- `journeys/tulum-slow-heat/chapter-02.jpg` — Nothing Ahead · https://www.pexels.com/photo/family-swimming-adventure-in-blue-ocean-38477814/
+- `journeys/tulum-slow-heat/chapter-03.jpg` — Nguyen Ngoc Tien · https://www.pexels.com/photo/group-enjoying-boat-ride-on-scenic-river-35042240/
+- `journeys/tulum-slow-heat/chapter-04.jpg` — Matheus Bertelli · https://www.pexels.com/photo/group-of-people-sitting-at-a-table-during-a-party-18999489/
+- `journeys/tulum-slow-heat/chapter-05.jpg` — Anthony Brown · https://www.pexels.com/photo/people-swimming-on-the-beach-12421287/
+- `journeys/cape-town-two-oceans/card.jpg` — Imad Clicks · https://www.pexels.com/photo/person-posing-on-mountain-against-lake-12465629/
+- `journeys/cape-town-two-oceans/chapter-01.jpg` — Denys Gromov · https://www.pexels.com/photo/friends-drinking-cocktails-on-a-terrace-12645180/
+- `journeys/cape-town-two-oceans/chapter-02.jpg` — Gabin Cobret · https://www.pexels.com/photo/hiking-group-enjoying-sunset-at-le-grand-bornand-34402264/
+- `journeys/cape-town-two-oceans/chapter-03.jpg` — Julia M Cameron · https://www.pexels.com/photo/a-family-eating-at-the-backyard-8841464/
+- `journeys/cape-town-two-oceans/chapter-04.jpg` — Quang Nguyen Vinh · https://www.pexels.com/photo/serene-sunset-fishing-silhouettes-on-calm-waters-33268360/
+- `journeys/cape-town-two-oceans/chapter-05.jpg` — Cord Allman · https://www.pexels.com/photo/woman-wearing-sari-blowing-out-a-candle-from-a-cake-19581397/
+- `journeys/bali-in-full-colour/film` — Anna Shvets · https://www.pexels.com/video/two-girls-swimming-on-a-pool-5933318/
+- `journeys/mykonos-after-dark/film` — Kampus Production · https://www.pexels.com/video/people-having-a-good-time-7885037/
+- `journeys/tulum-slow-heat/film` — Serg Alesenko · https://www.pexels.com/video/people-swimming-in-a-waterfall-in-the-jungle-17259130/
+- `journeys/cape-town-two-oceans/film` — Ron Lach · https://www.pexels.com/video/friends-bonding-together-and-swimming-in-the-beach-10494881/

@@ -15,7 +15,7 @@ const organisation = {
   name: "Fable Travels",
   slogan: "Write your own legend.",
   description:
-    "Hosted small-group weeks for people who do not do tours. Ten travellers, one host, villas, boats and deserts, four departures a year.",
+    "Hosted small-group weeks for people who do not do tours. Twelve travellers, one host, one villa, boats and beach clubs, four departures a year.",
   url: "https://k3sra.github.io/travelagency/",
 };
 
