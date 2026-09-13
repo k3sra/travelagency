@@ -1,8 +1,10 @@
 import { FocusReveal } from "@/components/motion/FocusReveal";
+import { LiveFilm } from "@/components/motion/LiveFilm";
 import { Magnetic } from "@/components/motion/Magnetic";
 import { TextReveal } from "@/components/motion/TextReveal";
 import { TransitionLink } from "@/components/gl/TransitionLink";
 import { featuredSlugs, formatPrice, getJourney } from "@/lib/journeys";
+import { getFilm } from "@/lib/media";
 import { SpotsTag } from "./SpotsTag";
 import { Title } from "./Title";
 import styles from "./Destinations.module.css";
@@ -41,6 +43,7 @@ export function Destinations() {
                       ratio={tall ? "4 / 5" : "16 / 10"}
                       sizes="(max-width: 900px) 100vw, 60vw"
                     />
+                    <LiveFilm film={getFilm(j.slug)} />
                   </div>
                 </TransitionLink>
               </Magnetic>

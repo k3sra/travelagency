@@ -49,6 +49,9 @@
 }
 
 .frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
   transition: transform var(--dur-tactile) var(--ease-fable);
 }
 
