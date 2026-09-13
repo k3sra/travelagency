@@ -4,7 +4,7 @@ import type { MetadataRoute } from "next";
 export const dynamic = "force-static";
 import { getJourneys } from "@/lib/journeys";
 
-const BASE = "https://fabletravels.com";
+const BASE = "https://k3sra.github.io/travelagency";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const journeys = getJourneys().map((j) => ({

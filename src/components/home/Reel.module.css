@@ -1,0 +1,75 @@
+.reel {
+  position: relative;
+  height: 300svh;
+  background: var(--night);
+  color: #fff;
+}
+
+.stage {
+  position: relative;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.25) 45%, rgba(0, 0, 0, 0.3) 100%);
+  pointer-events: none;
+}
+
+.copy {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: clamp(3rem, 10vh, 7rem);
+  display: grid;
+  gap: 1.4rem;
+}
+
+.eyebrow {
+  color: var(--sun-2);
+}
+
+.lines {
+  position: relative;
+  min-height: 2.8em;
+  font-size: var(--t-display);
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  font-size: inherit;
+  max-width: 12ch;
+  display: grid;
+}
+
+.word {
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.line:first-child .word {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reel {
+    height: 100svh;
+  }
+  .line:not(:first-child) {
+    display: none;
+  }
+}

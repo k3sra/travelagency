@@ -1,0 +1,145 @@
+.how {
+  position: relative;
+  background: var(--bg);
+}
+
+.stage {
+  position: relative;
+  padding-block: clamp(4rem, 8vh, 6rem) 0;
+}
+
+.head {
+  margin-bottom: 1.2rem;
+}
+
+.deck {
+  position: relative;
+}
+
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 2rem;
+  min-height: 72svh;
+  margin-inline: var(--gutter);
+  padding: clamp(1.5rem, 3vw, 3rem);
+  border-radius: var(--radius);
+  overflow: hidden;
+  will-change: transform;
+  transform-origin: 50% 0%;
+}
+
+.night {
+  background: var(--night);
+  color: #fff;
+}
+
+.sun {
+  background: var(--grad-sun);
+  color: var(--ink);
+}
+
+.sea {
+  background: var(--sea);
+  color: var(--ink);
+}
+
+.index {
+  position: absolute;
+  top: 0.4rem;
+  left: 1.2rem;
+  opacity: 0.22;
+  font-size: clamp(6rem, 20vw, 18rem);
+  line-height: 1;
+}
+
+.body {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.2rem;
+  max-width: 24ch;
+}
+
+.title {
+  font-size: clamp(2.6rem, 6vw, 6.5rem);
+}
+
+.line {
+  max-width: 28ch;
+}
+
+.tile {
+  width: 26vw;
+  max-width: 420px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+.tile img {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 900px) {
+  .how {
+    height: 300svh;
+  }
+  .stage {
+    height: 100svh;
+  }
+  .deck {
+    height: calc(100svh - 9rem);
+  }
+  .card {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(var(--i) * 1.4rem);
+    height: calc(100svh - 12rem);
+    min-height: 0;
+  }
+}
+
+@media (max-width: 899px) {
+  .stage {
+    padding-top: var(--section);
+  }
+  .deck {
+    display: grid;
+    gap: 1rem;
+  }
+  .card {
+    position: sticky;
+    top: 5rem;
+    grid-template-columns: 1fr;
+    min-height: 70svh;
+  }
+  .tile {
+    width: 58vw;
+    justify-self: end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .how {
+    height: auto;
+  }
+  .stage {
+    height: auto;
+  }
+  .deck {
+    height: auto;
+    display: grid;
+    gap: 1rem;
+  }
+  .card {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: 60svh;
+  }
+}

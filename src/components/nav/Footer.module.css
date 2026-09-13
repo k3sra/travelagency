@@ -1,0 +1,91 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+  padding-top: clamp(2rem, 5vw, 4rem);
+}
+
+.markMask {
+  overflow: hidden;
+  padding-inline: var(--gutter);
+  line-height: 0.8;
+}
+
+.mark {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(4.5rem, 17.5vw, 21rem);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  will-change: transform;
+  background: var(--grad-sun);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.head {
+  color: var(--on-night-2);
+  margin-bottom: 1rem;
+}
+
+.list {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  letter-spacing: -0.01em;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  height: 2px;
+  background: var(--sun);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+.foot {
+  padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+}
+
+.footRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.2rem;
+}
+
+.muted {
+  color: var(--on-night-2);
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

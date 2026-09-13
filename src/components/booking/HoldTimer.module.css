@@ -1,10 +1,10 @@
 .root {
   margin: 1.2rem 0 0;
   font-size: 0.62rem;
-  color: var(--on-forest-muted);
+  color: var(--ink-2);
 }
 
 .time {
-  color: var(--gold);
+  color: var(--sun);
   font-variant-numeric: tabular-nums;
 }

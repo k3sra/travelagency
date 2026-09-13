@@ -22,23 +22,17 @@ export default function CreditsPage() {
   const entries = Object.entries(credits as Record<string, Credit>);
   return (
     <main className={`container ${styles.main}`}>
-      <p className="t-caps t-muted">Fable Travels</p>
-      <h1 className={`t-display ${styles.title}`}>
-        Photography and <em>film.</em>
-      </h1>
-      <p className={`t-lead t-muted ${styles.copy}`}>
-        The photographs on this site are Creative Commons pictures by travellers, found through
-        Openverse, and licensed stills and films from Pexels. Each one is cropped and graded.
-        The people pictured are not Fable travellers; they stand in for a real, private collective.
-      </p>
+      <p className="t-label t-sun">Photo credits</p>
+      <h1 className={`t-h2 ${styles.title}`}>The people in the pictures.</h1>
+      <p className={`t-lead ${styles.copy}`}>Pictures are licensed from Pexels and from Creative Commons photographers via Openverse. The people shown are not FABLE travellers.</p>
       <ul className={styles.list}>
         {entries.map(([rel, c]) => (
           <li key={rel} className={styles.item}>
-            <span className={`t-caps ${styles.rel}`}>{rel}</span>
+            <span className={`t-label ${styles.rel}`}>{rel}</span>
             <a href={c.url} className={styles.link} target="_blank" rel="noreferrer" data-cursor="link">
               {c.photographer ?? "Unknown"}
             </a>
-            <span className={`t-caps t-muted ${styles.rel}`}>
+            <span className={`t-label ${styles.rel}`}>
               {c.licenseUrl ? (
                 <a href={c.licenseUrl} target="_blank" rel="noreferrer" data-cursor="link">
                   {licenseLabel(c)}
@@ -50,8 +44,8 @@ export default function CreditsPage() {
           </li>
         ))}
       </ul>
-      <TransitionLink href="/" kind="dissolve" className={`t-caps ${styles.back}`}>
-        Back to the beginning
+      <TransitionLink href="/" kind="dissolve" className={`btn btn--ghost ${styles.back}`}>
+        Back
       </TransitionLink>
     </main>
   );

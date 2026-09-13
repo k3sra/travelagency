@@ -396,7 +396,7 @@ export function BookingDrawer() {
                 Your place is held
               </h2>
               <p className={`t-display ${styles.title}`} data-rise>
-                Your legend begins <em>{journey.dates}</em>.
+                You are in. <em>{journey.dates}</em>
               </p>
               <p className={styles.meta} data-rise>
                 You are traveller {journey.groupMax - journey.spotsRemaining + 1} of{" "}
@@ -413,7 +413,7 @@ export function BookingDrawer() {
                 refundable until {heldUntilFormat.format(new Date(result.heldUntil))}
               </p>
               <div className={styles.actions} data-rise>
-                <MagneticButton variant="ghost" label="Back to the journey" onClick={closeDrawer} />
+                <MagneticButton variant="ghost" label="Back to the trip" onClick={closeDrawer} />
               </div>
               <hr className={styles.rule} data-rise />
               <div data-rise>
@@ -427,7 +427,7 @@ export function BookingDrawer() {
           ) : journey ? (
             <div key="details" ref={detailsRef} className={styles.details}>
               <p className={`t-caps ${styles.eyebrow}`} data-rise>
-                Secure your place
+                Secure your seat
               </p>
               <h2 id={titleId} className={`t-display ${styles.title}`} data-rise>
                 <Title title={journey.title} em={journey.titleEm} />

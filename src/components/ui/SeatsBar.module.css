@@ -5,19 +5,19 @@
 }
 
 .label {
-  font-size: 0.62rem;
-  color: var(--ink-muted);
+  font-size: 0.66rem;
+  color: var(--ink-2);
   white-space: nowrap;
 }
 
 .track {
   display: block;
-  height: 1px;
+  height: 2px;
   background: var(--line);
 }
 
 .fill {
   display: block;
   height: 100%;
-  background: var(--gold);
+  background: var(--grad-sun);
 }

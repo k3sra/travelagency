@@ -1,0 +1,68 @@
+.closing {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  background: var(--grad-sun);
+  color: var(--ink);
+  padding-block: var(--section);
+}
+
+.marquee {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  overflow: hidden;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: marquee-x 26s linear infinite;
+  will-change: transform;
+}
+
+.name {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  padding-inline: 0.2em;
+}
+
+.dot {
+  display: inline-block;
+  width: 0.14em;
+  height: 0.14em;
+  margin-left: 0.4em;
+  border-radius: 50%;
+  background: currentColor;
+  -webkit-text-stroke: 0;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 2rem;
+  text-align: center;
+  justify-items: center;
+}
+
+.big {
+  will-change: transform, opacity;
+}
+
+.cta {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+}
+
+.next {
+  color: rgba(10, 10, 10, 0.7);
+}
