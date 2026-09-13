@@ -1,5 +1,6 @@
 "use client";
 
+import { TextReveal } from "@/components/motion/TextReveal";
 import { useEffect, useRef } from "react";
 import { useBooking } from "@/components/booking/BookingProvider";
 import { Magnetic } from "@/components/motion/Magnetic";
@@ -42,7 +43,7 @@ export function Details({ trip }: { trip: Journey }) {
         <div className={styles.lists}>
           <div>
             <p className="t-label t-sun">The short version</p>
-            <h2 id="details-title" className={`t-h2 ${styles.title}`}>Three things you will actually do.</h2>
+            <TextReveal as="h2" id="details-title" className={`t-h2 ${styles.title}`}>Three things you will actually do.</TextReveal>
             <ul className={styles.list}>
               {trip.highlights.map((line) => (
                 <li key={line} className={styles.item} data-item>

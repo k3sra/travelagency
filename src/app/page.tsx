@@ -10,6 +10,7 @@ import { WhyUs } from "@/components/home/WhyUs";
 import { Reviews } from "@/components/home/Reviews";
 import { Faq } from "@/components/home/Faq";
 import { MobileCta } from "@/components/home/MobileCta";
+import { Mood } from "@/components/motion/Mood";
 
 const organisation = {
   "@context": "https://schema.org",
@@ -35,6 +36,7 @@ export default function Home() {
       <Faq />
       <Closing />
       <MobileCta />
+      <Mood />
     </main>
   );
 }

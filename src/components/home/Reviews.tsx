@@ -1,5 +1,6 @@
 "use client";
 
+import { TextReveal } from "@/components/motion/TextReveal";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap, ScrollTrigger, setupGsap } from "@/components/motion/gsapSetup";
@@ -30,7 +31,7 @@ export function Reviews() {
       <div className={`container ${styles.inner}`}>
         <div className={styles.head}>
           <p className="t-label t-sun">From the group chat</p>
-          <h2 id="reviews-title" className={`t-h2 ${styles.title}`}>What people say when they get home.</h2>
+          <TextReveal as="h2" id="reviews-title" className={`t-h2 ${styles.title}`}>What people say when they get home.</TextReveal>
         </div>
         <ul className={styles.rail} data-lenis-prevent-touch>
           {REVIEWS.map((r, i) => (

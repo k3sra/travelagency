@@ -1,6 +1,6 @@
 .rail {
   position: relative;
-  background: var(--bg);
+  background: transparent;
 }
 
 .stage {
@@ -73,6 +73,7 @@
 .card {
   flex: none;
   width: min(62vw, 900px);
+  will-change: transform;
 }
 
 .link {
@@ -155,6 +156,10 @@
   font-size: clamp(0.95rem, 1.1vw, 1.1rem);
   color: rgba(255, 255, 255, 0.9);
   max-width: 34ch;
+}
+
+.count {
+  color: var(--sun-2);
 }
 
 .more {

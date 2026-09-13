@@ -1,5 +1,6 @@
 "use client";
 
+import { TextReveal } from "@/components/motion/TextReveal";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap, ScrollTrigger, setupGsap } from "@/components/motion/gsapSetup";
@@ -59,7 +60,7 @@ export function Wall() {
     <section ref={root} className={styles.wall} aria-label="Real weeks">
       <div className={`container ${styles.head}`}>
         <p className="t-label t-sun">Real weeks, real people</p>
-        <h2 className={`t-h2 ${styles.title}`}>This is what day four looks like.</h2>
+        <TextReveal as="h2" className={`t-h2 ${styles.title}`}>This is what day four looks like.</TextReveal>
         <p className={`t-body ${styles.lead}`}>Shot on phones by people on the trip, not by an agency. Nobody was asked to pose.</p>
       </div>
       <div className={styles.rows}>

@@ -1,14 +1,23 @@
 "use client";
 
+import { TextReveal } from "@/components/motion/TextReveal";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { TransitionLink } from "@/components/gl/TransitionLink";
 import { LiveFilm } from "@/components/motion/LiveFilm";
+import { Countdown } from "@/components/motion/Countdown";
+import { useTilt } from "@/components/motion/useTilt";
 import { gsap, ScrollTrigger, setupGsap } from "@/components/motion/gsapSetup";
 import { formatPrice, getTrips } from "@/lib/journeys";
 import { getFilm } from "@/lib/media";
 import { prefersReducedMotion } from "@/lib/useReducedMotion";
 import styles from "./TripsRail.module.css";
+
+function RailCard({ children }: { children: React.ReactNode }) {
+  const ref = useRef<HTMLLIElement>(null);
+  useTilt(ref, 4);
+  return <li ref={ref} className={styles.card}>{children}</li>;
+}
 
 export function TripsRail() {
   const root = useRef<HTMLElement>(null);
@@ -36,11 +45,11 @@ export function TripsRail() {
   }, []);
 
   return (
-    <section ref={root} id="trips" className={styles.rail} aria-labelledby="trips-title">
+    <section ref={root} id="trips" className={styles.rail} aria-labelledby="trips-title" data-mood="white">
       <div className={styles.stage} data-stage>
         <div className={`container ${styles.head}`}>
           <p className="t-label t-sun">Four weeks a year</p>
-          <h2 id="trips-title" className={`t-h2 ${styles.title}`}>Pick your week.</h2>
+          <TextReveal as="h2" id="trips-title" className={`t-h2 ${styles.title}`}>Pick your week.</TextReveal>
           <p className={`t-body ${styles.lead}`}>Eight days, twelve travellers, one host. Everything at the table is included. Tap a week for the full day by day.</p>
           <div className={styles.progress} aria-hidden="true"><span className={styles.bar} data-bar /></div>
           <p className={`t-label ${styles.hint}`}>Swipe</p>
@@ -48,7 +57,7 @@ export function TripsRail() {
         <div className={styles.viewport} data-lenis-prevent-touch>
         <ul className={styles.track} data-track>
           {trips.map((t) => (
-            <li key={t.slug} className={styles.card}>
+            <RailCard key={t.slug}>
               <TransitionLink
                 href={`/trips/${t.slug}`}
                 kind={t.transition}
@@ -70,10 +79,11 @@ export function TripsRail() {
                   <span className={`t-display ${styles.name}`}>{t.title}</span>
                   <span className={styles.sub}>{t.subtitle}</span>
                   <span className={`t-label ${styles.meta}`}>{t.dates} · {t.durationDays} days · from {formatPrice(t.price.amount)}</span>
+                  <Countdown startDate={t.startDate} className={`t-label ${styles.count}`} />
                   <span className={styles.more}>See the full week</span>
                 </span>
               </TransitionLink>
-            </li>
+            </RailCard>
           ))}
         </ul>
         </div>

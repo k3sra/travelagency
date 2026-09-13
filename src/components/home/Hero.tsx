@@ -34,6 +34,24 @@ export function Hero() {
         .fromTo(rest, { yPercent: 30, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.9, ease: "fable", stagger: 0.07 }, 0.45);
       gsap.fromTo(el.querySelector("[data-frame]"), { scale: 1, borderRadius: 0 }, { scale: 0.9, borderRadius: 28, ease: "none", scrollTrigger: { trigger: el, start: "top top", end: "bottom top", scrub: 0.6 } });
       gsap.to(el.querySelector("[data-copy]"), { yPercent: -18, opacity: 0, ease: "none", scrollTrigger: { trigger: el, start: "top top", end: "70% top", scrub: 0.6 } });
+      if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        const frame = el.querySelector<HTMLElement>("[data-frame]");
+        const copy = el.querySelector<HTMLElement>("[data-copy]");
+        if (frame && copy) {
+          const fx = gsap.quickTo(frame, "x", { duration: 1.2, ease: "power3.out" });
+          const fy = gsap.quickTo(frame, "y", { duration: 1.2, ease: "power3.out" });
+          const cx = gsap.quickTo(copy, "x", { duration: 1, ease: "power3.out" });
+          const onMove = (e: PointerEvent) => {
+            const px = e.clientX / window.innerWidth - 0.5;
+            const py = e.clientY / window.innerHeight - 0.5;
+            fx(px * -18);
+            fy(py * -12);
+            cx(px * 10);
+          };
+          el.addEventListener("pointermove", onMove);
+          return () => el.removeEventListener("pointermove", onMove);
+        }
+      }
     }, el);
     return () => ctx.revert();
   }, [introDone]);

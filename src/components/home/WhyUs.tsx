@@ -1,5 +1,6 @@
 "use client";
 
+import { TextReveal } from "@/components/motion/TextReveal";
 import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger, setupGsap } from "@/components/motion/gsapSetup";
 import { PILLARS } from "@/lib/content";
@@ -22,11 +23,11 @@ export function WhyUs() {
   }, []);
 
   return (
-    <section ref={root} id="why" className={`section ${styles.why}`} aria-labelledby="why-title">
+    <section ref={root} id="why" className={`section ${styles.why}`} aria-labelledby="why-title" data-mood="soft">
       <div className={`container ${styles.inner}`}>
         <div className={styles.head}>
           <p className="t-label t-sun">Why FABLE</p>
-          <h2 id="why-title" className={`t-h2 ${styles.title}`}>Four things we will not compromise on.</h2>
+          <TextReveal as="h2" id="why-title" className={`t-h2 ${styles.title}`}>Four things we will not compromise on.</TextReveal>
           <p className={`t-lead ${styles.lead}`}>We built the trip we could not find: small, hosted, honest about the price, and easy to walk away from if it is not for you.</p>
         </div>
         <ol className={styles.grid}>

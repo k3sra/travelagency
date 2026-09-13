@@ -1,5 +1,6 @@
 "use client";
 
+import { TextReveal } from "@/components/motion/TextReveal";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { TransitionLink } from "@/components/gl/TransitionLink";
@@ -38,11 +39,11 @@ export function HowItWorks() {
   }, []);
 
   return (
-    <section ref={root} id="how" className={styles.how} aria-labelledby="how-title">
+    <section ref={root} id="how" className={styles.how} aria-labelledby="how-title" data-mood="white">
       <div className={styles.stage} data-stage>
         <div className={`container ${styles.head}`}>
           <p className="t-label t-sun">How it works</p>
-          <h2 id="how-title" className={`t-h2 ${styles.heading}`}>Three steps. No forms longer than a text message.</h2>
+          <TextReveal as="h2" id="how-title" className={`t-h2 ${styles.heading}`}>Three steps. No forms longer than a text message.</TextReveal>
         </div>
         <div className={styles.deck}>
           {STEPS.map((s, i) => (

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useBooking } from "@/components/booking/BookingProvider";
+import { Countdown } from "@/components/motion/Countdown";
 import { Film } from "@/components/motion/Film";
 import { Magnetic } from "@/components/motion/Magnetic";
 import { gsap, setupGsap } from "@/components/motion/gsapSetup";
@@ -55,6 +56,7 @@ export function TripHero({ trip }: { trip: Journey }) {
             <li className={styles.chip}>{trip.durationDays} days</li>
             <li className={styles.chip}>12 people</li>
             <li className={styles.chip}>from {formatPrice(trip.price.amount)}</li>
+            <li className={`${styles.chip} ${styles.chipSun}`}><Countdown startDate={trip.startDate} /></li>
           </ul>
         </div>
         <div className={styles.cta} data-rise>

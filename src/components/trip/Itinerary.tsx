@@ -1,5 +1,6 @@
 "use client";
 
+import { TextReveal } from "@/components/motion/TextReveal";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Parallax } from "@/components/motion/Parallax";
@@ -27,7 +28,7 @@ export function Itinerary({ trip }: { trip: Journey }) {
         <div className={styles.side}>
           <div className={styles.sticky}>
             <p className="t-label t-sun">The week</p>
-            <h2 id="itin-title" className={`t-h2 ${styles.title}`}>Five days you will talk about.</h2>
+            <TextReveal as="h2" id="itin-title" className={`t-h2 ${styles.title}`}>Five days you will talk about.</TextReveal>
             <ol className={styles.list}>
               {trip.chapters.map((c, i) => (
                 <li key={c.numeral} className={`${styles.item} ${i === active ? styles.active : ""}`}>

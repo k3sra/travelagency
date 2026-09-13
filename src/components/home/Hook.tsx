@@ -35,7 +35,7 @@ export function Hook() {
   }, []);
 
   return (
-    <section ref={root} className={styles.hook} aria-label="What FABLE is">
+    <section ref={root} className={styles.hook} aria-label="What FABLE is" data-mood="tint">
       <div className={styles.stage} data-stage>
         {FLOATS.map((f) => (
           <div key={f.cls} className={`${styles.float} ${styles[f.cls]}`} data-float data-y={f.y} style={{ "--r": `${f.r}deg` } as React.CSSProperties} aria-hidden="true">

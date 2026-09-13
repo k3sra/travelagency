@@ -1,5 +1,6 @@
 "use client";
 
+import { TextReveal } from "@/components/motion/TextReveal";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap, ScrollTrigger, setupGsap } from "@/components/motion/gsapSetup";
@@ -33,7 +34,7 @@ export function Group({ trip }: { trip: Journey }) {
     <section ref={root} id="group" className={`section ${styles.group}`} aria-labelledby="group-title">
       <div className={`container ${styles.head}`}>
         <p className="t-label t-sun">Who is already in</p>
-        <h2 id="group-title" className={`t-h2 ${styles.title}`}>{taken} of {trip.groupMax} confirmed.</h2>
+        <TextReveal as="h2" id="group-title" className={`t-h2 ${styles.title}`}>{`${taken} of ${trip.groupMax} confirmed.`}</TextReveal>
       </div>
       <div className={`container ${styles.grid}`}>
         <div className={styles.marquee} aria-label="Confirmed travellers">

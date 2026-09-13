@@ -92,6 +92,11 @@
   font-size: 0.82rem;
 }
 
+.chipSun {
+  background: rgba(255, 90, 31, 0.85);
+  border-color: rgba(255, 90, 31, 0.9);
+}
+
 .cta {
   display: grid;
   gap: 0.7rem;
