@@ -1,0 +1,7 @@
+:HL["/travelagency/_next/static/chunks/0v4asnmvkzka_.css","style"]
+:HL["/travelagency/_next/static/chunks/0qxrszaasqa88.css","style"]
+:HL["/travelagency/_next/static/chunks/1up5x_7eiaat2.css","style"]
+:HL["/travelagency/_next/static/media/a343f882a40d2cc9-s.p.1sj6eobyi31rd.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/travelagency/_next/static/media/fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/travelagency/_next/static/chunks/30hgppcm5l20z.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"trips","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"A4MEjetFASv9oa7SdIB8k"}
