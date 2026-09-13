@@ -73,6 +73,8 @@ export interface Journey {
   price: { amount: number; currency: "USD"; deposit: number };
   vibe: VibeTag[];
   hero: MediaImage;
+  /** Portrait cut of the hero for phones (the portrait film's first frame). */
+  heroTall: MediaImage;
   card: MediaImage;
   chapters: Chapter[];
   travellers: Traveller[];

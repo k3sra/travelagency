@@ -19,8 +19,8 @@ export function CollectiveTeaser() {
           </TextReveal>
           <TextReveal as="p" className={`t-lead ${styles.lead}`}>
             Before a seat is confirmed, every traveller answers twelve questions about how they
-            like a day to go. The group forms around alignment, not age. Your host reads the
-            answers before dinner on the first night.
+            like a day to go, and how late it should end. The group forms around energy, not
+            age. Your host reads the answers before the first drink on the first night.
           </TextReveal>
           <dl className={styles.facts}>
             <div>
@@ -39,7 +39,7 @@ export function CollectiveTeaser() {
           <PillLink
             href={`/journeys/${kyoto.slug}#collective`}
             kind={kyoto.transition}
-            to={kyoto.hero.src}
+            to={kyoto.hero.src} toNarrow={kyoto.heroTall.src}
             variant="ghost"
             label="Meet the Kyoto ten"
           />
@@ -51,7 +51,7 @@ export function CollectiveTeaser() {
               <TransitionLink
                 href={`/journeys/${kyoto.slug}#collective`}
                 kind={kyoto.transition}
-                to={kyoto.hero.src}
+                to={kyoto.hero.src} toNarrow={kyoto.heroTall.src}
                 className={styles.person}
                 data-cursor="view"
                 data-cursor-label="The Collective"

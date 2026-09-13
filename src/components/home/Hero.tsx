@@ -15,7 +15,8 @@ import { EASE_FABLE } from "@/lib/easing";
 import { getState } from "@/lib/store";
 import { prefersReducedMotion } from "@/lib/useReducedMotion";
 import { PillLink } from "@/components/ui/PillLink";
-import { HeroVideo } from "./HeroVideo";
+import { Film } from "@/components/motion/Film";
+import { HERO_FILM, HERO_POSTER } from "@/lib/media";
 import styles from "./Hero.module.css";
 
 const VIDEO_WAIT = 900;
@@ -121,14 +122,19 @@ export function Hero() {
   return (
     <section ref={root} className={styles.hero} aria-label="Fable Travels" data-nav="dark">
       <div className={styles.media} data-hero-media>
-        <HeroVideo onReady={onVideoReady} />
+        <Film
+          film={HERO_FILM}
+          poster={{ wide: HERO_POSTER.wide, wideBlur: HERO_POSTER.wideBlur, tall: HERO_POSTER.tall, tallBlur: HERO_POSTER.tallBlur }}
+          onReady={onVideoReady}
+          transitionHero
+        />
       </div>
       <div className={styles.scrimTop} aria-hidden="true" />
       <div className={styles.scrimBottom} aria-hidden="true" />
 
       <div ref={copy} className={`container ${styles.copy}`}>
         <p ref={eyebrow} className={`t-caps ${styles.eyebrow}`}>
-          Fable Travels · Small-group journeys for grown-ups
+          Fable Travels · Hosted weeks for people who do not do tours
         </p>
         <TextReveal as="h1" ref={tagline} trigger="manual" className={`t-display ${styles.tagline}`}>
           Write your own <em>legend.</em>

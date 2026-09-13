@@ -38,7 +38,7 @@ export function Footer() {
                   <TransitionLink
                     href={`/journeys/${j.slug}`}
                     kind={j.transition}
-                    to={j.hero.src}
+                    to={j.hero.src} toNarrow={j.heroTall.src}
                     className={styles.link}
                     data-cursor="link"
                   >
@@ -66,6 +66,11 @@ export function Footer() {
               <li>
                 <TransitionLink href="/#manifesto" kind="dissolve" className={styles.link} data-cursor="link">
                   <span>How we travel</span>
+                </TransitionLink>
+              </li>
+              <li>
+                <TransitionLink href="/credits" kind="dissolve" className={styles.link} data-cursor="link">
+                  <span>Photography credits</span>
                 </TransitionLink>
               </li>
             </ul>

@@ -19,6 +19,13 @@
   --on-forest-muted: rgba(251, 248, 241, 0.58);
   --on-forest-line: rgba(251, 248, 241, 0.14);
 
+  /* Dark mode roles: the page is ink, type is vellum, plates are forest. */
+  --ground: #0e1414;
+  --ground-alt: #141c1c;
+  --ink: var(--vellum);
+  --ink-muted: rgba(251, 248, 241, 0.62);
+  --line: rgba(251, 248, 241, 0.14);
+
   /* Type — set by next/font in layout.tsx */
   --font-display: var(--font-playfair), "Playfair Display", Georgia, serif;
   --font-caps: var(--font-cinzel), "Cinzel", "Times New Roman", serif;
@@ -55,13 +62,13 @@
   --dur-tactile: 0.3s;
   --dur-reveal: 1.2s;
 
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 html {
   height: 100%;
-  background: var(--vellum);
-  color: var(--forest);
+  background: var(--ground);
+  color: var(--ink);
   font-family: var(--font-body);
   font-size: 100%;
   line-height: 1.5;
@@ -96,8 +103,8 @@ html.lenis body {
 
 body {
   min-height: 100%;
-  background: var(--vellum);
-  color: var(--forest);
+  background: var(--ground);
+  color: var(--ink);
   overflow-x: hidden;
 }
 
@@ -198,7 +205,7 @@ select {
 }
 
 .t-muted {
-  color: var(--vellum-ink);
+  color: var(--ink-muted);
 }
 
 /* Split text lines are masked by the parent so they can rise from below */
@@ -225,7 +232,7 @@ select {
 
 .rule {
   height: 1px;
-  background: var(--vellum-line);
+  background: var(--line);
   border: 0;
 }
 

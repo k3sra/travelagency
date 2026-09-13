@@ -30,7 +30,7 @@ export function JourneyIndex() {
               <TransitionLink
                 href={`/journeys/${j.slug}`}
                 kind={j.transition}
-                to={j.hero.src}
+                to={j.hero.src} toNarrow={j.heroTall.src}
                 className={styles.cardLink}
                 data-cursor="view"
                 data-cursor-label="View journey"

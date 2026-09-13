@@ -116,7 +116,7 @@ export default async function JourneyPage({ params }: Props) {
         <TransitionLink
           href={`/journeys/${next.slug}`}
           kind={next.transition}
-          to={next.hero.src}
+          to={next.hero.src} toNarrow={next.heroTall.src}
           className={styles.nextLink}
           data-cursor="view"
           data-cursor-label="View journey"

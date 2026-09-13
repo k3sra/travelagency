@@ -118,7 +118,7 @@
 }
 
 .forest {
-  --btn-line: var(--forest);
+  --btn-line: var(--gold-dim);
   --btn-fill: var(--gold);
   --btn-ink-hover: var(--forest);
   --btn-line-hover: var(--gold);

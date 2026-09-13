@@ -1,5 +1,5 @@
 .root {
-  --focus-plate: var(--vellum-deep);
+  --focus-plate: var(--ground-alt);
   --focus-scale: 1.08;
   --focus-blur-scale: 1.03;
   position: relative;

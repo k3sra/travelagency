@@ -1,0 +1,124 @@
+{
+  "heroVideo": {
+    "wide": {
+      "hd": "https://videos.pexels.com/video-files/31715186/13512931_1920_1080_24fps.mp4",
+      "sd": "https://videos.pexels.com/video-files/31715186/13512930_1280_720_24fps.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration": 16,
+      "url": "https://www.pexels.com/video/scenic-yacht-adventure-with-people-jumping-into-water-31715186/",
+      "credit": "João  Pavese"
+    },
+    "tall": {
+      "hd": "https://videos.pexels.com/video-files/38161870/16202184_1080_1920_60fps.mp4",
+      "sd": "https://videos.pexels.com/video-files/38161870/16202182_720_1280_60fps.mp4",
+      "width": 1080,
+      "height": 1920,
+      "duration": 8,
+      "url": "https://www.pexels.com/video/aerial-view-of-cliff-divers-in-crystal-blue-sea-38161870/",
+      "credit": "Rüveyda Akkaya"
+    }
+  },
+  "journeys": {
+    "kyoto-in-silence": {
+      "wide": {
+        "hd": "https://videos.pexels.com/video-files/34209362/14500286_1920_1080_60fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/34209362/14500285_1280_720_60fps.mp4",
+        "width": 1920,
+        "height": 1080,
+        "duration": 12,
+        "url": "https://www.pexels.com/video/stunning-nanjing-lantern-lit-alleyway-tour-34209362/",
+        "credit": "LayG Traveller"
+      },
+      "tall": {
+        "hd": "https://videos.pexels.com/video-files/37901319/16080690_1080_1920_24fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/37901319/16080688_720_1280_24fps.mp4",
+        "width": 1080,
+        "height": 1920,
+        "duration": 15,
+        "url": "https://www.pexels.com/video/stunning-view-of-kinkaku-ji-temple-in-kyoto-37901319/",
+        "credit": "Stephan Leuzinger"
+      }
+    },
+    "patagonia-unhurried": {
+      "wide": {
+        "hd": "https://videos.pexels.com/video-files/33197882/14148108_1920_1080_60fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/33197882/14148107_1280_720_60fps.mp4",
+        "width": 1920,
+        "height": 1080,
+        "duration": 20,
+        "url": "https://www.pexels.com/video/breathtaking-aerial-view-of-fitz-roy-mountains-33197882/",
+        "credit": "Sergey Guk"
+      },
+      "tall": {
+        "hd": "https://videos.pexels.com/video-files/20549731/20549731-hd_1080_1920_30fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/20549731/20549731-hd_720_1280_30fps.mp4",
+        "width": 1080,
+        "height": 1920,
+        "duration": 10,
+        "url": "https://www.pexels.com/video/over-the-lakes-20549731/",
+        "credit": "Vasilis Karkalas"
+      }
+    },
+    "sahara-under-glass": {
+      "wide": {
+        "hd": "https://videos.pexels.com/video-files/17629657/17629657-hd_1920_1080_25fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/17629657/17629657-hd_1280_720_25fps.mp4",
+        "width": 1920,
+        "height": 1080,
+        "duration": 17,
+        "url": "https://www.pexels.com/video/aerial-sahara-view-17629657/",
+        "credit": "So Kenobi"
+      },
+      "tall": {
+        "hd": "https://videos.pexels.com/video-files/8865368/8865368-hd_720_1366_25fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/8865368/8865368-sd_506_960_25fps.mp4",
+        "width": 720,
+        "height": 1366,
+        "duration": 10,
+        "url": "https://www.pexels.com/video/sand-ripples-in-the-desert-8865368/",
+        "credit": "MART  PRODUCTION"
+      }
+    },
+    "iceland-edge-of-light": {
+      "wide": {
+        "hd": "https://videos.pexels.com/video-files/35092214/14866547_1920_1080_25fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/35092214/14866546_1280_720_25fps.mp4",
+        "width": 1920,
+        "height": 1080,
+        "duration": 9,
+        "url": "https://www.pexels.com/video/breathtaking-northern-lights-over-iceland-s-winter-landscape-35092214/",
+        "credit": "Ken Cheung"
+      },
+      "tall": {
+        "hd": "https://videos.pexels.com/video-files/25988225/11925565_1080_1920_25fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/25988225/11925561_720_1280_25fps.mp4",
+        "width": 1080,
+        "height": 1920,
+        "duration": 8,
+        "url": "https://www.pexels.com/video/the-aurora-bore-is-shown-in-this-photo-25988225/",
+        "credit": "Mohammed Abubakr"
+      }
+    }
+  },
+  "moments": {
+    "wide": {
+      "hd": "https://videos.pexels.com/video-files/5935470/5935470-hd_1920_1080_25fps.mp4",
+      "sd": "https://videos.pexels.com/video-files/5935470/5935470-hd_1280_720_25fps.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration": 20,
+      "url": "https://www.pexels.com/video/friends-dancing-together-5935470/",
+      "credit": "Kampus Production"
+    },
+    "tall": {
+      "hd": "https://videos.pexels.com/video-files/7147762/7147762-hd_1080_1920_30fps.mp4",
+      "sd": "https://videos.pexels.com/video-files/7147762/7147762-hd_720_1280_30fps.mp4",
+      "width": 1080,
+      "height": 1920,
+      "duration": 13,
+      "url": "https://www.pexels.com/video/women-having-fun-7147762/",
+      "credit": "Kindel Media"
+    }
+  }
+}

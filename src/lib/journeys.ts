@@ -40,6 +40,7 @@ export const journeys: Journey[] = [
       { label: "After Dark", pct: 31 },
     ],
     hero: image("journeys/kyoto-in-silence/hero.jpg", "Moss garden and maple in mist, Kyoto"),
+    heroTall: image("journeys/kyoto-in-silence/hero-tall.jpg", "Moss garden and maple in mist, Kyoto", 1250, 2000),
     card: image("journeys/kyoto-in-silence/card.jpg", "A lantern-lit lane in Gion at dusk", 1400, 1750),
     transition: "dissolve",
     promise:
@@ -130,6 +131,7 @@ export const journeys: Journey[] = [
       { label: "City Time", pct: 18 },
     ],
     hero: image("journeys/patagonia-unhurried/hero.jpg", "Granite towers above a glacial lake at first light"),
+    heroTall: image("journeys/patagonia-unhurried/hero-tall.jpg", "Granite towers above a glacial lake at first light", 1250, 2000),
     card: image("journeys/patagonia-unhurried/card.jpg", "A lone rider on the steppe under a vast sky", 1400, 1750),
     transition: "stretch",
     promise:
@@ -220,6 +222,7 @@ export const journeys: Journey[] = [
       { label: "Souk Hunting", pct: 39 },
     ],
     hero: image("journeys/sahara-under-glass/hero.jpg", "Dune ridges in the last amber light"),
+    heroTall: image("journeys/sahara-under-glass/hero-tall.jpg", "Dune ridges in the last amber light", 1250, 2000),
     card: image("journeys/sahara-under-glass/card.jpg", "A glass dome glowing under the desert stars", 1400, 1750),
     transition: "ripple",
     promise:
@@ -309,6 +312,7 @@ export const journeys: Journey[] = [
       { label: "Thermal Rituals", pct: 58 },
     ],
     hero: image("journeys/iceland-edge-of-light/hero.jpg", "Aurora over a black-sand coast and sea stacks"),
+    heroTall: image("journeys/iceland-edge-of-light/hero-tall.jpg", "Aurora over a black-sand coast and sea stacks", 1250, 2000),
     card: image("journeys/iceland-edge-of-light/card.jpg", "Steam rising from a thermal pool at blue hour", 1400, 1750),
     transition: "dissolve",
     promise:

@@ -50,7 +50,7 @@ export function JourneyCard({ journey, index, flip = false }: JourneyCardProps) 
           <TransitionLink
             href={href}
             kind={journey.transition}
-            to={journey.hero.src}
+            to={journey.hero.src} toNarrow={journey.heroTall.src}
             className={styles.imageLink}
             data-cursor="view"
             data-cursor-label="View journey"
@@ -87,7 +87,7 @@ export function JourneyCard({ journey, index, flip = false }: JourneyCardProps) 
             <TransitionLink
               href={href}
               kind={journey.transition}
-              to={journey.hero.src}
+              to={journey.hero.src} toNarrow={journey.heroTall.src}
               className={`t-caps ${styles.link}`}
             >
               Read the itinerary

@@ -29,7 +29,7 @@ export function Destinations() {
                 <TransitionLink
                   href={`/journeys/${j.slug}`}
                   kind={j.transition}
-                  to={j.hero.src}
+                  to={j.hero.src} toNarrow={j.heroTall.src}
                   className={styles.media}
                   data-cursor="view"
                   data-cursor-label="View journey"
@@ -63,7 +63,7 @@ export function Destinations() {
                   <TransitionLink
                     href={`/journeys/${j.slug}`}
                     kind={j.transition}
-                    to={j.hero.src}
+                    to={j.hero.src} toNarrow={j.heroTall.src}
                     className={`t-caps ${styles.link}`}
                   >
                     View the journey

@@ -1,0 +1,36 @@
+.kinetic {
+  overflow: hidden;
+  padding-block: clamp(2rem, 5vw, 4rem);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  will-change: transform;
+}
+
+.name {
+  display: inline-flex;
+  align-items: center;
+  font-size: clamp(4rem, 12vw, 13rem);
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--ink);
+}
+
+.name em {
+  color: var(--gold);
+}
+
+.dot {
+  display: inline-block;
+  width: 0.12em;
+  height: 0.12em;
+  margin: 0 0.35em;
+  border-radius: 50%;
+  background: var(--gold-dim);
+}

@@ -1,5 +1,5 @@
 .section {
-  background: var(--vellum);
+  background: var(--ground);
 }
 
 .inner {
@@ -37,7 +37,7 @@
 
 .copy {
   max-width: 34ch;
-  color: var(--vellum-ink);
+  color: var(--ink-muted);
 }
 
 .note {

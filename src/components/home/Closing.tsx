@@ -10,11 +10,11 @@ export function Closing() {
           Write your own <em>legend.</em>
         </TextReveal>
         <TextReveal as="p" className={`t-lead ${styles.copy}`}>
-          A deposit holds your place. It is refundable for fourteen days, which is longer than it
-          takes to know.
+          Your seat is one tap away. A deposit holds it, refundable for fourteen days, which is
+          longer than it takes to know. The people you will meet are already booking.
         </TextReveal>
         <div className={styles.cta}>
-          <PillLink href="/journeys" kind="dissolve" variant="forest" size="lg" label="Curate Your Journey" />
+          <PillLink href="/journeys" kind="dissolve" variant="forest" size="lg" label="Claim Your Seat" />
         </div>
       </div>
     </section>

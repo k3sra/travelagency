@@ -106,7 +106,10 @@ function parseHref(href: string): ParsedHref | null {
 }
 
 function readHeroUrl(): string | null {
-  const value = document.querySelector(HERO_SELECTOR)?.getAttribute("data-transition-hero");
+  // Pages may carry a landscape and a portrait hero; only the displayed one counts.
+  const all = Array.from(document.querySelectorAll<HTMLElement>(HERO_SELECTOR));
+  const visible = all.find((el) => el.getClientRects().length > 0) ?? all[0];
+  const value = visible?.getAttribute("data-transition-hero");
   return value && value.trim() ? value : null;
 }
 

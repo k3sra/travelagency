@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     template: "%s — Fable Travels",
   },
   description:
-    "Small-group journeys for grown-ups who travel slowly. Kyoto, Patagonia, the Sahara, Iceland. Ten travellers, one host, no itinerary you have seen before.",
+    "Hosted small-group weeks for people who do not do tours. Ten travellers, one host, four departures a year.",
   metadataBase: new URL(SITE_URL),
   openGraph: {
     siteName: "Fable Travels",
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#2D3A3A",
-  colorScheme: "light",
+  themeColor: "#0E1414",
+  colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",

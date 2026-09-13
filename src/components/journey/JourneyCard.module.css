@@ -9,7 +9,7 @@
   gap: clamp(2rem, 5vw, 6rem);
   align-items: center;
   padding-block: clamp(3rem, 7vw, 7rem);
-  border-top: 1px solid var(--vellum-line);
+  border-top: 1px solid var(--line);
 }
 
 /* Magnetic renders the link itself as the grid child. */
@@ -73,7 +73,7 @@
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  color: var(--forest);
+  color: var(--ink);
   border-bottom: 1px solid var(--gold-dim);
   transition: border-color var(--dur-tactile) var(--ease-fable);
 }

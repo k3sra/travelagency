@@ -1,6 +1,6 @@
 .list {
-  --vibe-line: var(--vellum-line);
-  --vibe-ink: var(--vellum-ink);
+  --vibe-line: var(--line);
+  --vibe-ink: var(--ink-muted);
   list-style: none;
   display: flex;
   flex-wrap: wrap;

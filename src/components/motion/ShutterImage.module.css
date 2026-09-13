@@ -1,5 +1,5 @@
 .root {
-  --shutter-plate: var(--vellum);
+  --shutter-plate: var(--ground);
   --shutter-over: 0%;
   --shutter-scale: 1.18;
   --shutter-n: 6;
@@ -18,7 +18,7 @@
 }
 
 .root.plateVellum {
-  --shutter-plate: var(--vellum);
+  --shutter-plate: var(--ground);
 }
 
 .frame {

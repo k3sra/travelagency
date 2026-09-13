@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0 0 auto 0;
   z-index: var(--z-nav);
-  color: var(--forest);
+  color: var(--vellum);
   pointer-events: none;
   transition: color 0.5s var(--ease-fable);
   /* hidden until the page enters; GSAP reveals */

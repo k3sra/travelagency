@@ -8,7 +8,7 @@
 .portrait {
   overflow: hidden;
   border-radius: var(--radius);
-  background: var(--vellum-deep);
+  background: var(--ground-alt);
 }
 
 .img {

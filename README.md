@@ -14,7 +14,7 @@ motion grammar and the 60 fps rules.
 
 ```bash
 npm install
-npm run media     # generate the placeholder media set into public/media (sharp + ffmpeg)
+PEXELS_API_KEY=... npm run media   # refresh the photography and films from Pexels (optional; assets are committed)
 npm run dev       # http://localhost:3000
 ```
 
@@ -45,12 +45,18 @@ the page underneath, and the curtain lifts on the new page.
 
 ## Media
 
-Placeholders are generated locally so the repo works offline. To ship real footage, mirror the paths in
-`public/media` (see the manifest in `ARCHITECTURE.md`) or point `NEXT_PUBLIC_MEDIA_BASE` at a CDN that does.
+All photography is real, licensed from Pexels, and committed under `public/media` with a
+`-blur.jpg` sibling for the blur-to-focus reveal and one shared film grade so the set reads as a
+single roll. Films are licensed Pexels clips streamed as H.264 MP4 (a landscape and a portrait cut
+each); their URLs live in `src/lib/media-remote.json` and their first frames are the posters.
+Credits are listed on `/credits` and in `CREDITS.md`.
 
-- Hero: `hero/hero.webm` (VP8) — add `hero/hero.mp4` (H.264) for the widest reach; the component tries both.
-- Every image has a `-blur.jpg` sibling used by the blur-to-focus reveal (pre-blurred so the reveal stays compositor-only).
-- Portraits are monochrome 600×800.
+- `PEXELS_API_KEY=... npm run media` refreshes everything; `--only=<substring>` limits it,
+  `--force` re-picks, `--regrade` re-applies the grade to the same photographs, `--skip-videos`
+  leaves the films alone. The key is read from the environment and never written to the repo.
+- Point `NEXT_PUBLIC_MEDIA_BASE` at a CDN that mirrors the same paths to serve your own stills.
+- Sub-path hosts (GitHub Pages) set `NEXT_PUBLIC_BASE_PATH` and `STATIC_EXPORT=1`; see
+  `.github/workflows/pages.yml`.
 
 ## Payments
 
