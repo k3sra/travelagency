@@ -313,6 +313,36 @@
 .pay {
   width: 100%;
   margin-top: 2.2rem;
+  padding: 1.4rem;
+  border: 1px solid var(--on-forest-line);
+  border-radius: var(--radius);
+  background: rgba(251, 248, 241, 0.03);
+}
+
+.noFees {
+  margin: 1rem 0 0;
+  font-size: 0.62rem;
+  color: var(--on-forest-muted);
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  padding: 0.3rem 0.55rem;
+  border: 1px solid var(--on-forest-line);
+  border-radius: 3px;
+  font-family: var(--font-caps);
+  font-size: 0.56rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--on-forest-muted);
 }
 
 /* --------------------------------------------------------------------------

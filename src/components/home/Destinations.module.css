@@ -70,6 +70,16 @@
   max-width: 14ch;
 }
 
+.intent {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--gold-dim);
+  border-radius: 999px;
+  color: var(--gold-soft);
+  font-size: 0.62rem;
+}
+
 .promise {
   max-width: 34ch;
   color: var(--ink-muted);

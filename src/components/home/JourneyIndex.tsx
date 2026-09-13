@@ -4,6 +4,8 @@ import { TextReveal } from "@/components/motion/TextReveal";
 import { TransitionLink } from "@/components/gl/TransitionLink";
 import { formatPrice, getJourneys } from "@/lib/journeys";
 import { SpotsTag } from "./SpotsTag";
+import { SeatsBar } from "@/components/ui/SeatsBar";
+import { RiskLine } from "@/components/ui/RiskLine";
 import { Title } from "./Title";
 import styles from "./JourneyIndex.module.css";
 
@@ -52,8 +54,11 @@ export function JourneyIndex() {
                 <h3 className={`t-display ${styles.name}`}>
                   <Title title={j.title} em={j.titleEm} />
                 </h3>
+                <p className={`t-caps ${styles.intent}`}>{j.intent}</p>
                 <p className={`t-caps t-muted ${styles.price}`}>From {formatPrice(j.price.amount)}</p>
+                <RiskLine className={styles.risk} />
                 <SpotsTag n={j.spotsRemaining} className={styles.spots} />
+                <SeatsBar taken={j.groupMax - j.spotsRemaining} total={j.groupMax} className={styles.seats} />
               </TransitionLink>
             </Magnetic>
           </li>

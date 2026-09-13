@@ -70,6 +70,8 @@ export interface Journey {
   durationDays: number;
   groupMax: number;
   spotsRemaining: number;
+  /** One line that says who this departure is for, so nobody has to compare four. */
+  intent: string;
   price: { amount: number; currency: "USD"; deposit: number };
   vibe: VibeTag[];
   hero: MediaImage;

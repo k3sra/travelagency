@@ -14,6 +14,8 @@ import { TextReveal } from "@/components/motion/TextReveal";
 import { formatPrice } from "@/lib/journeys";
 import type { Journey } from "@/lib/types";
 import { Scarcity } from "./Scarcity";
+import { SeatsBar } from "@/components/ui/SeatsBar";
+import { RiskLine } from "@/components/ui/RiskLine";
 import { VibeTags } from "./VibeTags";
 import styles from "./JourneyCard.module.css";
 
@@ -77,13 +79,16 @@ export function JourneyCard({ journey, index, flip = false }: JourneyCardProps) 
           <TextReveal as="h2" id={titleId} className={`t-display ${styles.title}`}>
             <JourneyTitle title={journey.title} titleEm={journey.titleEm} />
           </TextReveal>
+          <p className={`t-caps ${styles.intent}`}>{journey.intent}</p>
           <p className={`t-lead ${styles.subtitle}`}>{journey.subtitle}</p>
           <VibeTags tags={journey.vibe} className={styles.vibes} />
           <p className={`t-caps t-muted ${styles.meta}`}>
             {journey.durationDays} days · group of {journey.groupMax} · from {price}
           </p>
+          <RiskLine />
           <div className={styles.foot}>
             <Scarcity n={journey.spotsRemaining} />
+            <SeatsBar taken={journey.groupMax - journey.spotsRemaining} total={journey.groupMax} />
             <TransitionLink
               href={href}
               kind={journey.transition}

@@ -67,6 +67,20 @@
   font-size: var(--text-h3);
 }
 
+.intent {
+  margin-top: 0.6rem;
+  color: var(--gold-soft);
+  font-size: 0.62rem;
+}
+
+.risk {
+  margin-top: 0.4rem;
+}
+
+.seats {
+  margin-top: 0.7rem;
+}
+
 .price {
   font-size: 0.62rem;
 }

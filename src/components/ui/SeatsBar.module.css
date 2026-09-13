@@ -1,0 +1,23 @@
+.root {
+  display: inline-grid;
+  gap: 0.45rem;
+  min-width: 9rem;
+}
+
+.label {
+  font-size: 0.62rem;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.track {
+  display: block;
+  height: 1px;
+  background: var(--line);
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  background: var(--gold);
+}

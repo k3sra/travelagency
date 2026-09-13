@@ -1,5 +1,6 @@
 import { formatPrice } from "@/lib/journeys";
 import type { Journey } from "@/lib/types";
+import { RiskLine } from "@/components/ui/RiskLine";
 import styles from "./Inclusions.module.css";
 
 export interface InclusionsProps {
@@ -37,6 +38,7 @@ export function Inclusions({ journey }: InclusionsProps) {
           <p className={`t-body t-muted ${styles.deposit}`}>
             Deposit {deposit} holds your place · balance 60 days before departure
           </p>
+          <RiskLine />
         </div>
       </div>
     </section>

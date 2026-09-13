@@ -39,6 +39,8 @@ import { prefersReducedMotion, useReducedMotion } from "@/lib/useReducedMotion";
 import { Padlock } from "./Padlock";
 import { PaymentButtons } from "./PaymentButtons";
 import { TrustMarkers } from "./TrustMarkers";
+import { HoldTimer } from "./HoldTimer";
+import { SeatsBar } from "@/components/ui/SeatsBar";
 import styles from "./BookingDrawer.module.css";
 
 type Lifecycle = "closed" | "open" | "closing";
@@ -445,6 +447,10 @@ export function BookingDrawer() {
                 [ {journey.spotsRemaining} {journey.spotsRemaining === 1 ? "Spot" : "Spots"}{" "}
                 Remaining ]
               </p>
+              <div data-rise>
+                <SeatsBar taken={journey.groupMax - journey.spotsRemaining} total={journey.groupMax} />
+                {open ? <HoldTimer key={journey.slug} /> : null}
+              </div>
 
               <dl className={styles.terms} data-rise>
                 <div className={styles.term}>
@@ -462,6 +468,9 @@ export function BookingDrawer() {
                   </dd>
                 </div>
               </dl>
+              <p className={`t-caps ${styles.noFees}`} data-rise>
+                No booking fees. Nothing added at the end. The price is the price.
+              </p>
 
               <form ref={formRef} className={styles.form} onSubmit={onSubmit}>
                 <div className={styles.fields} data-rise>
@@ -507,6 +516,13 @@ export function BookingDrawer() {
                     disabled={busy}
                     onPay={(method) => void handlePay(method)}
                   />
+                  <ul className={styles.cards} aria-label="Accepted cards">
+                    {["Visa", "Mastercard", "Amex", "Apple Pay", "Google Pay"].map((c) => (
+                      <li key={c} className={styles.card}>
+                        {c}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </form>
 

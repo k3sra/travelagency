@@ -33,6 +33,7 @@ export const journeys: Journey[] = [
     durationDays: 9,
     groupMax: 10,
     spotsRemaining: 2,
+    intent: "Best for going solo",
     price: { amount: 7400, currency: "USD", deposit: 900 },
     vibe: [
       { label: "Cultural Deep Dive", pct: 85 },
@@ -124,6 +125,7 @@ export const journeys: Journey[] = [
     durationDays: 11,
     groupMax: 12,
     spotsRemaining: 4,
+    intent: "Best first Fable",
     price: { amount: 9200, currency: "USD", deposit: 1100 },
     vibe: [
       { label: "Wild Expedition", pct: 78 },
@@ -215,6 +217,7 @@ export const journeys: Journey[] = [
     durationDays: 7,
     groupMax: 8,
     spotsRemaining: 1,
+    intent: "Most after-dark",
     price: { amount: 5900, currency: "USD", deposit: 700 },
     vibe: [
       { label: "Slow Luxury", pct: 91 },
@@ -305,6 +308,7 @@ export const journeys: Journey[] = [
     durationDays: 8,
     groupMax: 10,
     spotsRemaining: 5,
+    intent: "Best for a milestone birthday",
     price: { amount: 6800, currency: "USD", deposit: 800 },
     vibe: [
       { label: "Elemental", pct: 82 },

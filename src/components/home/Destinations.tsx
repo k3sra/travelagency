@@ -6,6 +6,8 @@ import { TransitionLink } from "@/components/gl/TransitionLink";
 import { featuredSlugs, formatPrice, getJourney } from "@/lib/journeys";
 import { getFilm } from "@/lib/media";
 import { SpotsTag } from "./SpotsTag";
+import { SeatsBar } from "@/components/ui/SeatsBar";
+import { RiskLine } from "@/components/ui/RiskLine";
 import { Title } from "./Title";
 import styles from "./Destinations.module.css";
 
@@ -52,6 +54,7 @@ export function Destinations() {
                 <p className={`t-caps ${styles.meta}`}>
                   Chapter {NUMERALS[i]} · {j.country} · {j.season}
                 </p>
+                <p className={`t-caps ${styles.intent}`}>{j.intent}</p>
                 <TextReveal as="h3" className={`t-display ${styles.name}`}>
                   <Title title={j.title} em={j.titleEm} />
                 </TextReveal>
@@ -61,8 +64,10 @@ export function Destinations() {
                 <p className={`t-caps t-muted ${styles.facts}`}>
                   {j.durationDays} days · Group of {j.groupMax} · From {formatPrice(j.price.amount)}
                 </p>
+                <RiskLine />
                 <div className={styles.foot}>
                   <SpotsTag n={j.spotsRemaining} />
+                  <SeatsBar taken={j.groupMax - j.spotsRemaining} total={j.groupMax} />
                   <TransitionLink
                     href={`/journeys/${j.slug}`}
                     kind={j.transition}
