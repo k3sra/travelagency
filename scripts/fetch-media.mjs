@@ -35,50 +35,48 @@ const FRAMES = {
   portrait: { w: 600, h: 800, orientation: "portrait" },
 };
 
-/**
- * rel → { frame, q: Pexels queries, ov: Openverse queries }. Every frame has
- * people in it, mid-moment. Pexels is asked first for the bright villa, boat
- * and beach-club frames; Openverse (Creative Commons, mostly Flickr) is asked
- * first for the candid moments strip, where a phone-shot picture is the point.
- */
+/** rel → { frame, q: Pexels queries }. People in every frame, mid-moment, bright. */
 const IMAGES = {
-  "journeys/bali-in-full-colour/card.jpg": { frame: "card", q: ["young adults pool party friends laughing", "friends in pool sunset drinks adults", "group of friends infinity pool tropical"], ov: [] },
-  "journeys/bali-in-full-colour/chapter-01.jpg": { frame: "wide", q: ["friends night pool party lights adults", "friends pool evening party tropical villa", "friends swimming pool night laughing"], ov: [] },
-  "journeys/bali-in-full-colour/chapter-02.jpg": { frame: "wide", q: ["friends jumping off boat blue water","friends jumping boat bali","boat trip friends laughing"], ov: ["friends jumping off boat","boat trip friends jumping"] },
-  "journeys/bali-in-full-colour/chapter-03.jpg": { frame: "wide", q: ["friends scooter bali sunset","friends riding scooters beach road","scooter friends tropical"], ov: ["friends scooters bali","scooter trip friends"] },
-  "journeys/bali-in-full-colour/chapter-04.jpg": { frame: "wide", q: ["white water rafting friends laughing","rafting group jungle river","friends rafting splash"], ov: ["rafting friends laughing","white water rafting group"] },
-  "journeys/bali-in-full-colour/chapter-05.jpg": { frame: "wide", q: ["beach club friends dancing sunset","friends dancing beach sunset drinks","friends party beach sunset"], ov: ["beach party friends sunset dancing","friends dancing beach"] },
+  "trips/bali/card.jpg": { frame: "card", q: ["friends pool party villa tropical laughing","group friends infinity pool bali","friends jumping into pool tropical"] },
+  "trips/bali/chapter-01.jpg": { frame: "wide", q: ["friends villa pool party night lights","friends swimming pool night party","group friends pool evening drinks"] },
+  "trips/bali/chapter-02.jpg": { frame: "wide", q: ["friends jumping off boat blue water","boat trip friends laughing tropical","friends boat party sea"] },
+  "trips/bali/chapter-03.jpg": { frame: "wide", q: ["friends scooter tropical road sunset","friends riding scooters beach road","scooter friends laughing"] },
+  "trips/bali/chapter-04.jpg": { frame: "wide", q: ["white water rafting friends laughing","rafting group jungle river splash","friends rafting"] },
+  "trips/bali/chapter-05.jpg": { frame: "wide", q: ["beach club friends dancing sunset","friends party beach sunset drinks","friends dancing beach sunset"] },
 
-  "journeys/mykonos-after-dark/card.jpg": { frame: "card", q: ["friends toasting cocktails pool sunset", "friends drinks pool sunset laughing", "women cocktails poolside sunset"], ov: ["mykonos friends pool", "friends sunset drinks greece"] },
-  "journeys/mykonos-after-dark/chapter-01.jpg": { frame: "wide", q: ["friends sunset drinks terrace sea greece", "friends rooftop sunset sea toast", "friends pool sunset sea laughing"], ov: ["mykonos villa friends", "greece friends pool sunset"] },
-  "journeys/mykonos-after-dark/chapter-02.jpg": { frame: "wide", q: ["friends jumping off yacht","friends yacht party greece","friends yacht swimming"], ov: ["friends jumping off yacht","yacht friends greece"] },
-  "journeys/mykonos-after-dark/chapter-03.jpg": { frame: "wide", q: ["friends quad bikes beach","friends atv dirt road island","quad bike friends laughing"], ov: ["quad bikes friends mykonos","atv friends island"] },
-  "journeys/mykonos-after-dark/chapter-04.jpg": { frame: "wide", q: ["friends dancing beach club sunset","beach club party friends","friends party dancing sunset drinks"], ov: ["mykonos beach club party","friends dancing beach club"] },
-  "journeys/mykonos-after-dark/chapter-05.jpg": { frame: "wide", q: ["friends breakfast by the pool laughing", "friends brunch outdoor laughing sunny", "friends breakfast terrace laughing"], ov: ["friends breakfast pool", "brunch friends villa"] },
+  "trips/thailand/card.jpg": { frame: "card", q: ["friends longtail boat thailand laughing","friends boat turquoise water thailand","friends jumping boat thailand"] },
+  "trips/thailand/chapter-01.jpg": { frame: "wide", q: ["friends rooftop bar bangkok night","friends night market bangkok laughing","friends tuk tuk night"] },
+  "trips/thailand/chapter-02.jpg": { frame: "wide", q: ["friends longtail boat thailand","friends snorkeling turquoise water","friends jumping off boat thailand"] },
+  "trips/thailand/chapter-03.jpg": { frame: "wide", q: ["friends beach party thailand night","full moon party friends","friends fire show beach night"] },
+  "trips/thailand/chapter-04.jpg": { frame: "wide", q: ["friends kayaking lagoon thailand","friends kayak turquoise water laughing","kayaking friends tropical"] },
+  "trips/thailand/chapter-05.jpg": { frame: "wide", q: ["friends sunset beach thailand drinks","friends beach sunset laughing","friends beach bar sunset"] },
 
-  "journeys/tulum-slow-heat/card.jpg": { frame: "card", q: ["man jumping into cenote water", "cliff jumping into blue water", "friends jumping into water cave"], ov: [] },
-  "journeys/tulum-slow-heat/chapter-01.jpg": { frame: "wide", q: ["friends pool night tropical lights laughing", "friends night swimming pool party", "friends jungle pool evening"], ov: [] },
-  "journeys/tulum-slow-heat/chapter-02.jpg": { frame: "wide", q: ["people swimming in cenote mexico", "cenote swimmers", "friends cenote jump"], ov: [] },
-  "journeys/tulum-slow-heat/chapter-03.jpg": { frame: "wide", q: ["friends floating lagoon life jackets","friends boat lagoon mexico","friends floating river tropical"], ov: ["sian kaan floating","friends floating lagoon"] },
-  "journeys/tulum-slow-heat/chapter-04.jpg": { frame: "wide", q: ["friends beach bar laughing drinks", "friends beach club dancing day", "friends laughing beach drinks sunny"], ov: ["tulum beach club friends", "friends beach daybed"] },
-  "journeys/tulum-slow-heat/chapter-05.jpg": { frame: "wide", q: ["friends swimming turquoise water laughing","friends in the sea laughing","friends swimming ocean sunset"], ov: ["friends swimming sea laughing","friends in water laughing"] },
+  "trips/cape-town/card.jpg": { frame: "card", q: ["friends mountain summit arms raised ocean view","hikers cheering summit sea","friends hiking summit celebrating"] },
+  "trips/cape-town/chapter-01.jpg": { frame: "wide", q: ["friends terrace sunset drinks ocean","friends rooftop sunset drinks","friends braai sunset laughing"] },
+  "trips/cape-town/chapter-02.jpg": { frame: "wide", q: ["friends hiking summit ocean view arms up","hikers celebrating summit friends","friends mountain top cheering"] },
+  "trips/cape-town/chapter-03.jpg": { frame: "wide", q: ["friends wine tasting laughing vineyard","long table lunch friends outdoor wine","friends vineyard lunch laughing"] },
+  "trips/cape-town/chapter-04.jpg": { frame: "wide", q: ["friends catamaran net sunset","friends sailing catamaran laughing","friends boat sunset ocean laughing"] },
+  "trips/cape-town/chapter-05.jpg": { frame: "wide", q: ["friends beach sunset party dancing","friends beach volleyball sunset","friends running beach sunset"] },
 
-  "journeys/cape-town-two-oceans/card.jpg": { frame: "card", q: ["friends summit arms raised mountain sea","friends mountain top celebrating ocean view","hikers cheering summit coast"], ov: ["table mountain summit friends","friends summit arms up"] },
-  "journeys/cape-town-two-oceans/chapter-01.jpg": { frame: "wide", q: ["friends terrace sunset drinks braai","friends rooftop sunset drinks ocean","friends barbecue sunset friends laughing"], ov: ["camps bay friends sunset","friends braai sunset"] },
-  "journeys/cape-town-two-oceans/chapter-02.jpg": { frame: "wide", q: ["friends celebrating mountain summit ocean view", "hikers arms raised summit sea", "friends hiking lions head cape town"], ov: [] },
-  "journeys/cape-town-two-oceans/chapter-03.jpg": { frame: "wide", q: ["friends long lunch vineyard","friends wine tasting laughing vineyard","long table lunch friends outdoor wine"], ov: ["franschhoek friends wine","wine farm friends lunch"] },
-  "journeys/cape-town-two-oceans/chapter-04.jpg": { frame: "wide", q: ["friends catamaran net sunset","friends sailing catamaran laughing","friends boat sunset ocean laughing"], ov: ["catamaran friends sunset","friends sailing boat laughing"] },
-  "journeys/cape-town-two-oceans/chapter-05.jpg": { frame: "wide", q: ["friends birthday party night villa sparklers","friends celebrating night sparklers","friends party night cake laughing"], ov: ["friends birthday party night","friends sparklers night"] },
+  "trips/rio/card.jpg": { frame: "card", q: ["friends beach rio de janeiro laughing","friends ipanema beach sunset","friends beach party brazil"] },
+  "trips/rio/chapter-01.jpg": { frame: "wide", q: ["friends rooftop pool rio","friends pool party rooftop city view","friends rooftop pool sunset"] },
+  "trips/rio/chapter-02.jpg": { frame: "wide", q: ["friends beach volleyball sunset","friends beach football brazil","friends beach rio playing"] },
+  "trips/rio/chapter-03.jpg": { frame: "wide", q: ["friends samba dancing night party","friends street party night brazil","friends dancing night club colorful"] },
+  "trips/rio/chapter-04.jpg": { frame: "wide", q: ["friends hiking mountain city ocean view","hikers sugarloaf rio view","friends viewpoint city ocean arms up"] },
+  "trips/rio/chapter-05.jpg": { frame: "wide", q: ["friends boat party sunset bay","friends sailing bay sunset laughing","friends boat drinks sunset"] },
 
-  // Moments: real people, mid-trip, caught rather than posed.
-  "moments/m01.jpg": { frame: "card", ov: ["friends jumping off boat", "friends jumping into lake", "jumping into sea friends"], q: ["woman jumping off boat into sea", "friends jumping into sea from yacht"], ovFirst: true },
-  "moments/m02.jpg": { frame: "wide", q: ["friends pool party sunset laughing", "friends swimming pool laughing drinks", "pool party friends jumping"], ov: ["friends pool party sunset"] },
-  "moments/m03.jpg": { frame: "card", ov: ["friends scooter trip laughing", "friends laughing in car road trip", "girls road trip car laughing"], q: ["friends scooter sunset", "candid friends road trip car window"], ovFirst: true },
-  "moments/m04.jpg": { frame: "wide", q: ["friends sailing boat laughing wind", "friends yacht deck laughing", "friends boat trip laughing sea"], ov: ["friends on sailboat laughing"] },
-  "moments/m05.jpg": { frame: "card", q: ["friends beach party night dancing", "friends bonfire beach night laughing", "friends sparklers beach night"], ov: ["friends beach party night"] },
-  "moments/m06.jpg": { frame: "wide", q: ["friends mountain summit arms raised cheering", "hikers celebrating summit friends", "friends top of mountain jumping"], ov: ["hikers celebrating summit arms raised"] },
-  "moments/m07.jpg": { frame: "card", ov: ["friends watching sunset beach", "friends sunset silhouette beach", "sunset friends sitting"], q: ["friends watching sunset beach", "friends sunset silhouette"], ovFirst: true },
-  "moments/m08.jpg": { frame: "wide", q: ["friends dinner party outdoor night laughing wine", "friends toasting wine dinner terrace night", "young friends dinner table night string lights"], ov: ["friends dinner outdoors laughing night"] },
+  "tiles/t01.jpg": { frame: "card", q: ["friends jumping into pool","friends jumping pool party","friends jump pool splash"] },
+  "tiles/t02.jpg": { frame: "wide", q: ["friends pool party sunset laughing","friends swimming pool laughing drinks","pool party friends"] },
+  "tiles/t03.jpg": { frame: "card", q: ["friends scooter laughing","friends scooter sunset","vespa friends laughing"] },
+  "tiles/t04.jpg": { frame: "wide", q: ["friends boat deck laughing sea","friends yacht deck laughing","friends sailing laughing"] },
+  "tiles/t05.jpg": { frame: "card", q: ["friends beach party night dancing","friends sparklers night beach","friends bonfire beach night laughing"] },
+  "tiles/t06.jpg": { frame: "wide", q: ["friends mountain summit cheering arms","hikers celebrating summit friends","friends top of mountain jumping"] },
+  "tiles/t07.jpg": { frame: "card", q: ["friends watching sunset beach","friends sunset silhouette beach","friends sunset hug beach"] },
+  "tiles/t08.jpg": { frame: "wide", q: ["friends dinner party outdoor night laughing wine","friends toasting wine dinner terrace night","young friends dinner table night string lights"] },
+  "tiles/t09.jpg": { frame: "card", q: ["friends hugging laughing beach","friends laughing hug","friends group hug laughing"] },
+  "tiles/t10.jpg": { frame: "wide", q: ["friends dancing club colorful lights","friends dancing party night","friends party dancing laughing"] },
+  "tiles/t11.jpg": { frame: "card", q: ["friends cheers cocktails pool","friends toast drinks sunset","friends cocktails laughing"] },
+  "tiles/t12.jpg": { frame: "wide", q: ["friends running into sea laughing","friends running beach sunset","friends beach running laughing"] },
 };
 
 const PORTRAIT_QUERIES = [
@@ -309,12 +307,12 @@ for (let i = 0; i < targets.length; i++) {
 // Each clip's own frame becomes the poster / hero still, so the WebGL
 // transition lands on the exact frame the film starts from.
 const FILMS = {
-  hero: { q: ["friends jumping into pool together", "friends jumping off boat sea", "pool party friends splash", "friends running into sea"], qTall: ["friends jumping into pool", "friends jumping off boat", "friends pool party", "friends beach running"] },
+  hero: { q: ["friends jumping into pool together", "friends pool party splash", "friends jumping off boat sea", "friends running into sea sunset"], qTall: ["friends jumping into pool", "friends pool party", "friends jumping off boat", "friends beach running"] },
   moments: { q: ["friends pool party", "friends dancing beach club sunset", "friends beach party night", "friends jumping pool"], qTall: ["friends dancing club", "friends pool party", "friends party night"] },
-  "bali-in-full-colour": { q: ["friends jumping into pool splash", "pool party friends splashing", "friends pool float laughing", "friends boat trip tropical jumping"], qTall: ["friends pool tropical", "friends underwater swimming", "friends scooter"] },
-  "mykonos-after-dark": { q: ["friends yacht party dancing", "friends jumping off yacht", "friends yacht swimming sea", "friends dancing beach club sunset"], qTall: ["friends yacht dancing", "friends jumping yacht", "friends yacht party", "friends sunset drinks sea"] },
-  "tulum-slow-heat": { q: ["friends swimming cenote", "cenote swimming people", "friends jumping into water cave", "friends swimming turquoise water"], qTall: ["cenote diving", "friends swimming cenote", "jungle pool"] },
-  "cape-town-two-oceans": { q: ["friends running beach sunset", "friends beach volleyball sunset", "friends beach party dancing sunset", "friends hiking summit ocean cheering"], qTall: ["friends beach sunset", "hikers summit", "friends boat sunset"] },
+  bali: { q: ["friends pool party tropical", "friends jumping into pool villa", "friends boat trip tropical jumping", "bali beach club friends dancing"], qTall: ["friends pool tropical", "friends underwater swimming", "friends scooter"] },
+  thailand: { q: ["friends longtail boat thailand", "friends jumping off boat turquoise", "friends beach party night thailand", "friends kayaking turquoise"], qTall: ["friends boat turquoise", "friends beach thailand", "friends snorkeling"] },
+  "cape-town": { q: ["friends running beach sunset", "friends beach party sunset", "friends hiking summit ocean cheering", "friends catamaran sunset"], qTall: ["friends beach sunset", "hikers summit", "friends boat sunset"] },
+  rio: { q: ["friends beach volleyball sunset", "friends dancing party colorful", "friends rooftop pool city", "friends beach brazil"], qTall: ["friends dancing party", "friends beach sunset", "friends rooftop pool"] },
 };
 
 const CUT = (process.argv.find((a) => a.startsWith("--cut=")) ?? "").split("=")[1] || "";
@@ -388,10 +386,10 @@ if (!SKIP_VIDEOS) {
       remote.heroVideo = entry;
       credits["hero/film"] = { id: wide?.id ?? credits["hero/film"]?.id, photographer: entry.wide.credit, url: entry.wide.url, tall: entry.tall?.url };
     } else {
-      if (frame) await writeImage(`journeys/${key}/hero.jpg`, frame, "wide");
-      if (frameTall) await writeImage(`journeys/${key}/hero-tall.jpg`, frameTall, "tall");
+      if (frame) await writeImage(`trips/${key}/hero.jpg`, frame, "wide");
+      if (frameTall) await writeImage(`trips/${key}/hero-tall.jpg`, frameTall, "tall");
       remote.journeys[key] = entry;
-      credits[`journeys/${key}/film`] = { id: wide?.id ?? credits[`journeys/${key}/film`]?.id, photographer: entry.wide.credit, url: entry.wide.url, tall: entry.tall?.url };
+      credits[`trips/${key}/film`] = { id: wide?.id ?? credits[`trips/${key}/film`]?.id, photographer: entry.wide.credit, url: entry.wide.url, tall: entry.tall?.url };
     }
     console.log(`  film ${key.padEnd(24)} ${entry.wide.duration}s ${entry.wide.width}x${entry.wide.height} by ${entry.wide.credit}${tall ? ` · portrait ${tall.duration}s by ${tall.user?.name}` : " · no portrait"}`);
   }
@@ -399,7 +397,3 @@ if (!SKIP_VIDEOS) {
 }
 
 await writeFile(creditsPath, JSON.stringify(credits, null, 2));
-const lines = ["# Photography and film credits", "", "All imagery and film is from Pexels (https://www.pexels.com/license/). Travellers and hosts on the site are fictional personas; the portraits are stock photographs.", ""];
-for (const [rel, c] of Object.entries(credits)) lines.push(`- \`${rel}\` — ${c.photographer || "Pexels"} · ${c.url}`);
-await writeFile(path.join(ROOT, "CREDITS.md"), lines.join("\n") + "\n");
-console.log(`credits: ${Object.keys(credits).length} entries`);

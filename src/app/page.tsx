@@ -1,21 +1,17 @@
 import { Hero } from "@/components/home/Hero";
-import { Manifesto } from "@/components/home/Manifesto";
+import { Hook } from "@/components/home/Hook";
+import { TripsRail } from "@/components/home/TripsRail";
+import { Wall } from "@/components/home/Wall";
+import { HowItWorks } from "@/components/home/HowItWorks";
+import { Faces } from "@/components/home/Faces";
 import { Reel } from "@/components/home/Reel";
-import { Kinetic } from "@/components/home/Kinetic";
-import { Moments } from "@/components/home/Moments";
-import { Destinations } from "@/components/home/Destinations";
-import { JourneyIndex } from "@/components/home/JourneyIndex";
-import { CollectiveTeaser } from "@/components/home/CollectiveTeaser";
-import { StraightAnswers } from "@/components/home/StraightAnswers";
 import { Closing } from "@/components/home/Closing";
 
 const organisation = {
   "@context": "https://schema.org",
   "@type": "TravelAgency",
-  name: "Fable Travels",
-  slogan: "Write your own legend.",
-  description:
-    "Hosted small-group weeks for people who do not do tours. Twelve travellers, one host, one villa, boats and beach clubs, four departures a year.",
+  name: "FABLE",
+  description: "Hosted group weeks in Bali, Thailand, Cape Town and Rio. Twelve people, one villa, boat days, beach clubs and the nights in between.",
   url: "https://k3sra.github.io/travelagency/",
 };
 
@@ -24,14 +20,12 @@ export default function Home() {
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organisation) }} />
       <Hero />
-      <Manifesto />
+      <Hook />
+      <TripsRail />
+      <Wall />
+      <HowItWorks />
+      <Faces />
       <Reel />
-      <Moments />
-      <Kinetic />
-      <Destinations />
-      <JourneyIndex />
-      <CollectiveTeaser />
-      <StraightAnswers />
       <Closing />
     </main>
   );

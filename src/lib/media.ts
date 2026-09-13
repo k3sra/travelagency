@@ -1,14 +1,3 @@
-/**
- * Media manifest.
- *
- * Stills live under MEDIA_BASE ("/media", prefixed with NEXT_PUBLIC_BASE_PATH
- * on sub-path hosts such as GitHub Pages). Films are licensed Pexels clips
- * streamed from Pexels (H.264 MP4), recorded in media-remote.json by
- * `npm run media`, with their own first frames as the posters under hero/ and
- * journeys/<slug>/. Point NEXT_PUBLIC_MEDIA_BASE at a CDN that mirrors the
- * same paths to serve your own stills.
- */
-
 import remote from "./media-remote.json";
 import type { MediaImage } from "./types";
 
@@ -42,9 +31,7 @@ interface RemoteMedia {
 const REMOTE = remote as unknown as RemoteMedia;
 
 export const HERO_FILM: Film | null = REMOTE.heroVideo ?? null;
-
 export const MOMENTS_FILM: Film | null = REMOTE.moments ?? null;
-
 export const getFilm = (slug: string): Film | null => REMOTE.journeys?.[slug] ?? null;
 
 export const HERO_POSTER = {
@@ -54,19 +41,6 @@ export const HERO_POSTER = {
   tallBlur: media("hero/poster-tall-blur.jpg"),
 };
 
-export const image = (
-  path: string,
-  alt: string,
-  width = 2000,
-  height = 1250,
-): MediaImage => ({
-  src: media(path),
-  blur: media(path.replace(/\.(jpg|jpeg|png|webp)$/i, "-blur.$1")),
-  alt,
-  width,
-  height,
-});
-
 export const MOMENTS_POSTER = {
   wide: media("moments/film.jpg"),
   wideBlur: media("moments/film-blur.jpg"),
@@ -74,9 +48,21 @@ export const MOMENTS_POSTER = {
   tallBlur: media("moments/film-tall-blur.jpg"),
 };
 
-/** Candid stills of travellers mid-trip, alternating portrait and landscape frames. */
-export const moment = (n: number, alt: string, wide: boolean): MediaImage =>
-  image(`moments/m${String(n).padStart(2, "0")}.jpg`, alt, wide ? 2000 : 1400, wide ? 1250 : 1750);
+export const image = (path: string, alt: string, width = 2000, height = 1250): MediaImage => ({
+  src: media(path),
+  blur: media(path.replace(/\.(jpg|jpeg|png|webp)$/i, "-blur.$1")),
+  alt,
+  width,
+  height,
+});
+
+/** Twelve candid tiles for marquees and walls; odd numbers are portrait, even are landscape. */
+export const tile = (n: number, alt = ""): MediaImage => {
+  const wide = n % 2 === 0;
+  return image(`tiles/t${String(n).padStart(2, "0")}.jpg`, alt, wide ? 2000 : 1400, wide ? 1250 : 1750);
+};
+
+export const TILES: MediaImage[] = Array.from({ length: 12 }, (_, i) => tile(i + 1));
 
 export const portrait = (n: number) => media(`portraits/p${String(n).padStart(2, "0")}.jpg`);
 export const curatorPortrait = (n: number) => media(`curators/c${String(n).padStart(2, "0")}.jpg`);

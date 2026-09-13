@@ -1,0 +1,19 @@
+.main {
+  padding-top: clamp(7rem, 16vh, 11rem);
+}
+
+.head {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.title {
+  max-width: 10ch;
+}
+
+.list {
+  display: grid;
+  gap: clamp(3rem, 8vw, 7rem);
+  padding-bottom: var(--section);
+}

@@ -1,56 +1,30 @@
 import type { Metadata, Viewport } from "next";
-import { Cinzel, Crimson_Text, Playfair_Display } from "next/font/google";
+import { Manrope, Syne } from "next/font/google";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { Cursor } from "@/components/motion/Cursor";
 import { GLStage } from "@/components/gl/GLStage";
 import { TransitionProvider } from "@/components/gl/TransitionProvider";
 import { BookingProvider } from "@/components/booking/BookingProvider";
+import { Preloader } from "@/components/motion/Preloader";
 import { SiteNav } from "@/components/nav/SiteNav";
 import { Footer } from "@/components/nav/Footer";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const cinzel = Cinzel({
-  variable: "--font-cinzel",
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  display: "swap",
-});
-
-const crimson = Crimson_Text({
-  variable: "--font-crimson",
-  subsets: ["latin"],
-  weight: ["400", "600"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
+const syne = Syne({ variable: "--font-syne", subsets: ["latin"], weight: ["600", "700", "800"], display: "swap" });
+const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"], weight: ["400", "500", "600", "700"], display: "swap" });
 
 const SITE_URL = "https://k3sra.github.io/travelagency";
 
 export const metadata: Metadata = {
-  title: {
-    default: "Fable Travels — Write your own legend.",
-    template: "%s — Fable Travels",
-  },
-  description:
-    "Hosted small-group weeks for people who do not do tours. Twelve travellers, one villa, one host, four departures a year.",
+  title: { default: "FABLE — The best week of your year", template: "%s — FABLE" },
+  description: "Hosted group weeks in Bali, Thailand, Cape Town and Rio. Twelve people, one villa, boat days, beach clubs and the nights in between.",
   metadataBase: new URL(SITE_URL),
-  openGraph: {
-    siteName: "Fable Travels",
-    type: "website",
-  },
+  openGraph: { siteName: "FABLE", type: "website" },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0E1414",
-  colorScheme: "dark",
+  themeColor: "#ffffff",
+  colorScheme: "light",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -58,11 +32,12 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${playfair.variable} ${cinzel.variable} ${crimson.variable}`}>
-      <body>
+    <html lang="en" className={`${syne.variable} ${manrope.variable}`}>
+      <body data-custom-cursor="on">
         <SmoothScroll>
           <TransitionProvider>
             <BookingProvider>
+              <Preloader />
               <SiteNav />
               {children}
               <Footer />

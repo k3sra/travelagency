@@ -1,13 +1,13 @@
 {
   "heroVideo": {
     "wide": {
-      "hd": "https://videos.pexels.com/video-files/9974882/9974882-hd_1366_720_25fps.mp4",
-      "sd": "https://videos.pexels.com/video-files/9974882/9974882-sd_960_506_25fps.mp4",
-      "width": 1366,
-      "height": 720,
-      "duration": 17,
-      "url": "https://www.pexels.com/video/a-man-riding-a-floater-9974882/",
-      "credit": "Ron Lach"
+      "hd": "https://videos.pexels.com/video-files/9872566/9872566-hd_1920_1080_24fps.mp4",
+      "sd": "https://videos.pexels.com/video-files/9872566/9872566-hd_1280_720_24fps.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration": 11,
+      "url": "https://www.pexels.com/video/women-sitting-on-side-of-a-pool-9872566/",
+      "credit": "KoolShooters"
     },
     "tall": {
       "hd": "https://videos.pexels.com/video-files/9872704/9872704-hd_1080_1920_24fps.mp4",
@@ -21,13 +21,13 @@
   },
   "moments": {
     "wide": {
-      "hd": "https://videos.pexels.com/video-files/9872853/9872853-hd_1920_1080_25fps.mp4",
-      "sd": "https://videos.pexels.com/video-files/9872853/9872853-hd_1280_720_25fps.mp4",
+      "hd": "https://videos.pexels.com/video-files/5102769/5102769-hd_1920_1080_30fps.mp4",
+      "sd": "https://videos.pexels.com/video-files/5102769/5102769-hd_1280_720_30fps.mp4",
       "width": 1920,
       "height": 1080,
-      "duration": 8,
-      "url": "https://www.pexels.com/video/an-underwater-footage-of-women-sitting-on-a-poolside-while-throwing-an-inflatable-balls-9872853/",
-      "credit": "KoolShooters"
+      "duration": 16,
+      "url": "https://www.pexels.com/video/women-having-fun-splashing-water-5102769/",
+      "credit": "Gustavo Fring"
     },
     "tall": {
       "hd": "https://videos.pexels.com/video-files/7722385/7722385-hd_1080_1920_25fps.mp4",
@@ -40,15 +40,15 @@
     }
   },
   "journeys": {
-    "bali-in-full-colour": {
+    "bali": {
       "wide": {
-        "hd": "https://videos.pexels.com/video-files/5933318/5933318-hd_1920_1080_30fps.mp4",
-        "sd": "https://videos.pexels.com/video-files/5933318/5933318-hd_1280_720_60fps.mp4",
+        "hd": "https://videos.pexels.com/video-files/9872864/9872864-hd_1920_1080_25fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/9872864/9872864-hd_1280_720_25fps.mp4",
         "width": 1920,
         "height": 1080,
-        "duration": 25,
-        "url": "https://www.pexels.com/video/two-girls-swimming-on-a-pool-5933318/",
-        "credit": "Anna Shvets"
+        "duration": 14,
+        "url": "https://www.pexels.com/video/a-woman-sitting-on-a-floater-while-playing-water-gun-9872864/",
+        "credit": "KoolShooters"
       },
       "tall": {
         "hd": "https://videos.pexels.com/video-files/7293549/7293549-hd_1080_1920_30fps.mp4",
@@ -60,54 +60,34 @@
         "credit": "Kindel Media"
       }
     },
-    "mykonos-after-dark": {
+    "thailand": {
       "wide": {
-        "hd": "https://videos.pexels.com/video-files/7885037/7885037-hd_1920_1080_25fps.mp4",
-        "sd": "https://videos.pexels.com/video-files/7885037/7885037-hd_1280_720_25fps.mp4",
+        "hd": "https://videos.pexels.com/video-files/35888269/15221505_1920_1080_24fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/35888269/15221503_1280_720_24fps.mp4",
         "width": 1920,
         "height": 1080,
-        "duration": 13,
-        "url": "https://www.pexels.com/video/people-having-a-good-time-7885037/",
-        "credit": "Kampus Production"
+        "duration": 12,
+        "url": "https://www.pexels.com/video/traditional-longtail-boat-on-krabi-coast-35888269/",
+        "credit": "Pete Miller Portraits"
       },
       "tall": {
-        "hd": "https://videos.pexels.com/video-files/8039127/8039127-hd_720_1366_25fps.mp4",
-        "sd": "https://videos.pexels.com/video-files/8039127/8039127-sd_506_960_25fps.mp4",
-        "width": 720,
-        "height": 1366,
-        "duration": 15,
-        "url": "https://www.pexels.com/video/a-couple-dancing-together-8039127/",
-        "credit": "ANTONI SHKRABA production"
-      }
-    },
-    "tulum-slow-heat": {
-      "wide": {
-        "hd": "https://videos.pexels.com/video-files/17259130/17259130-hd_1920_1080_60fps.mp4",
-        "sd": "https://videos.pexels.com/video-files/17259130/17259130-hd_1280_720_60fps.mp4",
-        "width": 1920,
-        "height": 1080,
-        "duration": 34,
-        "url": "https://www.pexels.com/video/people-swimming-in-a-waterfall-in-the-jungle-17259130/",
-        "credit": "Serg Alesenko"
-      },
-      "tall": {
-        "hd": "https://videos.pexels.com/video-files/32313712/13781758_1080_1920_60fps.mp4",
-        "sd": "https://videos.pexels.com/video-files/32313712/13781753_720_1280_60fps.mp4",
+        "hd": "https://videos.pexels.com/video-files/33093034/14106219_1080_1920_60fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/33093034/14106216_720_1280_60fps.mp4",
         "width": 1080,
         "height": 1920,
-        "duration": 9,
-        "url": "https://www.pexels.com/video/underwater-adventure-scuba-divers-exploring-32313712/",
-        "credit": "JUN HO LEE"
+        "duration": 8,
+        "url": "https://www.pexels.com/video/drone-footage-of-a-sailboat-in-clear-waters-33093034/",
+        "credit": "Kenan Turguç"
       }
     },
-    "cape-town-two-oceans": {
+    "cape-town": {
       "wide": {
-        "hd": "https://videos.pexels.com/video-files/10494881/10494881-hd_1366_720_25fps.mp4",
-        "sd": "https://videos.pexels.com/video-files/10494881/10494881-sd_960_506_25fps.mp4",
+        "hd": "https://videos.pexels.com/video-files/10495030/10495030-hd_1366_720_25fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/10495030/10495030-sd_960_506_25fps.mp4",
         "width": 1366,
         "height": 720,
-        "duration": 10,
-        "url": "https://www.pexels.com/video/friends-bonding-together-and-swimming-in-the-beach-10494881/",
+        "duration": 12,
+        "url": "https://www.pexels.com/video/man-and-women-running-in-the-beach-10495030/",
         "credit": "Ron Lach"
       },
       "tall": {
@@ -118,6 +98,26 @@
         "duration": 12,
         "url": "https://www.pexels.com/video/silhouettes-of-young-people-enjoying-sunset-at-the-beach-8695010/",
         "credit": "Yaroslav Shuraev"
+      }
+    },
+    "rio": {
+      "wide": {
+        "hd": "https://videos.pexels.com/video-files/38121330/16185605_1920_1080_24fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/38121330/16185604_1280_720_24fps.mp4",
+        "width": 1920,
+        "height": 1080,
+        "duration": 24,
+        "url": "https://www.pexels.com/video/exciting-beach-volleyball-match-on-sunny-day-38121330/",
+        "credit": "Santiago Balbuena"
+      },
+      "tall": {
+        "hd": "https://videos.pexels.com/video-files/6111521/6111521-hd_1080_1920_24fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/6111521/6111521-hd_720_1280_24fps.mp4",
+        "width": 1080,
+        "height": 1920,
+        "duration": 10,
+        "url": "https://www.pexels.com/video/women-dancing-while-holding-balloons-6111521/",
+        "credit": "Julia Larson"
       }
     }
   }
