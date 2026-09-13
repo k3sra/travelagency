@@ -35,64 +35,58 @@ const FRAMES = {
   portrait: { w: 600, h: 800, orientation: "portrait" },
 };
 
-/** rel → { frame, queries (in order of preference) } */
+/**
+ * rel → { frame, ov: Openverse queries, q: Pexels queries }. Every frame has a
+ * person in it. Openverse (Creative Commons photographs, mostly Flickr) is
+ * tried first because that is where the unposed, phone-shot, wind-in-the-hair
+ * pictures live; Pexels is the fallback.
+ */
 const IMAGES = {
-  "journeys/kyoto-in-silence/hero.jpg": { frame: "wide", q: ["kyoto moss garden temple", "kyoto zen garden autumn", "kyoto temple mist"] },
-  "journeys/kyoto-in-silence/hero-tall.jpg": { frame: "tall", q: ["kyoto temple autumn maple", "kyoto torii path", "japanese garden stone lantern"] },
-  "journeys/kyoto-in-silence/card.jpg": { frame: "card", q: ["gion kyoto night lantern street", "kyoto alley night lanterns", "japan lantern night street"] },
-  "journeys/kyoto-in-silence/chapter-01.jpg": { frame: "wide", q: ["women colorful kimono kyoto street", "kimono women walking kyoto temple", "kyoto lanterns night shrine"] },
-  "journeys/kyoto-in-silence/chapter-02.jpg": { frame: "wide", q: ["moss garden kyoto", "japanese moss temple garden", "zen garden moss stone"] },
-  "journeys/kyoto-in-silence/chapter-03.jpg": { frame: "wide", q: ["friends izakaya laughing japan", "japanese tea ceremony hands", "matcha tea ceremony bowl"] },
-  "journeys/kyoto-in-silence/chapter-04.jpg": { frame: "wide", q: ["japan shrine lanterns stairs forest", "kifune shrine lanterns", "kyoto shrine stone stairs lanterns"] },
-  "journeys/kyoto-in-silence/chapter-05.jpg": { frame: "wide", q: ["arashiyama bamboo grove", "bamboo forest kyoto path", "bamboo forest morning light"] },
+  "journeys/kyoto-in-silence/card.jpg": { frame: "card", ov: ["friends kimono kyoto laughing", "kyoto friends night lanterns", "yukata friends kyoto"], q: ["friends kimono kyoto walking", "tourists yukata kyoto night"] },
+  "journeys/kyoto-in-silence/chapter-01.jpg": { frame: "wide", ov: ["gion night friends walking", "kyoto night street people umbrella", "pontocho night people"], q: ["kyoto street night people walking lanterns", "friends kimono kyoto night"] },
+  "journeys/kyoto-in-silence/chapter-02.jpg": { frame: "wide", ov: ["kyoto temple visitors moss garden", "japan temple garden people walking", "kyoto garden woman walking"], q: ["woman walking japanese garden temple", "kyoto temple visitors"] },
+  "journeys/kyoto-in-silence/chapter-03.jpg": { frame: "wide", ov: ["tea ceremony friends japan", "matcha tea ceremony guests", "izakaya friends laughing"], q: ["friends izakaya laughing japan", "japanese tea ceremony guests"] },
+  "journeys/kyoto-in-silence/chapter-04.jpg": { frame: "wide", ov: ["kurama hike friends", "hiking kyoto mountains friends", "japan forest shrine hikers"], q: ["friends hiking forest shrine japan", "hikers stone stairs forest japan"] },
+  "journeys/kyoto-in-silence/chapter-05.jpg": { frame: "wide", ov: ["arashiyama bamboo people walking", "bamboo forest friends walking", "bamboo grove tourists"], q: ["people walking bamboo forest kyoto", "friends bamboo forest"] },
 
-  "journeys/patagonia-unhurried/hero.jpg": { frame: "wide", q: ["torres del paine sunrise", "patagonia mountains lake sunrise", "torres del paine lake"] },
-  "journeys/patagonia-unhurried/hero-tall.jpg": { frame: "tall", q: ["torres del paine", "patagonia mountain peak", "fitz roy mountain"] },
-  "journeys/patagonia-unhurried/card.jpg": { frame: "card", q: ["hikers summit celebration mountains", "friends hiking mountain lake", "gaucho horse patagonia"] },
-  "journeys/patagonia-unhurried/chapter-01.jpg": { frame: "wide", q: ["torres del paine turquoise lake", "patagonia lake mountains", "cuernos del paine"] },
-  "journeys/patagonia-unhurried/chapter-02.jpg": { frame: "wide", q: ["grey glacier patagonia", "glacier wall blue ice patagonia", "perito moreno glacier"] },
-  "journeys/patagonia-unhurried/chapter-03.jpg": { frame: "wide", q: ["friends campfire mountains night laughing", "friends hiking laughing mountains", "horses patagonia steppe"] },
-  "journeys/patagonia-unhurried/chapter-04.jpg": { frame: "wide", q: ["fitz roy sunrise", "fitz roy laguna", "el chalten mountains"] },
-  "journeys/patagonia-unhurried/chapter-05.jpg": { frame: "wide", q: ["patagonia road mountains", "empty road mountains patagonia", "ruta 40 patagonia"] },
+  "journeys/patagonia-unhurried/card.jpg": { frame: "card", ov: ["torres del paine hikers laughing", "patagonia hikers friends", "trekking friends patagonia"], q: ["hikers summit celebration mountains", "friends hiking mountain lake"] },
+  "journeys/patagonia-unhurried/chapter-01.jpg": { frame: "wide", ov: ["torres del paine trekking group", "patagonia hikers lake", "w trek hikers"], q: ["friends hiking patagonia lake", "hikers torres del paine"] },
+  "journeys/patagonia-unhurried/chapter-02.jpg": { frame: "wide", ov: ["glacier hike group patagonia", "perito moreno trekking people", "ice trekking friends"], q: ["people glacier trekking ice", "friends glacier hike"] },
+  "journeys/patagonia-unhurried/chapter-03.jpg": { frame: "wide", ov: ["friends campfire mountains night", "asado friends patagonia", "estancia friends"], q: ["friends campfire mountains night laughing", "friends bonfire night mountains"] },
+  "journeys/patagonia-unhurried/chapter-04.jpg": { frame: "wide", ov: ["fitz roy hikers sunrise", "el chalten trekking friends", "laguna de los tres hikers"], q: ["hikers mountain sunrise friends", "friends hiking sunrise mountains"] },
+  "journeys/patagonia-unhurried/chapter-05.jpg": { frame: "wide", ov: ["road trip friends patagonia car", "friends van road mountains", "ruta 40 friends car"], q: ["friends road trip mountains van", "friends car window mountains"] },
 
-  "journeys/sahara-under-glass/hero.jpg": { frame: "wide", q: ["sahara dunes sunset morocco", "erg chebbi dunes", "desert dunes golden light"] },
-  "journeys/sahara-under-glass/hero-tall.jpg": { frame: "tall", q: ["sahara dunes morocco", "desert dune ridge", "sand dunes sunset"] },
-  "journeys/sahara-under-glass/card.jpg": { frame: "card", q: ["desert camp night stars morocco", "sahara camp milky way", "desert tent stars night"] },
-  "journeys/sahara-under-glass/chapter-01.jpg": { frame: "wide", q: ["friends rooftop dinner marrakech sunset", "rooftop dinner friends night lights", "riad courtyard marrakech"] },
-  "journeys/sahara-under-glass/chapter-02.jpg": { frame: "wide", q: ["atlas mountains road morocco", "tizi n tichka", "morocco mountain pass road"] },
-  "journeys/sahara-under-glass/chapter-03.jpg": { frame: "wide", q: ["kasbah palm oasis morocco", "skoura palm grove", "ait benhaddou kasbah"] },
-  "journeys/sahara-under-glass/chapter-04.jpg": { frame: "wide", q: ["friends desert camp fire night", "desert camp dinner lanterns night friends", "sahara night stars milky way"] },
-  "journeys/sahara-under-glass/chapter-05.jpg": { frame: "wide", q: ["sahara sunrise dunes", "desert sunrise sand dunes", "erg chebbi sunrise"] },
+  "journeys/sahara-under-glass/card.jpg": { frame: "card", ov: ["desert camp friends night morocco", "sahara camp friends fire", "merzouga camp friends"], q: ["friends desert camp night fire", "desert camp friends night"] },
+  "journeys/sahara-under-glass/chapter-01.jpg": { frame: "wide", ov: ["marrakech rooftop friends sunset", "morocco rooftop dinner friends", "marrakech friends terrace"], q: ["friends rooftop dinner marrakech sunset", "friends rooftop terrace evening"] },
+  "journeys/sahara-under-glass/chapter-02.jpg": { frame: "wide", ov: ["atlas mountains road trip friends", "morocco road trip friends car", "friends 4x4 morocco"], q: ["friends road trip morocco mountains", "friends car desert road"] },
+  "journeys/sahara-under-glass/chapter-03.jpg": { frame: "wide", ov: ["morocco oasis friends walking", "kasbah friends morocco", "ait benhaddou friends"], q: ["friends walking kasbah morocco", "friends palm oasis"] },
+  "journeys/sahara-under-glass/chapter-04.jpg": { frame: "wide", ov: ["sahara campfire friends night", "desert campfire friends stars", "bedouin camp friends fire"], q: ["friends desert camp fire night", "campfire friends desert night"] },
+  "journeys/sahara-under-glass/chapter-05.jpg": { frame: "wide", ov: ["sahara dunes friends sunrise", "friends running sand dunes", "erg chebbi friends dune"], q: ["friends running sand dunes sunrise", "people walking dunes sunrise"] },
 
-  "journeys/iceland-edge-of-light/hero.jpg": { frame: "wide", q: ["aurora iceland mountain", "northern lights iceland vestrahorn", "aurora borealis iceland"] },
-  "journeys/iceland-edge-of-light/hero-tall.jpg": { frame: "tall", q: ["northern lights iceland", "aurora borealis kirkjufell", "iceland aurora"] },
-  "journeys/iceland-edge-of-light/card.jpg": { frame: "card", q: ["woman hot spring iceland steam", "friends geothermal lagoon iceland", "iceland hot spring steam"] },
-  "journeys/iceland-edge-of-light/chapter-01.jpg": { frame: "wide", q: ["reykjavik harbour night", "reykjavik harbor lights", "reykjavik winter"] },
-  "journeys/iceland-edge-of-light/chapter-02.jpg": { frame: "wide", q: ["reynisfjara black sand beach", "black sand beach basalt columns iceland", "vik iceland beach"] },
-  "journeys/iceland-edge-of-light/chapter-03.jpg": { frame: "wide", q: ["ice cave iceland", "blue ice cave vatnajokull", "glacier cave"] },
-  "journeys/iceland-edge-of-light/chapter-04.jpg": { frame: "wide", q: ["friends hot spring laughing snow", "couple geothermal lagoon iceland", "hot river iceland snow"] },
-  "journeys/iceland-edge-of-light/chapter-05.jpg": { frame: "wide", q: ["jokulsarlon icebergs", "glacier lagoon iceland sunrise", "diamond beach iceland"] },
+  "journeys/iceland-edge-of-light/card.jpg": { frame: "card", ov: ["friends hot spring iceland laughing", "blue lagoon friends", "iceland hot pool friends"], q: ["friends geothermal lagoon iceland", "woman hot spring iceland steam"] },
+  "journeys/iceland-edge-of-light/chapter-01.jpg": { frame: "wide", ov: ["reykjavik friends night bar", "reykjavik nightlife friends", "reykjavik friends winter street"], q: ["friends bar night laughing winter", "friends night city winter laughing"] },
+  "journeys/iceland-edge-of-light/chapter-02.jpg": { frame: "wide", ov: ["reynisfjara friends beach", "iceland black beach people wind", "vik beach friends"], q: ["people black sand beach iceland wind", "friends black sand beach"] },
+  "journeys/iceland-edge-of-light/chapter-03.jpg": { frame: "wide", ov: ["ice cave iceland people", "glacier cave visitors", "vatnajokull ice cave tour"], q: ["people ice cave iceland", "ice cave visitors"] },
+  "journeys/iceland-edge-of-light/chapter-04.jpg": { frame: "wide", ov: ["reykjadalur hot river people", "hot spring friends snow iceland", "iceland hot river bathing"], q: ["friends hot spring laughing snow", "couple geothermal lagoon iceland"] },
+  "journeys/iceland-edge-of-light/chapter-05.jpg": { frame: "wide", ov: ["northern lights friends watching", "aurora people watching iceland", "jokulsarlon friends"], q: ["people watching northern lights", "friends aurora night"] },
+
+  // Moments: real people, mid-trip, caught rather than posed.
+  "moments/m01.jpg": { frame: "card", ov: ["friends jumping off boat", "friends jumping into lake", "jumping into sea friends"], q: ["woman jumping off boat into sea", "friends jumping into sea from yacht"] },
+  "moments/m02.jpg": { frame: "wide", ov: ["friends rooftop party sunset", "friends beer sunset rooftop", "rooftop friends laughing"], q: ["candid friends rooftop sunset drinks", "friends rooftop party sunset"] },
+  "moments/m03.jpg": { frame: "card", ov: ["friends road trip car laughing", "friends convertible road trip", "road trip friends car window"], q: ["candid friends road trip car window", "friends road trip car laughing"] },
+  "moments/m04.jpg": { frame: "wide", ov: ["friends sailing boat laughing", "friends sailboat", "sailing friends wind"], q: ["candid friends sailing boat laughing", "friends yacht deck laughing"] },
+  "moments/m05.jpg": { frame: "card", ov: ["friends campfire beach night", "friends bonfire beach", "beach bonfire party"], q: ["candid friends bonfire beach night", "friends dancing beach night"] },
+  "moments/m06.jpg": { frame: "wide", ov: ["hikers summit celebration", "friends mountain summit jumping", "summit friends arms up"], q: ["candid friends hiking summit", "friends mountain top arms raised"] },
+  "moments/m07.jpg": { frame: "card", ov: ["friends pool villa party", "friends swimming pool sunset", "pool party friends"], q: ["candid friends pool villa", "friends pool sunset laughing"] },
+  "moments/m08.jpg": { frame: "wide", ov: ["friends dinner table night laughing", "friends long table dinner outdoor", "dinner party friends laughing"], q: ["young adults dinner party wine night terrace", "friends clinking glasses dinner table night"] },
 };
-
-// Moments: real people, mid-trip, having the time of their lives.
-const MOMENTS = {
-  "moments/m01.jpg": { frame: "card", q: ["woman jumping off boat into sea", "friends jumping into sea from yacht", "girl jumping into turquoise water boat"] },
-  "moments/m02.jpg": { frame: "wide", q: ["candid friends rooftop sunset drinks", "friends rooftop party sunset", "friends toast sunset rooftop"] },
-  "moments/m03.jpg": { frame: "card", q: ["candid friends road trip car window", "friends road trip car laughing", "woman car window sunset happy"] },
-  "moments/m04.jpg": { frame: "wide", q: ["candid friends sailing boat laughing", "friends yacht deck laughing", "friends boat summer"] },
-  "moments/m05.jpg": { frame: "card", q: ["candid friends bonfire beach night", "friends dancing beach night", "friends bonfire night sparklers"] },
-  "moments/m06.jpg": { frame: "wide", q: ["candid friends hiking summit", "friends mountain top arms raised", "hikers cheering summit"] },
-  "moments/m07.jpg": { frame: "card", q: ["candid friends pool villa", "friends pool sunset laughing", "woman pool sunset"] },
-  "moments/m08.jpg": { frame: "wide", q: ["young adults dinner party wine night terrace", "friends clinking glasses dinner table night", "group of friends toasting wine outdoor night"] },
-};
-Object.assign(IMAGES, MOMENTS);
 
 const PORTRAIT_QUERIES = [
-  "black and white portrait woman", "black and white portrait man beard", "portrait woman natural light", "portrait man moody",
-  "portrait woman smiling monochrome", "portrait man glasses", "portrait woman scarf", "portrait man street",
-  "portrait woman hat", "portrait young man", "portrait older man", "portrait older woman",
-  "portrait woman curly hair", "portrait man profile", "portrait woman braid", "portrait woman laughing",
-  "portrait man hat monochrome", "portrait woman studio", "portrait man window light", "portrait woman confident",
+  "candid portrait woman laughing", "candid portrait man laughing beard", "woman mid laugh portrait", "man laughing candid",
+  "woman laughing wind hair", "man smiling candid street", "woman laughing cafe", "man candid portrait outdoors",
+  "woman laughing hat", "young man laughing candid", "older man laughing candid", "older woman laughing candid",
+  "woman curly hair laughing", "man profile laughing", "woman laughing friends", "woman laughing sunlight",
+  "man hat laughing", "woman candid smile", "man window light candid", "woman confident laughing",
 ];
 
 /* ----------------------------------------------------------------------------
@@ -113,6 +107,47 @@ async function pexels(pathname, params) {
 
 const used = new Set();
 
+/* ----------------------------------------------------------------------------
+   Openverse (Creative Commons; Flickr, Wikimedia and friends)
+   ---------------------------------------------------------------------------- */
+
+const OV_OK = new Set(["by", "by-sa", "cc0", "pdm"]);
+
+async function openverse(q, orientation) {
+  const url = new URL("https://api.openverse.org/v1/images/");
+  url.searchParams.set("q", q);
+  url.searchParams.set("license_type", "commercial");
+  url.searchParams.set("page_size", "20");
+  url.searchParams.set("mature", "false");
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const res = await fetch(url);
+      if (res.status === 429) { await new Promise((r) => setTimeout(r, 5000)); continue; }
+      if (!res.ok) return [];
+      const data = await res.json();
+      return (data.results ?? []).filter((r) => {
+        if (!OV_OK.has(r.license)) return false;
+        if (!r.width || !r.height) return false;
+        if (Math.max(r.width, r.height) < 900) return false;
+        if (r.source === "rawpixel" || r.source === "stocksnap") return false;
+        return orientation === "portrait" ? r.height > r.width : r.width >= r.height;
+      });
+    } catch { await new Promise((r) => setTimeout(r, 2000)); }
+  }
+  return [];
+}
+
+async function findOpenverse(queries, frame) {
+  const { w, h, orientation } = FRAMES[frame];
+  const target = w / h;
+  for (const q of queries) {
+    const cands = (await openverse(q, orientation)).filter((r) => !used.has(`ov${r.id}`));
+    cands.sort((a, b) => Math.abs(a.width / a.height - target) - Math.abs(b.width / b.height - target));
+    if (cands.length) return cands.slice(0, 4).map((r) => ({ provider: "openverse", raw: r }));
+  }
+  return [];
+}
+
 async function findPhoto(queries, frame, { portrait = false } = {}) {
   const { w, h, orientation } = FRAMES[frame];
   for (const q of queries) {
@@ -126,13 +161,18 @@ async function findPhoto(queries, frame, { portrait = false } = {}) {
   return [];
 }
 
-/** Try candidates in order until one downloads. */
+/** Try candidates in order until one downloads. Pexels photos and Openverse wrappers both welcome. */
 async function fetchFirst(cands, width) {
   for (const photo of cands) {
-    const buf = await download(`${photo.src.original}?auto=compress&cs=tinysrgb&w=${width}`);
+    const url = photo.provider === "openverse" ? photo.raw.url : `${photo.src.original}?auto=compress&cs=tinysrgb&w=${width}`;
+    const buf = await download(url);
     if (buf) return { photo, buf };
   }
   return null;
+}
+
+function mark(photo) {
+  used.add(photo.provider === "openverse" ? `ov${photo.raw.id}` : photo.id);
 }
 
 async function download(url) {
@@ -148,11 +188,15 @@ async function download(url) {
 
 async function writeImage(rel, buf, frame, { portrait = false } = {}) {
   const { w, h } = FRAMES[frame];
-  let img = sharp(buf).rotate().resize(w, h, { fit: "cover", position: sharp.strategy.attention });
+  let img = sharp(buf).rotate().resize(w, h, { fit: "cover", position: sharp.strategy.attention, kernel: "lanczos3" });
   if (portrait) img = img.grayscale().tint({ r: 232, g: 224, b: 210 }).linear(1.04, -3);
   else img = grade(img);
   const out = path.join(OUT, rel);
   await mkdir(path.dirname(out), { recursive: true });
+  if (!portrait) {
+    const grain = await sharp({ create: { width: w, height: h, channels: 3, noise: { type: "gaussian", mean: 128, sigma: 9 } } }).jpeg({ quality: 90 }).toBuffer();
+    img = sharp(await img.toBuffer()).composite([{ input: grain, blend: "overlay" }]);
+  }
   const jpg = await img.jpeg({ quality: portrait ? 80 : 82, mozjpeg: true, progressive: true }).toBuffer();
   await writeFile(out, jpg);
   if (!portrait) {
@@ -181,7 +225,11 @@ function grade(img) {
 }
 
 function credit(photo) {
-  return { id: photo.id, photographer: photo.photographer, photographerUrl: photo.photographer_url, url: photo.url, alt: photo.alt };
+  if (photo.provider === "openverse") {
+    const r = photo.raw;
+    return { provider: "openverse", id: r.id, src: r.url, photographer: r.creator || "Unknown", photographerUrl: r.creator_url || r.foreign_landing_url, url: r.foreign_landing_url, alt: r.title, license: r.license.toUpperCase(), licenseUrl: r.license_url };
+  }
+  return { provider: "pexels", id: photo.id, photographer: photo.photographer, photographerUrl: photo.photographer_url, url: photo.url, alt: photo.alt, license: "Pexels" };
 }
 
 /* ----------------------------------------------------------------------------
@@ -190,18 +238,20 @@ function credit(photo) {
 
 const creditsPath = path.join(OUT, "credits.json");
 const credits = existsSync(creditsPath) ? JSON.parse(await readFile(creditsPath, "utf8")) : {};
-for (const c of Object.values(credits)) if (c.id) used.add(c.id);
+for (const c of Object.values(credits)) if (c.id) used.add(c.provider === "openverse" ? `ov${c.id}` : c.id);
 
 // Images
 const FORCE = process.argv.includes("--force");
 const REGRADE = process.argv.includes("--regrade");
+const PEXELS_ONLY = process.argv.includes("--pexels");
 if (REGRADE) {
   for (const [rel, spec] of Object.entries(IMAGES)) {
     if (ONLY && !rel.includes(ONLY)) continue;
     const c = credits[rel];
     if (!c?.id) continue;
     let photo;
-    try { photo = await pexels(`/v1/photos/${c.id}`, {}); } catch { console.log(`  SKIP ${rel} (photo ${c.id} gone)`); continue; }
+    if (c.provider === "openverse") photo = { provider: "openverse", raw: { id: c.id, url: c.src } };
+    else { try { photo = await pexels(`/v1/photos/${c.id}`, {}); } catch { console.log(`  SKIP ${rel} (photo ${c.id} gone)`); continue; } }
     const got = await fetchFirst([photo], 2600);
     if (!got) { console.log(`  SKIP ${rel} (download failed)`); continue; }
     const bytes = await writeImage(rel, got.buf, spec.frame);
@@ -211,12 +261,14 @@ if (REGRADE) {
 for (const [rel, spec] of Object.entries(IMAGES)) {
   if (ONLY && !rel.includes(ONLY)) continue;
   if (!FORCE && existsSync(path.join(OUT, rel)) && credits[rel]) continue;
-  const got = await fetchFirst(await findPhoto(spec.q, spec.frame), 2600);
+  let got = PEXELS_ONLY || !spec.ov ? null : await fetchFirst(await findOpenverse(spec.ov, spec.frame), 2600);
+  if (!got) got = await fetchFirst(await findPhoto(spec.q, spec.frame), 2600);
   if (!got) { console.log(`  MISSING ${rel}`); continue; }
-  used.add(got.photo.id);
+  mark(got.photo);
   const bytes = await writeImage(rel, got.buf, spec.frame);
   credits[rel] = credit(got.photo);
-  console.log(`  ${rel.padEnd(50)} ${(bytes / 1024).toFixed(0).padStart(4)} KB  ${got.photo.photographer} · ${(got.photo.alt || "").slice(0, 50)}`);
+  const c = credits[rel];
+  console.log(`  ${rel.padEnd(50)} ${(bytes / 1024).toFixed(0).padStart(4)} KB  ${c.provider} · ${c.photographer} · ${(c.alt || "").slice(0, 44)}`);
 }
 
 // Portraits (monochrome)
@@ -228,9 +280,9 @@ for (let i = 0; i < targets.length; i++) {
   if (ONLY && !rel.includes(ONLY)) continue;
   if (!FORCE && existsSync(path.join(OUT, rel)) && credits[rel]) continue;
   const q = PORTRAIT_QUERIES[i % PORTRAIT_QUERIES.length];
-  const got = await fetchFirst(await findPhoto([q, "portrait black and white"], "portrait", { portrait: true }), 1200);
+  const got = await fetchFirst(await findPhoto([q, "candid laughing portrait"], "portrait", { portrait: true }), 1200);
   if (!got) { console.log(`  MISSING ${rel}`); continue; }
-  used.add(got.photo.id);
+  mark(got.photo);
   const bytes = await writeImage(rel, got.buf, "portrait", { portrait: true });
   credits[rel] = credit(got.photo);
   console.log(`  ${rel.padEnd(50)} ${(bytes / 1024).toFixed(0).padStart(4)} KB  ${got.photo.photographer}`);
@@ -240,12 +292,12 @@ for (let i = 0; i < targets.length; i++) {
 // Each clip's own frame becomes the poster / hero still, so the WebGL
 // transition lands on the exact frame the film starts from.
 const FILMS = {
-  hero: { q: ["friends jumping off yacht into sea", "friends yacht party champagne sunset", "women jumping into sea boat slow motion", "friends swimming sea boat summer"], qTall: ["friends jumping into sea vertical", "yacht party vertical", "friends beach sunset vertical"] },
-  moments: { q: ["friends rooftop party sunset slow motion", "friends toasting sunset drinks slow motion", "friends dancing sunset", "friends road trip convertible sunset"], qTall: ["friends party sunset vertical", "friends dancing vertical", "friends cheers vertical"] },
-  "kyoto-in-silence": { q: ["kyoto temple night lanterns", "japan temple autumn maple", "kyoto bamboo forest", "japan torii gates"], qTall: ["japan temple vertical", "kyoto vertical", "japan lanterns night vertical"] },
-  "patagonia-unhurried": { q: ["patagonia drone mountains lake", "torres del paine", "glacier drone aerial", "patagonia horses"], qTall: ["mountains lake vertical drone", "glacier vertical", "patagonia vertical"] },
-  "sahara-under-glass": { q: ["sahara dunes drone sunset", "desert dunes aerial golden", "morocco desert camels sunset", "sand dunes wind"], qTall: ["desert dunes vertical", "sahara vertical", "sand dunes vertical drone"] },
-  "iceland-edge-of-light": { q: ["aurora borealis timelapse iceland", "northern lights timelapse", "iceland waterfall drone", "iceland black sand beach drone"], qTall: ["northern lights vertical", "iceland vertical drone", "waterfall vertical"] },
+  hero: { q: ["friends jumping off boat handheld", "friends laughing boat sunset", "friends running into sea sunset", "friends jumping into sea"], qTall: ["friends jumping into sea vertical", "friends beach sunset vertical", "friends boat vertical"] },
+  moments: { q: ["friends dancing bonfire night", "friends laughing campfire night", "friends party rooftop night", "friends dancing sunset"], qTall: ["friends campfire vertical", "friends dancing vertical", "friends party vertical"] },
+  "kyoto-in-silence": { q: ["friends walking kyoto night lanterns", "tourists kimono kyoto walking", "kyoto street night people", "kyoto temple visitors"], qTall: ["kyoto people vertical", "japan lanterns people vertical", "kimono walking vertical"] },
+  "patagonia-unhurried": { q: ["hikers patagonia mountains walking", "friends hiking mountains lake", "hiker glacier walking", "friends trekking mountains"], qTall: ["hiker mountains vertical", "friends hiking vertical", "trekking vertical"] },
+  "sahara-under-glass": { q: ["friends sahara dunes walking sunset", "people walking desert dunes", "camel ride friends desert sunset", "desert camp friends night"], qTall: ["desert dunes people vertical", "sahara walking vertical", "camel desert vertical"] },
+  "iceland-edge-of-light": { q: ["friends watching northern lights", "people hot spring iceland snow", "hikers iceland waterfall", "friends iceland black beach"], qTall: ["northern lights people vertical", "iceland hot spring vertical", "iceland hiker vertical"] },
 };
 
 async function findFilm(queries, orientation) {
