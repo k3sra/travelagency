@@ -19,9 +19,13 @@
   z-index: 2;
   display: grid;
   gap: 1.2rem;
-  max-width: min(30ch, 70vw);
+  width: min(58rem, 72vw);
   text-align: center;
   justify-items: center;
+}
+
+.text {
+  width: 100%;
 }
 
 .text {
@@ -70,7 +74,7 @@
 
 @media (max-width: 899px) {
   .inner {
-    max-width: 92vw;
+    width: 92vw;
   }
   .text {
     font-size: clamp(1.45rem, 6vw, 2rem);

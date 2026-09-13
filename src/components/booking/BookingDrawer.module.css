@@ -2,11 +2,6 @@
   position: fixed;
   inset: 0;
   z-index: var(--z-drawer);
-  pointer-events: none;
-}
-
-.root[data-open="true"] {
-  pointer-events: auto;
 }
 
 .backdrop {

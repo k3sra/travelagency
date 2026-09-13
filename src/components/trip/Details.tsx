@@ -27,7 +27,8 @@ export function Details({ trip }: { trip: Journey }) {
         once: true,
         onEnter: (batch) => {
           gsap.to(batch, { opacity: 1, y: 0, duration: 0.7, ease: "fable", stagger: 0.08 });
-          gsap.to(batch.map((b) => (b as HTMLElement).querySelector("[data-check]")), { strokeDashoffset: 0, duration: 0.6, ease: "fable", stagger: 0.08, delay: 0.15 });
+          const checks = batch.map((b) => (b as HTMLElement).querySelector("[data-check]")).filter(Boolean);
+          if (checks.length) gsap.to(checks, { strokeDashoffset: 0, duration: 0.6, ease: "fable", stagger: 0.08, delay: 0.15 });
         },
       });
     }, el);
