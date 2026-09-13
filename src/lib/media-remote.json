@@ -1,0 +1,124 @@
+{
+  "heroVideo": {
+    "wide": {
+      "hd": "https://videos.pexels.com/video-files/9872566/9872566-hd_1920_1080_24fps.mp4",
+      "sd": "https://videos.pexels.com/video-files/9872566/9872566-hd_1280_720_24fps.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration": 11,
+      "url": "https://www.pexels.com/video/women-sitting-on-side-of-a-pool-9872566/",
+      "credit": "KoolShooters"
+    },
+    "tall": {
+      "hd": "https://videos.pexels.com/video-files/9872704/9872704-hd_1080_1920_24fps.mp4",
+      "sd": "https://videos.pexels.com/video-files/9872704/9872704-hd_720_1280_24fps.mp4",
+      "width": 1080,
+      "height": 1920,
+      "duration": 12,
+      "url": "https://www.pexels.com/video/young-women-dancing-by-the-pool-9872704/",
+      "credit": "KoolShooters"
+    }
+  },
+  "moments": {
+    "wide": {
+      "hd": "https://videos.pexels.com/video-files/5102769/5102769-hd_1920_1080_30fps.mp4",
+      "sd": "https://videos.pexels.com/video-files/5102769/5102769-hd_1280_720_30fps.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration": 16,
+      "url": "https://www.pexels.com/video/women-having-fun-splashing-water-5102769/",
+      "credit": "Gustavo Fring"
+    },
+    "tall": {
+      "hd": "https://videos.pexels.com/video-files/7722385/7722385-hd_1080_1920_25fps.mp4",
+      "sd": "https://videos.pexels.com/video-files/7722385/7722385-hd_720_1280_25fps.mp4",
+      "width": 1080,
+      "height": 1920,
+      "duration": 8,
+      "url": "https://www.pexels.com/video/party-people-dancing-in-a-club-7722385/",
+      "credit": "Alena Darmel"
+    }
+  },
+  "journeys": {
+    "bali": {
+      "wide": {
+        "hd": "https://videos.pexels.com/video-files/9872864/9872864-hd_1920_1080_25fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/9872864/9872864-hd_1280_720_25fps.mp4",
+        "width": 1920,
+        "height": 1080,
+        "duration": 14,
+        "url": "https://www.pexels.com/video/a-woman-sitting-on-a-floater-while-playing-water-gun-9872864/",
+        "credit": "KoolShooters"
+      },
+      "tall": {
+        "hd": "https://videos.pexels.com/video-files/7293549/7293549-hd_1080_1920_30fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/7293549/7293549-hd_720_1280_30fps.mp4",
+        "width": 1080,
+        "height": 1920,
+        "duration": 8,
+        "url": "https://www.pexels.com/video/friends-chatting-in-the-swimming-pool-7293549/",
+        "credit": "Kindel Media"
+      }
+    },
+    "thailand": {
+      "wide": {
+        "hd": "https://videos.pexels.com/video-files/35888269/15221505_1920_1080_24fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/35888269/15221503_1280_720_24fps.mp4",
+        "width": 1920,
+        "height": 1080,
+        "duration": 12,
+        "url": "https://www.pexels.com/video/traditional-longtail-boat-on-krabi-coast-35888269/",
+        "credit": "Pete Miller Portraits"
+      },
+      "tall": {
+        "hd": "https://videos.pexels.com/video-files/33093034/14106219_1080_1920_60fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/33093034/14106216_720_1280_60fps.mp4",
+        "width": 1080,
+        "height": 1920,
+        "duration": 8,
+        "url": "https://www.pexels.com/video/drone-footage-of-a-sailboat-in-clear-waters-33093034/",
+        "credit": "Kenan Turguç"
+      }
+    },
+    "cape-town": {
+      "wide": {
+        "hd": "https://videos.pexels.com/video-files/10495030/10495030-hd_1366_720_25fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/10495030/10495030-sd_960_506_25fps.mp4",
+        "width": 1366,
+        "height": 720,
+        "duration": 12,
+        "url": "https://www.pexels.com/video/man-and-women-running-in-the-beach-10495030/",
+        "credit": "Ron Lach"
+      },
+      "tall": {
+        "hd": "https://videos.pexels.com/video-files/8695010/8695010-hd_720_1366_24fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/8695010/8695010-sd_506_960_24fps.mp4",
+        "width": 720,
+        "height": 1366,
+        "duration": 12,
+        "url": "https://www.pexels.com/video/silhouettes-of-young-people-enjoying-sunset-at-the-beach-8695010/",
+        "credit": "Yaroslav Shuraev"
+      }
+    },
+    "rio": {
+      "wide": {
+        "hd": "https://videos.pexels.com/video-files/38121330/16185605_1920_1080_24fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/38121330/16185604_1280_720_24fps.mp4",
+        "width": 1920,
+        "height": 1080,
+        "duration": 24,
+        "url": "https://www.pexels.com/video/exciting-beach-volleyball-match-on-sunny-day-38121330/",
+        "credit": "Santiago Balbuena"
+      },
+      "tall": {
+        "hd": "https://videos.pexels.com/video-files/6111521/6111521-hd_1080_1920_24fps.mp4",
+        "sd": "https://videos.pexels.com/video-files/6111521/6111521-hd_720_1280_24fps.mp4",
+        "width": 1080,
+        "height": 1920,
+        "duration": 10,
+        "url": "https://www.pexels.com/video/women-dancing-while-holding-balloons-6111521/",
+        "credit": "Julia Larson"
+      }
+    }
+  }
+}

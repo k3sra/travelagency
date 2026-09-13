@@ -1,0 +1,142 @@
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 600px;
+  overflow: hidden;
+  background: var(--night);
+  color: #fff;
+}
+
+.frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  will-change: transform;
+  transform-origin: 50% 40%;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 45%, rgba(0, 0, 0, 0.2) 100%);
+  pointer-events: none;
+}
+
+.copy {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: clamp(3.5rem, 9vh, 6rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 2rem;
+  will-change: transform, opacity;
+}
+
+.text {
+  display: grid;
+  gap: 1rem;
+}
+
+.eyebrow {
+  opacity: 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.title {
+  font-size: min(var(--t-hero), 22vh);
+}
+
+.mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+.line {
+  display: inline-block;
+  transform: translate3d(0, 110%, 0);
+}
+
+.sub {
+  max-width: 34ch;
+  opacity: 0;
+}
+
+.who {
+  max-width: 48ch;
+  color: rgba(255, 255, 255, 0.82);
+  opacity: 0;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  opacity: 0;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.3rem;
+  padding: 0 0.9rem;
+  border-radius: var(--pill);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.chipSun {
+  background: rgba(255, 90, 31, 0.85);
+  border-color: rgba(255, 90, 31, 0.9);
+}
+
+.cta {
+  display: grid;
+  gap: 0.7rem;
+  justify-items: end;
+  opacity: 0;
+}
+
+.spots {
+  color: var(--sun-2);
+}
+
+.pulse {
+  animation: pulse-soft 2.2s ease-in-out infinite;
+}
+
+@media (max-width: 899px) {
+  .copy {
+    grid-template-columns: 1fr;
+    bottom: clamp(3rem, 8vh, 5rem);
+  }
+  .cta {
+    justify-items: stretch;
+  }
+  .cta :global(.btn) {
+    width: 100%;
+  }
+  .spots {
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line {
+    transform: none;
+  }
+  .eyebrow,
+  .sub,
+  .who,
+  .chips,
+  .cta {
+    opacity: 1;
+  }
+}

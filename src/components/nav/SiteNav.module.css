@@ -1,130 +1,194 @@
-.nav {
+.bar {
   position: fixed;
-  inset: 0 0 auto 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: var(--z-nav);
-  color: var(--forest);
-  pointer-events: none;
-  transition: color 0.5s var(--ease-fable);
-  /* hidden until the page enters; GSAP reveals */
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-16px);
-  will-change: transform;
-}
-
-.nav[data-drawer-open] {
-  visibility: hidden !important;
-}
-
-.inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--gutter);
-  padding: clamp(1.1rem, 2.2vw, 1.8rem) var(--gutter);
+  height: 4.5rem;
+  padding-inline: var(--gutter);
+  color: var(--ink);
+  transition: transform 0.5s var(--ease-out), color 0.3s var(--ease-out);
+  pointer-events: none;
 }
 
-.brand,
-.link,
-.cta {
+.bar > * {
   pointer-events: auto;
+}
+
+.bar[data-theme="dark"] {
+  color: #fff;
+}
+
+.bar[data-hidden="true"] {
+  transform: translate3d(0, -100%, 0);
+}
+
+:global(.nav-open) .bar {
+  transform: none;
+  color: #fff;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
+  width: fit-content;
 }
 
 .links {
   display: flex;
+  gap: 1.8rem;
+  justify-self: center;
+}
+
+.link {
+  position: relative;
+  display: inline-flex;
   align-items: center;
-  gap: clamp(1.2rem, 3vw, 3rem);
+  min-height: 44px;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
-.link,
-.cta {
-  font-family: var(--font-caps);
-  font-size: var(--text-caps);
-  letter-spacing: var(--tracking-caps);
-  text-transform: uppercase;
-  position: relative;
-}
-
-.linkLabel {
-  display: inline-block;
-  position: relative;
-  padding-block: 0.4em;
-}
-
-.link .linkLabel::after {
+.link::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0.1em;
-  height: 1px;
+  bottom: 10px;
+  height: 1.5px;
   background: currentColor;
   transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.45s var(--ease-fable);
-}
-
-.link:hover .linkLabel::after,
-.link:focus-visible .linkLabel::after {
-  transform: scaleX(1);
   transform-origin: left;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .cta {
-  padding: 0.85em 1.6em;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  overflow: hidden;
-  isolation: isolate;
+  min-height: 2.7rem;
+  padding: 0 1.2rem;
+  font-size: 0.85rem;
 }
 
-.cta::before {
-  content: "";
-  position: absolute;
+.bar[data-theme="dark"] .cta {
+  background: #fff;
+  border-color: #fff;
+  color: var(--ink);
+}
+
+.bar[data-theme="dark"] .cta:hover {
+  background: var(--sun);
+  border-color: var(--sun);
+  color: #fff;
+}
+
+.menu {
+  display: none;
+  min-height: 2.7rem;
+  padding: 0 1.1rem;
+  border-radius: var(--pill);
+  border: 1.5px solid currentColor;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.overlay {
+  position: fixed;
   inset: 0;
-  background: currentColor;
-  transform: scaleY(0);
-  transform-origin: bottom;
-  transition: transform var(--dur-tactile) var(--ease-fable);
-  z-index: -1;
+  z-index: calc(var(--z-nav) - 1);
+  background: var(--night);
+  color: #fff;
+  clip-path: inset(0 0 100% 0);
+  visibility: hidden;
+  transition: clip-path 0.7s var(--ease-inout), visibility 0s linear 0.7s;
+  overflow: auto;
 }
 
-.cta:hover::before,
-.cta:focus-visible::before {
-  transform: scaleY(1);
+.overlay[data-open="true"] {
+  clip-path: inset(0 0 0 0);
+  visibility: visible;
+  transition: clip-path 0.7s var(--ease-inout), visibility 0s;
 }
 
-.cta:hover .linkLabel,
-.cta:focus-visible .linkLabel {
-  color: var(--vellum);
-  transition: color var(--dur-tactile) var(--ease-fable);
+.overlayInner {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: 6rem var(--gutter) calc(var(--gutter) + env(safe-area-inset-bottom));
+  gap: 2rem;
 }
 
-/* Over a dark plate (hero, forest sections) the chrome turns to vellum. */
-.nav[data-theme="dark"] {
-  color: var(--vellum);
+.tripList {
+  display: grid;
+  gap: 0.1em;
+  align-content: center;
 }
 
-.nav[data-theme="dark"] .cta:hover .linkLabel,
-.nav[data-theme="dark"] .cta:focus-visible .linkLabel {
-  color: var(--forest-ink);
+.mask {
+  overflow: hidden;
 }
 
-.linkLabel,
-.cta {
-  white-space: nowrap;
+.tripLink {
+  display: block;
+  transform: translate3d(0, 110%, 0);
+  will-change: transform;
+  padding-block: 0.04em;
 }
 
-@media (max-width: 720px) {
-  /* Phones: wordmark + Journeys only. The hero and the closing carry the CTA. */
-  .link:not(:first-child),
+.tripLink:hover {
+  color: var(--sun-2);
+}
+
+.overlayFoot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem 1.6rem;
+  align-items: center;
+}
+
+.small {
+  color: var(--on-night-2);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: 899px) {
+  .bar {
+    grid-template-columns: 1fr auto;
+  }
+  .links,
   .cta {
     display: none;
   }
-  .links {
-    gap: 1rem;
+  .menu {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay {
+    transition: none;
+  }
+  .tripLink {
+    transform: none;
   }
 }

@@ -1,0 +1,36 @@
+.plate {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-preloader);
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  color: var(--ink);
+  clip-path: inset(0 0 0 0);
+  will-change: clip-path;
+}
+
+.word {
+  display: flex;
+  gap: 0.02em;
+}
+
+.mask {
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+}
+
+.letter {
+  display: inline-block;
+  transform: translate3d(0, 110%, 0);
+  will-change: transform;
+}
+
+.count {
+  position: absolute;
+  right: var(--gutter);
+  bottom: var(--gutter);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-2);
+}

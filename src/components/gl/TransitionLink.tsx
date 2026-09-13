@@ -27,6 +27,8 @@ export type TransitionLinkProps = LinkProps &
     kind?: TransitionKind;
     /** Texture for the destination page (its hero image). */
     to?: string;
+    /** Portrait texture used instead of `to` on narrow viewports (phones). */
+    toNarrow?: string;
     children: ReactNode;
     ref?: Ref<HTMLAnchorElement>;
     "data-cursor"?: string;
@@ -69,6 +71,7 @@ function toOrigin(clientX: number, clientY: number): TransitionOrigin {
 export function TransitionLink({
   kind = "dissolve",
   to,
+  toNarrow,
   href,
   children,
   onNavigate,
@@ -110,20 +113,26 @@ export function TransitionLink({
     });
     event.preventDefault();
     if (blocked) return;
+    const narrow = window.innerWidth < 700;
     void transitions.navigate(formatHref(href), {
       kind,
-      to,
+      to: narrow && toNarrow ? toNarrow : to,
       origin: originRef.current ?? undefined,
     });
   };
 
+  const warm = () => {
+    const url = window.innerWidth < 700 && toNarrow ? toNarrow : to;
+    if (url) transitions.preload(url);
+  };
+
   const handlePointerEnter = (event: PointerEvent<HTMLAnchorElement>) => {
-    if (to) transitions.preload(to);
+    warm();
     onPointerEnter?.(event);
   };
 
   const handleFocus = (event: FocusEvent<HTMLAnchorElement>) => {
-    if (to) transitions.preload(to);
+    warm();
     onFocus?.(event);
   };
 

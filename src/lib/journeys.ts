@@ -2,392 +2,173 @@ import { curatorPortrait, image, portrait } from "./media";
 import type { Journey, Traveller } from "./types";
 
 /**
- * Journey catalogue. Four departures, each a complete package the pages
- * render from. Copy is written to be read slowly: short lines, concrete
- * images, no adjectives that could describe any other trip.
+ * Four hosted weeks. Copy is deliberately short: one hook per trip, one line
+ * per day. The pictures carry the rest.
  */
 
-const pool = (
-  ...rows: [number, string, string, number, string?][]
-): Traveller[] =>
-  rows.map(([n, firstName, from, match, note]) => ({
-    id: `p${n}`,
-    firstName,
-    from,
-    portrait: portrait(n),
-    match,
-    note,
-  }));
+const pool = (...rows: [number, string, string, number, string?][]): Traveller[] =>
+  rows.map(([n, firstName, from, match, note]) => ({ id: `p${n}`, firstName, from, portrait: portrait(n), match, note }));
+
+const ch = (slug: string, n: number, alt: string) => image(`trips/${slug}/chapter-0${n}.jpg`, alt);
+const heroes = (slug: string, alt: string) => ({
+  hero: image(`trips/${slug}/hero.jpg`, alt),
+  heroTall: image(`trips/${slug}/hero-tall.jpg`, alt, 1250, 2000),
+  card: image(`trips/${slug}/card.jpg`, alt, 1400, 1750),
+});
 
 export const journeys: Journey[] = [
   {
-    slug: "kyoto-in-silence",
-    title: "Kyoto, in Silence",
-    titleEm: "Silence",
-    subtitle: "Nine days inside the quiet hours of an ancient capital.",
-    region: "Kansai",
-    country: "Japan",
-    season: "Late autumn",
-    dates: "21 – 29 Nov 2026",
-    startDate: "2026-11-21",
-    durationDays: 9,
-    groupMax: 10,
+    slug: "bali",
+    title: "Bali",
+    subtitle: "Cliff villa. Boat day. Nights that run late.",
+    region: "Uluwatu · Canggu · Ubud",
+    country: "Indonesia",
+    season: "Dry season",
+    dates: "14 – 21 Jun 2026",
+    startDate: "2026-06-14",
+    durationDays: 8,
+    groupMax: 12,
     spotsRemaining: 2,
-    price: { amount: 7400, currency: "USD", deposit: 900 },
+    intent: "Best first week",
+    price: { amount: 2490, currency: "USD", deposit: 400 },
     vibe: [
-      { label: "Cultural Deep Dive", pct: 85 },
-      { label: "Slow Mornings", pct: 68 },
-      { label: "After Dark", pct: 31 },
+      { label: "Pool", pct: 92 },
+      { label: "Party", pct: 78 },
+      { label: "Jungle", pct: 55 },
     ],
-    hero: image("journeys/kyoto-in-silence/hero.jpg", "Moss garden and maple in mist, Kyoto"),
-    card: image("journeys/kyoto-in-silence/card.jpg", "A lantern-lit lane in Gion at dusk", 1400, 1750),
+    ...heroes("bali", "Friends in the villa pool at golden hour"),
     transition: "dissolve",
-    promise:
-      "We go in before the gates open and stay after they close. The city you have seen in photographs is not the one you will remember.",
+    promise: "One villa on the cliff, twelve of you, a driver who knows what is open at 2am.",
     chapters: [
-      {
-        numeral: "I",
-        days: "Days 1–2",
-        title: "Arrive at dusk",
-        body:
-          "A car meets you at Kansai. By the time you reach the machiya in Gion the lanterns are lit and dinner is a twelve-course kaiseki cooked in a kitchen the size of a wardrobe. Nothing is scheduled tomorrow before ten.",
-        image: image("journeys/kyoto-in-silence/chapter-01.jpg", "Lantern-lit wooden façades in Gion"),
-      },
-      {
-        numeral: "II",
-        days: "Days 3–4",
-        title: "The moss temples, alone",
-        body:
-          "Saihō-ji admits a handful of visitors a day. We are the first through the gate, before the tour buses find the road. You will copy a sutra in ink, then walk a garden that has been growing for six hundred years.",
-        image: image("journeys/kyoto-in-silence/chapter-02.jpg", "Moss garden with stone lantern and soft light"),
-      },
-      {
-        numeral: "III",
-        days: "Day 5",
-        title: "Tea with the fifteenth generation",
-        body:
-          "In Uji a family has been roasting tea since 1580. The master will not sell you anything. He will pour, wait, and pour again, and by the third cup you will understand why we came.",
-        image: image("journeys/kyoto-in-silence/chapter-03.jpg", "Steam rising from a tea bowl on a dark table"),
-      },
-      {
-        numeral: "IV",
-        days: "Days 6–7",
-        title: "Kurama to Kibune, on foot",
-        body:
-          "A mountain path, a cedar forest, a shrine where the lanterns line the stairs. We sleep in a ryokan above the river and eat trout grilled on a fire the innkeeper's grandmother lit.",
-        image: image("journeys/kyoto-in-silence/chapter-04.jpg", "Stone stairway lined with red lanterns in cedar forest"),
-      },
-      {
-        numeral: "V",
-        days: "Days 8–9",
-        title: "Arashiyama before dawn",
-        body:
-          "The bamboo grove at 5:40 in the morning belongs to the crows and to us. Then a final breakfast on the river, and the car to the airport, and the long quiet you will carry home.",
-        image: image("journeys/kyoto-in-silence/chapter-05.jpg", "Bamboo grove path in pale dawn light"),
-      },
+      { numeral: "01", days: "Day 1", title: "The cliff villa", body: "Land, drop the bags, straight into the pool. Long table. First names.", image: ch("bali", 1, "The villa pool at night, everyone in it") },
+      { numeral: "02", days: "Day 3", title: "Boat day", body: "Nusa Penida by wooden boat. Jump off the roof. Fish on the deck.", image: ch("bali", 2, "Jumping off the boat") },
+      { numeral: "03", days: "Day 4", title: "Canggu on scooters", body: "Surf in the morning. Beach club by three. The night writes itself.", image: ch("bali", 3, "Scooters at sunset") },
+      { numeral: "04", days: "Day 6", title: "The jungle", body: "Rafting, then a villa above the valley with a pool that faces the light.", image: ch("bali", 4, "Rafting through the jungle") },
+      { numeral: "05", days: "Day 8", title: "Last sunset", body: "One more beach club. Numbers swapped. Nobody wants the car.", image: ch("bali", 5, "Beach club at sunset") },
     ],
-    travellers: pool(
-      [1, "Amara", "Lagos → London", 94, "Second journey with Fable."],
-      [2, "Tomas", "Lisbon", 91],
-      [3, "Priya", "Mumbai → Berlin", 88],
-      [4, "Leonie", "Zürich", 87, "Ceramicist. Bringing a sketchbook."],
-      [5, "Marcus", "Chicago", 85],
-      [6, "Ingrid", "Oslo", 83],
-      [7, "Kenji", "Osaka → Melbourne", 82, "Going home, slowly."],
-      [8, "Sofia", "Buenos Aires", 79],
-    ),
-    curator: {
-      name: "Mika Sato",
-      role: "Your host · former Kyoto correspondent, The Financial Times",
-      bio: "Mika lived in a machiya off Sanjō for eleven years. She still knows which temple gate opens first.",
-      portrait: curatorPortrait(1),
-    },
-    inclusions: [
-      "Eight nights: Gion machiya, mountain ryokan, riverside inn",
-      "Private access to Saihō-ji and Uji tea house",
-      "All meals, including two kaiseki dinners",
-      "Airport transfers and every train in between",
-      "A group of ten. Never more.",
-    ],
+    travellers: pool([1, "Amara", "London", 94], [2, "Tomas", "Lisbon", 91], [3, "Priya", "Berlin", 88], [4, "Leonie", "Zürich", 87], [5, "Marcus", "Chicago", 85], [6, "Ingrid", "Oslo", 83], [7, "Kenji", "Melbourne", 82], [8, "Sofia", "Buenos Aires", 79], [9, "Dev", "Toronto", 78], [10, "Chloé", "Lyon", 76]),
+    curator: { name: "Nadia", role: "Your host · ran a beach bar in Canggu for six years", bio: "Knows every boat captain by first name, and which one waits for the late sleepers.", portrait: curatorPortrait(1) },
+    inclusions: ["7 nights, 3 villas", "Private boat day", "Every meal and drink at the table", "Airport transfers and a driver all week", "Twelve people. Never more."],
+    notIncluded: ["Flights to Denpasar","Travel insurance (required)","Surf lessons and spa treatments","Drinks after the group has gone to bed"],
+    highlights: ["A cliff villa in Uluwatu with a pool over the ocean","A private wooden boat to Nusa Penida, mantas if they show","Canggu on scooters, a beach club by three, no alarm set"],
+    forWho: "Best if it is your first week with us, or your first time in Asia. Pool days with a proper night or two.",
   },
   {
-    slug: "patagonia-unhurried",
-    title: "Patagonia, Unhurried",
-    titleEm: "Unhurried",
-    subtitle: "Eleven days at the bottom of the world, walking at the speed of weather.",
-    region: "Magallanes & Santa Cruz",
-    country: "Chile & Argentina",
+    slug: "thailand",
+    title: "Thailand",
+    subtitle: "Bangkok rooftops, then islands that glow at night.",
+    region: "Bangkok · Phi Phi · Phuket",
+    country: "Thailand",
+    season: "High season",
+    dates: "8 – 15 Nov 2026",
+    startDate: "2026-11-08",
+    durationDays: 8,
+    groupMax: 12,
+    spotsRemaining: 1,
+    intent: "Loudest nights",
+    price: { amount: 2290, currency: "USD", deposit: 400 },
+    vibe: [
+      { label: "Party", pct: 95 },
+      { label: "Boat", pct: 84 },
+      { label: "Pool", pct: 70 },
+    ],
+    ...heroes("thailand", "Friends on a longtail boat in turquoise water"),
+    transition: "ripple",
+    promise: "Two nights in the city, five on the water. Sleep is optional.",
+    chapters: [
+      { numeral: "01", days: "Day 1", title: "Bangkok, up high", body: "A rooftop above the river. Street food after. A tuk tuk race home.", image: ch("thailand", 1, "Rooftop bar in Bangkok at night") },
+      { numeral: "02", days: "Day 3", title: "Longtail day", body: "Phi Phi by longtail. Snorkel, jump, repeat. Lunch on a sandbar.", image: ch("thailand", 2, "Longtail boat in turquoise water") },
+      { numeral: "03", days: "Day 4", title: "Fire on the beach", body: "The beach party everyone has heard about, with the table already booked.", image: ch("thailand", 3, "Beach party with fire show") },
+      { numeral: "04", days: "Day 6", title: "Kayaks and lagoons", body: "Paddle into a lagoon you cannot see from the sea. Silence, then not.", image: ch("thailand", 4, "Kayaking in a lagoon") },
+      { numeral: "05", days: "Day 8", title: "Sunset, last one", body: "Feet in the sand. One long dinner. The group chat is already planning.", image: ch("thailand", 5, "Sunset drinks on the beach") },
+    ],
+    travellers: pool([9, "Dev", "Toronto", 92], [3, "Priya", "Berlin", 90], [11, "Yara", "Paris", 89], [12, "Luca", "Milan", 86], [5, "Marcus", "Chicago", 84], [13, "Hugo", "Copenhagen", 83], [14, "Nour", "Dubai", 81], [6, "Ingrid", "Oslo", 79], [15, "Jonah", "Tel Aviv", 78], [16, "Wren", "Portland", 77]),
+    curator: { name: "Ploy", role: "Your host · Bangkok born, ten seasons on the islands", bio: "Has never queued for a boat and does not plan to start with you.", portrait: curatorPortrait(2) },
+    inclusions: ["7 nights, city hotel and beach villa", "Private longtail day", "Every meal and drink at the table, two nights with the table booked", "Flights between city and islands", "Twelve people. Never more."],
+    notIncluded: ["Flights to Bangkok","Travel insurance (required)","Massages and dive certifications","Drinks after the group has gone to bed"],
+    highlights: ["A rooftop over the Chao Phraya on the first night","A private longtail to Phi Phi with lunch on a sandbar","The beach party with the table already booked"],
+    forWho: "For people who want the loudest nights on the calendar and a long lazy boat day to recover on.",
+  },
+  {
+    slug: "cape-town",
+    title: "Cape Town",
+    subtitle: "A mountain, two oceans and a lunch that will not end.",
+    region: "Camps Bay · Winelands · Cape Point",
+    country: "South Africa",
     season: "Late summer",
-    dates: "6 – 16 Mar 2027",
-    startDate: "2027-03-06",
-    durationDays: 11,
+    dates: "20 – 27 Feb 2027",
+    startDate: "2027-02-20",
+    durationDays: 8,
+    groupMax: 12,
+    spotsRemaining: 5,
+    intent: "Biggest days out",
+    price: { amount: 2690, currency: "USD", deposit: 450 },
+    vibe: [
+      { label: "Big days", pct: 88 },
+      { label: "Long lunches", pct: 90 },
+      { label: "Party", pct: 64 },
+    ],
+    ...heroes("cape-town", "Friends at the summit with the ocean behind"),
+    transition: "ripple",
+    promise: "A villa on the beach with the mountain behind it. Some of the best days of your year, back to back.",
+    chapters: [
+      { numeral: "01", days: "Day 1", title: "Camps Bay", body: "The villa faces the sunset. Braai on the terrace. It goes late.", image: ch("cape-town", 1, "Sunset drinks on the terrace") },
+      { numeral: "02", days: "Day 3", title: "Up the mountain", body: "Table Mountain on foot before the heat. Clifton to cool down.", image: ch("cape-town", 2, "At the summit, arms up") },
+      { numeral: "03", days: "Day 4", title: "The winelands", body: "One long lunch in Franschhoek. Somebody buys too much wine.", image: ch("cape-town", 3, "Long lunch in the vineyards") },
+      { numeral: "04", days: "Day 6", title: "Two oceans", body: "Chapman's Peak, penguins, the Cape, then a catamaran into the sunset.", image: ch("cape-town", 4, "Catamaran at sunset") },
+      { numeral: "05", days: "Day 8", title: "The last big night", body: "Someone has a birthday. There is usually someone. The beach after.", image: ch("cape-town", 5, "Beach party at sunset") },
+    ],
+    travellers: pool([13, "Hugo", "Copenhagen", 91], [2, "Tomas", "Lisbon", 87], [16, "Wren", "Portland", 86], [8, "Sofia", "Buenos Aires", 80], [11, "Yara", "Paris", 78], [4, "Leonie", "Zürich", 77], [9, "Dev", "Toronto", 75]),
+    curator: { name: "Thandi", role: "Your host · Capetonian, mountain guide, best braai on the Atlantic", bio: "One rule: nobody leaves without a day they will talk about for a decade.", portrait: curatorPortrait(4) },
+    inclusions: ["7 nights in one villa in Camps Bay", "Guided hike, winelands day, sunset catamaran", "Every meal and drink at the table", "Airport transfers and a minibus all week", "Twelve people. Never more."],
+    notIncluded: ["Flights to Cape Town","Travel insurance (required)","Shark cage diving and paragliding (bookable on request)","Drinks after the group has gone to bed"],
+    highlights: ["One villa in Camps Bay facing the sunset all week","Table Mountain on foot, then the winelands for one long lunch","A sunset catamaran with the whole group on the net"],
+    forWho: "For big days out and long lunches, with a birthday in the group more often than not.",
+  },
+  {
+    slug: "rio",
+    title: "Rio",
+    subtitle: "Beach by day. The whole city by night.",
+    region: "Ipanema · Santa Teresa · Búzios",
+    country: "Brazil",
+    season: "Summer",
+    dates: "23 – 30 Jan 2027",
+    startDate: "2027-01-23",
+    durationDays: 8,
     groupMax: 12,
     spotsRemaining: 4,
-    price: { amount: 9200, currency: "USD", deposit: 1100 },
+    intent: "Best for solo",
+    price: { amount: 2590, currency: "USD", deposit: 450 },
     vibe: [
-      { label: "Wild Expedition", pct: 78 },
-      { label: "Fireside Conversation", pct: 64 },
-      { label: "City Time", pct: 18 },
+      { label: "Party", pct: 90 },
+      { label: "Beach", pct: 86 },
+      { label: "Big days", pct: 60 },
     ],
-    hero: image("journeys/patagonia-unhurried/hero.jpg", "Granite towers above a glacial lake at first light"),
-    card: image("journeys/patagonia-unhurried/card.jpg", "A lone rider on the steppe under a vast sky", 1400, 1750),
+    ...heroes("rio", "Friends on Ipanema beach at sunset"),
     transition: "stretch",
-    promise:
-      "No itinerary survives the wind here, so we wrote one that bends. Twelve people, two guides, and the largest sky you will ever stand under.",
+    promise: "Half the group arrives alone. By the second night nobody remembers who came with whom.",
     chapters: [
-      {
-        numeral: "I",
-        days: "Days 1–3",
-        title: "Base of the towers",
-        body:
-          "A lodge on the shore of Lago Pehoé where the windows face the massif. We walk the first morning to loosen the legs and spend the second in the French Valley until the light goes.",
-        image: image("journeys/patagonia-unhurried/chapter-01.jpg", "Turquoise lake beneath granite peaks"),
-      },
-      {
-        numeral: "II",
-        days: "Days 4–5",
-        title: "Grey Glacier, by water",
-        body:
-          "A boat the colour of the lake takes us to the wall of the glacier. It calves twice while we are there. Someone will cry. It is usually the person who said they would not.",
-        image: image("journeys/patagonia-unhurried/chapter-02.jpg", "Blue glacier face rising from dark water"),
-      },
-      {
-        numeral: "III",
-        days: "Days 6–7",
-        title: "The estancia",
-        body:
-          "A working sheep station older than the border. Horses in the morning, lamb over the fire at night, a gaucho who has never left the valley and does not see the point.",
-        image: image("journeys/patagonia-unhurried/chapter-03.jpg", "Horses on open steppe at golden hour"),
-      },
-      {
-        numeral: "IV",
-        days: "Days 8–10",
-        title: "Across the line to El Chaltén",
-        body:
-          "Argentina. Fitz Roy at dawn from the lagoon, if the mountain permits. If it does not, there is a bakery, a river, and the best conversation of the trip.",
-        image: image("journeys/patagonia-unhurried/chapter-04.jpg", "Jagged peaks reflected in a still lagoon"),
-      },
-      {
-        numeral: "V",
-        days: "Day 11",
-        title: "The long way out",
-        body:
-          "A last breakfast with the door open to the wind. Then the road north, the airport, and a silence in the group that nobody wants to be first to break.",
-        image: image("journeys/patagonia-unhurried/chapter-05.jpg", "Empty road across the steppe toward distant mountains"),
-      },
+      { numeral: "01", days: "Day 1", title: "Rooftop pool", body: "A house in Santa Teresa with the city underneath. First caipirinha at the pool.", image: ch("rio", 1, "Rooftop pool over the city") },
+      { numeral: "02", days: "Day 2", title: "Ipanema", body: "Beach volleyball you will lose. A vendor who knows your name by noon.", image: ch("rio", 2, "Beach volleyball at sunset") },
+      { numeral: "03", days: "Day 3", title: "Samba, properly", body: "A street party in Lapa. Dancing badly is the point.", image: ch("rio", 3, "Dancing at a street party") },
+      { numeral: "04", days: "Day 5", title: "Above the city", body: "Sugarloaf on foot, the view at the top, the swim after.", image: ch("rio", 4, "Viewpoint above the city and ocean") },
+      { numeral: "05", days: "Day 7", title: "Búzios by boat", body: "Two nights on the coast. A boat, a bay, a sunset nobody talks through.", image: ch("rio", 5, "Boat party at sunset in the bay") },
     ],
-    travellers: pool(
-      [9, "Elena", "Madrid", 92],
-      [10, "Daniel", "Cape Town", 90, "Third Fable journey."],
-      [11, "Yara", "Beirut → Paris", 86],
-      [12, "Olamide", "Toronto", 84],
-      [13, "Hugo", "Copenhagen", 81, "Landscape photographer."],
-      [14, "Nadia", "Amsterdam", 80],
-      [15, "Rafael", "São Paulo", 77],
-      [16, "Wren", "Portland", 76],
-    ),
-    curator: {
-      name: "Sebastián Rojas",
-      role: "Your guide · mountain guide, 22 seasons in Torres del Paine",
-      bio: "Sebastián has walked the W more times than he will admit. He still stops at the same bend to look.",
-      portrait: curatorPortrait(2),
-    },
-    inclusions: [
-      "Ten nights: lakeside lodge, estancia, mountain hotel",
-      "Two guides for twelve travellers",
-      "Glacier navigation and all park permits",
-      "Every meal, every transfer, both borders",
-      "A weather day built in. We will use it.",
-    ],
-  },
-  {
-    slug: "sahara-under-glass",
-    title: "Sahara, Under Glass",
-    titleEm: "Glass",
-    subtitle: "Seven days from a Marrakech riad to a glass-domed camp in the dunes.",
-    region: "Marrakech-Safi & Drâa-Tafilalet",
-    country: "Morocco",
-    season: "Autumn",
-    dates: "10 – 16 Oct 2026",
-    startDate: "2026-10-10",
-    durationDays: 7,
-    groupMax: 8,
-    spotsRemaining: 1,
-    price: { amount: 5900, currency: "USD", deposit: 700 },
-    vibe: [
-      { label: "Slow Luxury", pct: 91 },
-      { label: "Desert Silence", pct: 73 },
-      { label: "Souk Hunting", pct: 39 },
-    ],
-    hero: image("journeys/sahara-under-glass/hero.jpg", "Dune ridges in the last amber light"),
-    card: image("journeys/sahara-under-glass/card.jpg", "A glass dome glowing under the desert stars", 1400, 1750),
-    transition: "ripple",
-    promise:
-      "Eight travellers. One night under a ceiling of glass with nothing between you and the Milky Way but a wool blanket.",
-    chapters: [
-      {
-        numeral: "I",
-        days: "Days 1–2",
-        title: "The riad",
-        body:
-          "Behind a door you would walk past, a courtyard with a fountain and a fig tree. Dinner on the roof. The medina is a rumour beyond the wall until you are ready for it.",
-        image: image("journeys/sahara-under-glass/chapter-01.jpg", "Courtyard fountain under carved cedar arches"),
-      },
-      {
-        numeral: "II",
-        days: "Day 3",
-        title: "Over the Atlas",
-        body:
-          "The Tizi n'Tichka pass at eleven in the morning, mint tea at the top, and the moment the land turns from green to the colour of bread.",
-        image: image("journeys/sahara-under-glass/chapter-02.jpg", "Mountain pass road winding through ochre hills"),
-      },
-      {
-        numeral: "III",
-        days: "Day 4",
-        title: "Skoura palm grove",
-        body:
-          "A kasbah in a thousand-year-old oasis. We do nothing here on purpose. Read, swim, sleep with the shutters open.",
-        image: image("journeys/sahara-under-glass/chapter-03.jpg", "Palm grove and mud-brick kasbah at midday"),
-      },
-      {
-        numeral: "IV",
-        days: "Days 5–6",
-        title: "Erg Chebbi, under glass",
-        body:
-          "Camels for the last hour because the dunes ask for it. Then the camp: eight domes, a fire, a Berber astronomer who names the stars in three languages. You sleep looking up.",
-        image: image("journeys/sahara-under-glass/chapter-04.jpg", "Glass dome tents on a dune at twilight"),
-      },
-      {
-        numeral: "V",
-        days: "Day 7",
-        title: "Dawn from the high dune",
-        body:
-          "We climb in the dark. The sun does what it does. Then coffee, the long drive back to the green, and a flight home you will spend staring out of the window.",
-        image: image("journeys/sahara-under-glass/chapter-05.jpg", "Sunrise over rippled sand dunes"),
-      },
-    ],
-    travellers: pool(
-      [3, "Priya", "Mumbai → Berlin", 95],
-      [6, "Ingrid", "Oslo", 93],
-      [10, "Daniel", "Cape Town", 90],
-      [12, "Olamide", "Toronto", 89, "Celebrating forty."],
-      [1, "Amara", "Lagos → London", 88],
-      [14, "Nadia", "Amsterdam", 84],
-      [5, "Marcus", "Chicago", 82],
-    ),
-    curator: {
-      name: "Leïla Benali",
-      role: "Your host · hotelier, born in Skoura",
-      bio: "Leïla's family has kept the kasbah for four generations. She chose the camp's astronomer herself.",
-      portrait: curatorPortrait(3),
-    },
-    inclusions: [
-      "Six nights: riad, kasbah, glass-domed desert camp",
-      "Private 4×4 across the Atlas and Drâa valley",
-      "Every meal, from rooftop to campfire",
-      "Camels, astronomer, and a dune to yourself",
-      "A group of eight. Intimacy is the luxury.",
-    ],
-  },
-  {
-    slug: "iceland-edge-of-light",
-    title: "Iceland, at the Edge of Light",
-    titleEm: "Light",
-    subtitle: "Eight days of black sand, blue ice and a sky that may or may not perform.",
-    region: "South Coast & Highlands",
-    country: "Iceland",
-    season: "Deep winter",
-    dates: "12 – 19 Feb 2027",
-    startDate: "2027-02-12",
-    durationDays: 8,
-    groupMax: 10,
-    spotsRemaining: 5,
-    price: { amount: 6800, currency: "USD", deposit: 800 },
-    vibe: [
-      { label: "Elemental", pct: 82 },
-      { label: "Aurora Hunting", pct: 66 },
-      { label: "Thermal Rituals", pct: 58 },
-    ],
-    hero: image("journeys/iceland-edge-of-light/hero.jpg", "Aurora over a black-sand coast and sea stacks"),
-    card: image("journeys/iceland-edge-of-light/card.jpg", "Steam rising from a thermal pool at blue hour", 1400, 1750),
-    transition: "dissolve",
-    promise:
-      "Five hours of daylight, used with intent. The rest of the time is for the dark, the water, and the sky.",
-    chapters: [
-      {
-        numeral: "I",
-        days: "Days 1–2",
-        title: "Reykjavík, briefly",
-        body:
-          "One night in the city to shake off the flight, a swim in a public pool at seven in the morning with the locals, and then the road east.",
-        image: image("journeys/iceland-edge-of-light/chapter-01.jpg", "Harbour lights on dark water in winter"),
-      },
-      {
-        numeral: "II",
-        days: "Days 3–4",
-        title: "The black coast",
-        body:
-          "Reynisfjara in a gale, a glacier tongue you can walk on with crampons, and a farmhouse where the owner keeps the northern lights forecast on the fridge.",
-        image: image("journeys/iceland-edge-of-light/chapter-02.jpg", "Waves on black sand beneath basalt columns"),
-      },
-      {
-        numeral: "III",
-        days: "Day 5",
-        title: "Inside the ice",
-        body:
-          "A cave beneath Vatnajökull that will not exist next year. Blue in a way that makes the word feel inadequate.",
-        image: image("journeys/iceland-edge-of-light/chapter-03.jpg", "Inside a blue glacial ice cave"),
-      },
-      {
-        numeral: "IV",
-        days: "Days 6–7",
-        title: "The hot river",
-        body:
-          "Snow on the banks, steam on the water, a walk in and a longer walk out. At night we drive away from every light on the island and wait.",
-        image: image("journeys/iceland-edge-of-light/chapter-04.jpg", "Steaming river through a snowy valley"),
-      },
-      {
-        numeral: "V",
-        days: "Day 8",
-        title: "The last dark morning",
-        body:
-          "Lagoon at first light, the ice drifting to the sea. Then the airport. You will look for the sky out of the plane window. Everyone does.",
-        image: image("journeys/iceland-edge-of-light/chapter-05.jpg", "Icebergs drifting in a lagoon at dawn"),
-      },
-    ],
-    travellers: pool(
-      [13, "Hugo", "Copenhagen", 91],
-      [2, "Tomas", "Lisbon", 87],
-      [16, "Wren", "Portland", 86, "First time this far north."],
-      [8, "Sofia", "Buenos Aires", 80],
-      [11, "Yara", "Beirut → Paris", 78],
-    ),
-    curator: {
-      name: "Ásta Jónsdóttir",
-      role: "Your guide · glacier guide and search-and-rescue volunteer",
-      bio: "Ásta reads the sky the way other people read the news. She has never promised an aurora and never needed to.",
-      portrait: curatorPortrait(4),
-    },
-    inclusions: [
-      "Seven nights: city hotel, coastal farmhouse, glacier lodge",
-      "Ice-cave and glacier walk with certified guides",
-      "Thermal river and lagoon access",
-      "Every meal and a private 4×4 for ten",
-      "Two aurora nights, one weather night, all yours.",
-    ],
+    travellers: pool([16, "Wren", "Portland", 93], [12, "Luca", "Milan", 88], [1, "Amara", "London", 86], [14, "Nour", "Dubai", 85], [7, "Kenji", "Melbourne", 82], [10, "Chloé", "Lyon", 80], [15, "Jonah", "Tel Aviv", 79], [8, "Sofia", "Buenos Aires", 77]),
+    curator: { name: "Mateus", role: "Your host · carioca, former lifeguard, knows every bloco", bio: "Has never missed a sunset at Arpoador and will not let you either.", portrait: curatorPortrait(3) },
+    inclusions: ["7 nights, city house and beach pousada", "Boat day in Búzios", "Every meal and drink at the table, one night with the table booked", "Airport transfers and a driver all week", "Twelve people. Never more."],
+    notIncluded: ["Flights to Rio de Janeiro","Travel insurance (required)","Hang gliding and football tickets (bookable on request)","Drinks after the group has gone to bed"],
+    highlights: ["A house in Santa Teresa with a rooftop pool over the city","Ipanema by day, a Lapa street party by night","Two nights in Búzios with a boat and a bay to yourselves"],
+    forWho: "Best for solo travellers. Half the group comes alone and it stops mattering by the second night.",
   },
 ];
 
 export const getJourneys = () => journeys;
-
+export const getTrips = getJourneys;
 export const getJourney = (slug: string) => journeys.find((j) => j.slug === slug);
+export const getTrip = getJourney;
 
 export const formatPrice = (amount: number, currency = "USD") =>
-  new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency,
-    maximumFractionDigits: 0,
-  }).format(amount);
+  new Intl.NumberFormat("en-US", { style: "currency", currency, maximumFractionDigits: 0 }).format(amount);
 
-/** The three journeys teased with the blur-to-focus reveal on the home page. */
-export const featuredSlugs = ["kyoto-in-silence", "sahara-under-glass", "patagonia-unhurried"];
+export const featuredSlugs = ["bali", "thailand", "cape-town", "rio"];

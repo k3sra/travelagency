@@ -1,142 +1,98 @@
-.root[hidden] {
-  display: none;
-}
-
-/* --------------------------------------------------------------------------
-   Backdrop — the heavy blur
-   -------------------------------------------------------------------------- */
-
-.backdrop {
+.root {
   position: fixed;
   inset: 0;
-  z-index: var(--z-drawer-backdrop);
-  background: rgba(28, 38, 38, 0.55);
-  -webkit-backdrop-filter: blur(24px);
-  backdrop-filter: blur(24px);
+  z-index: var(--z-drawer);
 }
 
-/* --------------------------------------------------------------------------
-   Panel
-   -------------------------------------------------------------------------- */
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-drawer-backdrop);
+  background: rgba(10, 10, 10, 0.5);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  opacity: 0;
+}
 
 .panel {
-  --pad: clamp(1.5rem, 6vw, 3.5rem);
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: var(--z-drawer);
-  display: flex;
-  flex-direction: column;
-  width: min(600px, 100vw);
-  height: 100vh;
-  height: 100dvh;
-  overflow: hidden;
-  background: var(--forest);
-  color: var(--on-forest);
-  box-shadow: -40px 0 90px rgba(18, 26, 26, 0.35);
-  outline: none;
-}
-
-/* Gold hairline on the leading edge. */
-.panel::before {
-  content: "";
   position: absolute;
   top: 0;
+  right: 0;
   bottom: 0;
-  left: 0;
-  z-index: 2;
-  width: 1px;
-  background: linear-gradient(180deg, var(--gold-dim), var(--gold) 40%, var(--gold) 60%, var(--gold-dim));
-  pointer-events: none;
+  z-index: var(--z-drawer);
+  width: min(100vw, 520px);
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: var(--ink);
+  border-left: 1px solid var(--line);
+  will-change: transform;
+  overflow: hidden;
 }
 
-/* Processing: a gold hairline sweeps along the top edge (transform only). */
 .progress {
   position: absolute;
   top: 0;
-  right: 0;
   left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--line);
   z-index: 2;
-  height: 1px;
-  overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--dur-tactile) var(--ease-fable);
-}
-
-.progress[data-active] {
-  opacity: 1;
 }
 
 .progressBar {
   display: block;
-  width: 40%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  transform: translateX(-100%);
-}
-
-.progress[data-active] .progressBar {
-  animation: sweep 1.6s var(--ease-cinematic) infinite;
-}
-
-@keyframes sweep {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(250%);
-  }
+  width: 100%;
+  background: var(--grad-sun);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.2s var(--ease-out);
 }
 
 .head {
-  flex: none;
   display: flex;
   justify-content: flex-end;
-  padding: calc(1.4rem + env(safe-area-inset-top, 0px)) var(--pad) 0
-    calc(var(--pad) + env(safe-area-inset-left, 0px));
+  align-items: center;
+  padding: 1rem var(--gutter) 0;
+  flex: none;
 }
 
 .close {
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
-  padding: 0.6rem 0 0.6rem 0.6rem;
-  color: var(--on-forest-muted);
-  transition: color var(--dur-tactile) var(--ease-fable);
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0 0.9rem;
+  border-radius: var(--pill);
+  border: 1.5px solid var(--line);
+  color: var(--ink);
+  transition: border-color var(--dur-tactile) var(--ease-out), background var(--dur-tactile) var(--ease-out);
 }
 
-.close:hover,
-.close:focus-visible {
-  color: var(--on-forest);
+.close:hover {
+  border-color: var(--ink);
 }
 
 .closeGlyph {
-  width: 18px;
-  height: 18px;
-  flex: none;
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  fill: none;
 }
 
 .closeLabel {
-  font-size: 0.62rem;
-  letter-spacing: 0.26em;
-  line-height: 1;
+  font-size: 0.7rem;
 }
-
-/* --------------------------------------------------------------------------
-   Scrollable body
-   -------------------------------------------------------------------------- */
 
 .body {
   flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
+  padding: 1rem var(--gutter) calc(2rem + env(safe-area-inset-bottom));
   -webkit-overflow-scrolling: touch;
-  padding: 1.5rem calc(var(--pad) + env(safe-area-inset-right, 0px))
-    calc(2.5rem + env(safe-area-inset-bottom, 0px)) calc(var(--pad) + env(safe-area-inset-left, 0px));
-  scrollbar-width: thin;
-  scrollbar-color: var(--on-forest-line) transparent;
 }
 
 .details,
@@ -144,254 +100,191 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.confirm {
   outline: none;
 }
 
 .eyebrow {
-  margin: 0 0 1.4rem;
-  color: var(--gold);
-  font-size: var(--text-caps);
-  font-weight: 400;
+  color: var(--sun);
+  margin: 0;
 }
 
 .title {
-  margin: 0 0 1.1rem;
-  font-size: clamp(2.3rem, 5.4vw, 3.5rem);
-  line-height: 1.02;
-  color: var(--on-forest);
+  margin: 0.8rem 0 0;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+}
+
+.title em {
+  font-style: normal;
+  background: var(--grad-sun);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .meta {
-  margin: 0;
-  font-family: var(--font-body);
-  font-size: 1.12rem;
-  line-height: 1.5;
-  color: var(--on-forest-muted);
+  margin: 0.8rem 0 0;
+  color: var(--ink-2);
+  font-size: 0.95rem;
 }
 
 .dot {
-  color: var(--gold);
+  color: var(--ink-3);
 }
 
-/* Scarcity: a slow gold pulse, opacity only, so it survives main-thread work. */
 .scarcity {
-  margin: 1.6rem 0 0;
-  color: var(--gold);
-  animation: pulse 2.4s ease-in-out infinite;
+  margin: 1.4rem 0 0;
+  color: var(--sun);
+  animation: pulse-soft 2.4s ease-in-out infinite;
 }
-
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.55;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   Terms
-   -------------------------------------------------------------------------- */
 
 .terms {
   width: 100%;
-  margin: 2.4rem 0 0;
+  margin: 2rem 0 0;
 }
 
 .term {
   display: flex;
-  align-items: baseline;
   justify-content: space-between;
-  gap: 1.5rem;
-  padding: 0.9rem 0;
-  border-top: 1px solid var(--on-forest-line);
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--line);
 }
 
 .term:last-child {
-  border-bottom: 1px solid var(--on-forest-line);
+  border-bottom: 1px solid var(--line);
 }
 
 .term dt {
-  font-family: var(--font-body);
-  font-size: 1.05rem;
-  color: var(--on-forest-muted);
-  text-wrap: pretty;
+  color: var(--ink-2);
+  font-size: 0.92rem;
 }
 
 .term dd {
-  flex: none;
+  margin: 0;
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-weight: 700;
+  font-size: 1.15rem;
   letter-spacing: -0.01em;
-  color: var(--on-forest);
-  font-variant-numeric: tabular-nums;
 }
 
 .termDeposit dd {
-  color: var(--gold);
+  color: var(--sun);
 }
 
-/* --------------------------------------------------------------------------
-   Traveller form
-   -------------------------------------------------------------------------- */
+.noFees {
+  margin: 0.9rem 0 0;
+  color: var(--ink-2);
+}
 
 .form {
   width: 100%;
-  margin-top: 2.4rem;
 }
 
 .fields {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.6rem;
-}
-
-@media (min-width: 520px) {
-  .fields {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 2rem;
 }
 
 .field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-  min-width: 0;
+  display: grid;
+  gap: 0.4rem;
 }
 
 .label {
-  font-size: 0.62rem;
-  letter-spacing: 0.26em;
-  color: var(--on-forest-muted);
+  color: var(--ink-2);
+  font-size: 0.66rem;
 }
 
 .input {
   width: 100%;
-  padding: 0.55rem 0;
+  min-height: 44px;
+  padding: 0.4rem 0;
   border: 0;
-  border-bottom: 1px solid var(--on-forest-line);
-  border-radius: 0;
+  border-bottom: 1.5px solid var(--line);
   background: transparent;
-  color: var(--on-forest);
-  font-family: var(--font-body);
-  font-size: 1.25rem;
-  line-height: 1.3;
+  color: var(--ink);
+  font: 500 1rem var(--font-body);
+  border-radius: 0;
+  transition: border-color var(--dur-tactile) var(--ease-out);
+}
+
+.input:focus {
   outline: none;
-  transition: border-color var(--dur-tactile) var(--ease-fable);
-}
-
-.input:hover {
-  border-color: rgba(251, 248, 241, 0.32);
-}
-
-.input:focus,
-.input:focus-visible {
-  border-color: var(--gold);
-  outline: none;
-}
-
-.input:user-invalid {
-  border-color: var(--gold-dim);
-}
-
-.input:read-only {
-  color: var(--on-forest-muted);
-}
-
-/* Autofill on a dark plate: keep the forest ground and vellum ink. */
-.input:-webkit-autofill,
-.input:-webkit-autofill:hover,
-.input:-webkit-autofill:focus {
-  -webkit-text-fill-color: var(--on-forest);
-  -webkit-box-shadow: 0 0 0 1000px var(--forest) inset;
-  caret-color: var(--on-forest);
-  transition: background-color 9999s ease-out;
+  border-bottom-color: var(--sun);
 }
 
 .pay {
   width: 100%;
-  margin-top: 2.2rem;
+  margin-top: 1.6rem;
+  padding: 1.2rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-soft);
 }
 
-/* --------------------------------------------------------------------------
-   Rule · trust · fine print · confirmation
-   -------------------------------------------------------------------------- */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 1rem 0 0;
+}
+
+.card {
+  padding: 0.3rem 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
 
 .rule {
   width: 100%;
   height: 1px;
-  margin: 2.6rem 0 2.2rem;
+  margin: 2rem 0 1.6rem;
   border: 0;
-  background: var(--on-forest-line);
+  background: var(--line);
 }
 
 .fine {
-  margin: 2.2rem 0 0;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  line-height: 1.55;
-  color: var(--on-forest-muted);
+  margin: 1.4rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--ink-2);
   text-wrap: pretty;
 }
 
 .lock {
   display: flex;
-  margin: 2.6rem 0 2.2rem;
-  color: var(--gold);
+  margin: 1.6rem 0 0;
+  color: var(--sun);
 }
 
 .reference {
-  margin: 0;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  color: var(--on-forest-muted);
-  font-variant-numeric: tabular-nums;
+  margin: 1.2rem 0 0;
+  font-size: 0.85rem;
+  color: var(--ink-2);
 }
 
 .actions {
-  margin-top: 2rem;
+  margin-top: 1.4rem;
 }
 
-/* --------------------------------------------------------------------------
-   Mobile: full width, payment pinned to the bottom of the sheet
-   -------------------------------------------------------------------------- */
-
-@media (max-width: 640px) {
-  .panel {
-    width: 100vw;
-    box-shadow: none;
-  }
-
-  .pay {
-    position: sticky;
-    bottom: 0;
-    z-index: 1;
-    margin-top: 1.6rem;
-    margin-inline: calc(-1 * (var(--pad) + env(safe-area-inset-left, 0px)))
-      calc(-1 * (var(--pad) + env(safe-area-inset-right, 0px)));
-    padding: 1.1rem calc(var(--pad) + env(safe-area-inset-right, 0px))
-      calc(1rem + env(safe-area-inset-bottom, 0px)) calc(var(--pad) + env(safe-area-inset-left, 0px));
-    width: auto;
-    background: linear-gradient(180deg, rgba(45, 58, 58, 0) 0%, var(--forest) 22%);
+@media (max-width: 480px) {
+  .fields {
+    grid-template-columns: 1fr;
   }
 }
-
-/* --------------------------------------------------------------------------
-   Reduced motion: nothing pulses or sweeps, everything is already in place
-   -------------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
   .scarcity {
     animation: none;
-    opacity: 1;
-  }
-
-  .progress[data-active] .progressBar {
-    width: 100%;
-    animation: none;
-    transform: none;
-    opacity: 0.7;
   }
 }

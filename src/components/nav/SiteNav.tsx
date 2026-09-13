@@ -1,136 +1,124 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { gsap, ScrollTrigger, setupGsap } from "@/components/motion/gsapSetup";
 import { TransitionLink } from "@/components/gl/TransitionLink";
-import { usePageEnter } from "@/components/gl/transitionController";
-import { getState, subscribe, useStore } from "@/lib/store";
+import { gsap, ScrollTrigger, setupGsap } from "@/components/motion/gsapSetup";
+import { HERO_POSTER } from "@/lib/media";
+import { getTrips } from "@/lib/journeys";
 import { prefersReducedMotion } from "@/lib/useReducedMotion";
-import { EASE_FABLE } from "@/lib/easing";
-import { Wordmark } from "./Wordmark";
 import styles from "./SiteNav.module.css";
 
-/**
- * Minimal top chrome. Blends with whatever is beneath it (difference), hides
- * on scroll-down, returns on scroll-up, and stays out of the way of the hero
- * until the page has entered.
- */
 export function SiteNav() {
   const root = useRef<HTMLElement>(null);
+  const overlay = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const drawerOpen = useStore((s) => s.drawerOpen);
+  const trips = getTrips();
 
-  // Reveal after the page enters. On the home page the hero owns the first
-  // moments: the chrome waits for the intro (store.introDone) before it appears.
-  usePageEnter(() => {
-    const el = root.current;
-    if (!el) return;
-    setupGsap();
-    const reveal = () => {
-      if (prefersReducedMotion()) {
-        gsap.set(el, { autoAlpha: 1, yPercent: 0 });
-        return;
-      }
-      gsap.to(el, { autoAlpha: 1, yPercent: 0, duration: 1.2, ease: EASE_FABLE, overwrite: true });
-    };
-    // usePathname is base-path-free; the static export adds a trailing slash.
-    const onHome = pathname.replace(/\/$/, "") === "";
-    if (!onHome || getState().introDone) {
-      reveal();
-      return;
-    }
-    const unsubscribe = subscribe(() => {
-      if (!getState().introDone) return;
-      unsubscribe();
-      reveal();
-    });
-    // Never strand the chrome if the intro never reports (video stalls, tab hidden).
-    window.setTimeout(() => {
-      unsubscribe();
-      reveal();
-    }, 4500);
-  });
-
-  // Hide on scroll-down, show on scroll-up.
+  // Dark plates invert the bar; scrolling down hides it, up shows it.
   useEffect(() => {
     const el = root.current;
     if (!el) return;
     setupGsap();
+    let dark = 0;
     const ctx = gsap.context(() => {
-      let hidden = false;
-      const show = () => {
-        if (!hidden) return;
-        hidden = false;
-        gsap.to(el, { yPercent: 0, duration: 0.8, ease: EASE_FABLE, overwrite: true });
-      };
-      const hide = () => {
-        if (hidden) return;
-        hidden = true;
-        gsap.to(el, { yPercent: -110, duration: 0.6, ease: "power3.in", overwrite: true });
-      };
-      // Dark plates (hero, forest sections, footer) declare data-nav="dark";
-      // the chrome flips to vellum while any of them sits under the bar.
-      let darkCount = 0;
-      const setTheme = () => {
-        el.dataset.theme = darkCount > 0 ? "dark" : "light";
-      };
-      const plates = Array.from(document.querySelectorAll<HTMLElement>('[data-nav="dark"]'));
-      plates.forEach((plate) => {
-        ScrollTrigger.create({
-          trigger: plate,
-          start: "top 48px",
-          end: "bottom 48px",
-          onToggle: (self) => {
-            darkCount += self.isActive ? 1 : -1;
-            setTheme();
-          },
+      const timer = window.setTimeout(() => {
+        dark = 0;
+        document.querySelectorAll<HTMLElement>('[data-nav="dark"]').forEach((plate) => {
+          ScrollTrigger.create({
+            trigger: plate,
+            start: "top 4.5rem",
+            end: "bottom 4.5rem",
+            onToggle: (self) => {
+              dark += self.isActive ? 1 : -1;
+              el.dataset.theme = dark > 0 ? "dark" : "light";
+            },
+          });
         });
-      });
-      setTheme();
+        ScrollTrigger.refresh();
+      }, 400);
+      let last = 0;
       ScrollTrigger.create({
         start: 0,
         end: "max",
         onUpdate: (self) => {
           const y = self.scroll();
-          if (y < 80) return show();
-          if (self.direction === 1) hide();
-          else show();
+          const hide = y > last + 4 && y > 120;
+          const show = y < last - 4 || y < 120;
+          if (hide) el.dataset.hidden = "true";
+          else if (show) el.dataset.hidden = "false";
+          last = y;
         },
       });
-      const onScrollTop = () => {
-        if (window.scrollY < 80) show();
-      };
-      window.addEventListener("scroll", onScrollTop, { passive: true });
-      return () => window.removeEventListener("scroll", onScrollTop);
+      return () => window.clearTimeout(timer);
     });
     return () => ctx.revert();
   }, [pathname]);
 
-  return (
-    <header
-      ref={root}
-      className={styles.nav}
-      data-drawer-open={drawerOpen ? "true" : undefined}
-      aria-label="Site"
-    >
-      <div className={styles.inner}>
-        <TransitionLink href="/" kind="dissolve" className={styles.brand} aria-label="Fable Travels — home">
-          <Wordmark />
-        </TransitionLink>
+  const [seenPath, setSeenPath] = useState(pathname);
+  if (seenPath !== pathname) {
+    setSeenPath(pathname);
+    setOpen(false);
+  }
 
+  useEffect(() => {
+    const el = overlay.current;
+    if (!el) return;
+    document.documentElement.classList.toggle("nav-open", open);
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    if (!prefersReducedMotion()) {
+      setupGsap();
+      gsap.fromTo(el.querySelectorAll("[data-menu-line]"), { yPercent: 110, y: 0 }, { yPercent: 0, y: 0, duration: 0.8, ease: "fable", stagger: 0.06, delay: 0.1 });
+    }
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.documentElement.classList.remove("nav-open");
+    };
+  }, [open]);
+
+  return (
+    <>
+      <header ref={root} className={styles.bar} data-theme="light" data-hidden="false">
+        <TransitionLink href="/" kind="dissolve" to={HERO_POSTER.wide} toNarrow={HERO_POSTER.tall} className={styles.wordmark} aria-label="FABLE home">
+          FABLE
+        </TransitionLink>
         <nav className={styles.links} aria-label="Primary">
-          <TransitionLink href="/journeys" kind="dissolve" className={styles.link} data-cursor="link">
-            <span className={styles.linkLabel}>Journeys</span>
-          </TransitionLink>
-          <TransitionLink href="/#collective" kind="dissolve" className={styles.link} data-cursor="link">
-            <span className={styles.linkLabel}>The Collective</span>
-          </TransitionLink>
-          <TransitionLink href="/journeys" kind="dissolve" className={styles.cta} data-cursor="link">
-            <span className={styles.linkLabel}>Curate Your Journey</span>
-          </TransitionLink>
+          <TransitionLink href="/trips" kind="dissolve" className={styles.link}>Trips</TransitionLink>
+          <Link href="/#how" className={styles.link}>How it works</Link>
+          <Link href="/#faces" className={styles.link}>Who comes</Link>
         </nav>
+        <div className={styles.right}>
+          <TransitionLink href="/trips" kind="dissolve" className={`btn ${styles.cta}`}>Apply now</TransitionLink>
+          <button type="button" className={styles.menu} aria-expanded={open} aria-controls="site-menu" onClick={() => setOpen((v) => !v)}>
+            {open ? "Close" : "Menu"}
+          </button>
+        </div>
+      </header>
+
+      <div ref={overlay} id="site-menu" className={styles.overlay} data-open={open} data-lenis-prevent aria-hidden={!open} inert={!open}>
+        <div className={styles.overlayInner}>
+          <ul className={styles.tripList}>
+            {trips.map((t) => (
+              <li key={t.slug} className={styles.mask}>
+                <TransitionLink href={`/trips/${t.slug}`} kind={t.transition} to={t.hero.src} toNarrow={t.heroTall.src} className={`t-display ${styles.tripLink}`} data-menu-line onClick={() => setOpen(false)}>
+                  {t.title}
+                </TransitionLink>
+              </li>
+            ))}
+          </ul>
+          <div className={styles.overlayFoot}>
+            <Link href="/#how" className={`t-label ${styles.small}`} onClick={() => setOpen(false)}>How it works</Link>
+            <Link href="/#faces" className={`t-label ${styles.small}`} onClick={() => setOpen(false)}>Who comes</Link>
+            <TransitionLink href="/trips" kind="dissolve" className="btn btn--light" onClick={() => setOpen(false)}>Apply now</TransitionLink>
+          </div>
+        </div>
       </div>
-    </header>
+    </>
   );
 }

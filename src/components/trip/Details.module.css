@@ -1,0 +1,160 @@
+.details {
+  background: var(--bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.lists {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.title {
+  margin: 0.8rem 0 1.6rem;
+  max-width: 18ch;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.subhead {
+  margin-bottom: 0.9rem;
+}
+
+.plain {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.plainItem {
+  display: grid;
+  grid-template-columns: 1rem 1fr;
+  gap: 0.6rem;
+  align-items: start;
+}
+
+.tick {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.35rem;
+  border-radius: 50%;
+  background: var(--sun);
+}
+
+.tick::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  width: 4px;
+  height: 7px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.cross {
+  background: var(--line);
+}
+
+.cross::after {
+  display: none;
+}
+
+.muted {
+  color: var(--ink-2);
+}
+
+.panelMuted {
+  color: var(--on-night-2);
+}
+
+.list {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+  gap: 0.9rem;
+  align-items: start;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.check {
+  width: 1.6rem;
+  height: 1.6rem;
+  color: var(--sun);
+  margin-top: 0.2rem;
+}
+
+.panel {
+  min-width: 0;
+  position: sticky;
+  top: 6rem;
+  display: grid;
+  gap: 0.8rem;
+  padding: clamp(1.5rem, 3vw, 2.4rem);
+  border-radius: var(--radius);
+  background: var(--night);
+  color: #fff;
+}
+
+.price {
+  font-size: clamp(2.4rem, 4vw, 4.2rem);
+  letter-spacing: -0.04em;
+  overflow-wrap: anywhere;
+}
+
+.rule {
+  height: 1px;
+  border: 0;
+  background: var(--on-night-line);
+  margin: 0.4rem 0;
+}
+
+.line {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.risk {
+  color: var(--sun-2);
+  margin-top: 0.4rem;
+}
+
+.cta {
+  width: 100%;
+  margin-top: 0.8rem;
+}
+
+.spots {
+  text-align: center;
+  color: var(--sun-2);
+}
+
+.pulse {
+  animation: pulse-soft 2.2s ease-in-out infinite;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .panel {
+    position: static;
+  }
+  .cols {
+    grid-template-columns: 1fr;
+  }
+}

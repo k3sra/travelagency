@@ -8,7 +8,7 @@
  * provider lives in the tree.
  *
  *   const { open } = useBooking();     // inside React
- *   booking.open("kyoto-in-silence");   // anywhere else (transition controller, tests)
+ *   booking.open("bali-in-full-colour");   // anywhere else (transition controller, tests)
  */
 
 import { createContext, useContext, useMemo, useSyncExternalStore, type ReactNode } from "react";

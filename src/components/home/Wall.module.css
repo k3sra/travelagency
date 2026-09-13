@@ -1,0 +1,70 @@
+.wall {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-soft);
+  padding-block: var(--section) clamp(6rem, 12vw, 12rem);
+}
+
+.lead {
+  color: var(--ink-2);
+  max-width: 44ch;
+}
+
+.head {
+  display: grid;
+  gap: 0.8rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.rows {
+  display: grid;
+  gap: 1.2rem;
+  width: 124vw;
+  margin-left: -12vw;
+  transform: rotate(-4deg);
+}
+
+.rowMask {
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  gap: 1.2rem;
+  width: max-content;
+  will-change: transform;
+}
+
+.tile {
+  flex: none;
+  height: clamp(180px, 30vh, 380px);
+  aspect-ratio: var(--ar);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: #ddd;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease-out);
+}
+
+.tile:hover {
+  transform: translateY(-4px);
+}
+
+.tile:hover img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 899px) {
+  .rows {
+    transform: rotate(-3deg);
+  }
+  .tile {
+    height: clamp(140px, 22vh, 220px);
+  }
+}

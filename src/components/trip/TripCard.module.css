@@ -1,0 +1,140 @@
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+}
+
+.flip .media {
+  order: 2;
+}
+
+.media {
+  display: block;
+  color: #fff;
+}
+
+.parallax {
+  display: block;
+}
+
+.frame {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--night);
+}
+
+.img {
+  object-fit: cover;
+  transition: transform 0.7s var(--ease-out);
+}
+
+.media:hover .img {
+  transform: scale(1.05);
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 50%);
+  pointer-events: none;
+}
+
+.index {
+  position: absolute;
+  z-index: 4;
+  top: 1.2rem;
+  left: 1.2rem;
+}
+
+.copy {
+  display: grid;
+  gap: 1.1rem;
+  align-content: center;
+}
+
+.meta {
+  color: var(--sun);
+}
+
+.title {
+  font-size: clamp(2.2rem, 4.2vw, 4.4rem);
+}
+
+.highlights {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--ink-2);
+}
+
+.highlight {
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.highlight::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sun);
+}
+
+.sub {
+  color: var(--ink-2);
+  max-width: 30ch;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.2rem;
+  padding: 0 0.9rem;
+  border-radius: var(--pill);
+  background: var(--bg-soft);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.intent {
+  background: #fff;
+  border: 1.5px solid var(--ink);
+}
+
+.facts {
+  color: var(--ink-2);
+}
+
+.spots {
+  color: var(--sun);
+}
+
+.pulse {
+  animation: pulse-soft 2.2s ease-in-out infinite;
+}
+
+@media (max-width: 900px) {
+  .row,
+  .flip {
+    grid-template-columns: 1fr;
+  }
+  .flip .media {
+    order: 0;
+  }
+  .frame {
+    aspect-ratio: 4 / 5;
+  }
+}

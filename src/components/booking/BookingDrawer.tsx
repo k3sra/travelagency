@@ -39,6 +39,8 @@ import { prefersReducedMotion, useReducedMotion } from "@/lib/useReducedMotion";
 import { Padlock } from "./Padlock";
 import { PaymentButtons } from "./PaymentButtons";
 import { TrustMarkers } from "./TrustMarkers";
+import { HoldTimer } from "./HoldTimer";
+import { SeatsBar } from "@/components/ui/SeatsBar";
 import styles from "./BookingDrawer.module.css";
 
 type Lifecycle = "closed" | "open" | "closing";
@@ -385,14 +387,16 @@ export function BookingDrawer() {
           {status}
         </p>
 
+        {/* Distinct keys: the details block is faded out by GSAP before the swap, and
+            React must not reuse that node (with its inline opacity) for the confirmation. */}
         <div ref={bodyRef} className={styles.body} data-lenis-prevent>
           {journey && step === "held" && result ? (
-            <div ref={confirmRef} className={styles.confirm} tabIndex={-1}>
+            <div key="held" ref={confirmRef} className={styles.confirm} tabIndex={-1}>
               <h2 id={titleId} className={`t-caps ${styles.eyebrow}`} data-rise>
                 Your place is held
               </h2>
               <p className={`t-display ${styles.title}`} data-rise>
-                Your legend begins <em>{journey.dates}</em>.
+                You are in. <em>{journey.dates}</em>
               </p>
               <p className={styles.meta} data-rise>
                 You are traveller {journey.groupMax - journey.spotsRemaining + 1} of{" "}
@@ -409,7 +413,7 @@ export function BookingDrawer() {
                 refundable until {heldUntilFormat.format(new Date(result.heldUntil))}
               </p>
               <div className={styles.actions} data-rise>
-                <MagneticButton variant="ghost" label="Back to the journey" onClick={closeDrawer} />
+                <MagneticButton variant="ghost" label="Back to the trip" onClick={closeDrawer} />
               </div>
               <hr className={styles.rule} data-rise />
               <div data-rise>
@@ -421,9 +425,9 @@ export function BookingDrawer() {
               </p>
             </div>
           ) : journey ? (
-            <div ref={detailsRef} className={styles.details}>
+            <div key="details" ref={detailsRef} className={styles.details}>
               <p className={`t-caps ${styles.eyebrow}`} data-rise>
-                Secure your place
+                Secure your seat
               </p>
               <h2 id={titleId} className={`t-display ${styles.title}`} data-rise>
                 <Title title={journey.title} em={journey.titleEm} />
@@ -443,6 +447,10 @@ export function BookingDrawer() {
                 [ {journey.spotsRemaining} {journey.spotsRemaining === 1 ? "Spot" : "Spots"}{" "}
                 Remaining ]
               </p>
+              <div data-rise>
+                <SeatsBar taken={journey.groupMax - journey.spotsRemaining} total={journey.groupMax} />
+                {open ? <HoldTimer key={journey.slug} /> : null}
+              </div>
 
               <dl className={styles.terms} data-rise>
                 <div className={styles.term}>
@@ -460,6 +468,9 @@ export function BookingDrawer() {
                   </dd>
                 </div>
               </dl>
+              <p className={`t-caps ${styles.noFees}`} data-rise>
+                No booking fees. Nothing added at the end. The price is the price.
+              </p>
 
               <form ref={formRef} className={styles.form} onSubmit={onSubmit}>
                 <div className={styles.fields} data-rise>
@@ -505,6 +516,13 @@ export function BookingDrawer() {
                     disabled={busy}
                     onPay={(method) => void handlePay(method)}
                   />
+                  <ul className={styles.cards} aria-label="Accepted cards">
+                    {["Visa", "Mastercard", "Amex", "Apple Pay", "Google Pay"].map((c) => (
+                      <li key={c} className={styles.card}>
+                        {c}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </form>
 

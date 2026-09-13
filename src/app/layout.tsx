@@ -1,55 +1,29 @@
 import type { Metadata, Viewport } from "next";
-import { Cinzel, Crimson_Text, Playfair_Display } from "next/font/google";
+import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { Cursor } from "@/components/motion/Cursor";
 import { GLStage } from "@/components/gl/GLStage";
 import { TransitionProvider } from "@/components/gl/TransitionProvider";
 import { BookingProvider } from "@/components/booking/BookingProvider";
+import { Preloader } from "@/components/motion/Preloader";
 import { SiteNav } from "@/components/nav/SiteNav";
 import { Footer } from "@/components/nav/Footer";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const cinzel = Cinzel({
-  variable: "--font-cinzel",
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  display: "swap",
-});
-
-const crimson = Crimson_Text({
-  variable: "--font-crimson",
-  subsets: ["latin"],
-  weight: ["400", "600"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
+const jakarta = Plus_Jakarta_Sans({ variable: "--font-jakarta", subsets: ["latin"], weight: ["600", "700", "800"], display: "swap" });
+const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"], weight: ["400", "500", "600", "700"], display: "swap" });
 
 const SITE_URL = "https://k3sra.github.io/travelagency";
 
 export const metadata: Metadata = {
-  title: {
-    default: "Fable Travels — Write your own legend.",
-    template: "%s — Fable Travels",
-  },
-  description:
-    "Small-group journeys for grown-ups who travel slowly. Kyoto, Patagonia, the Sahara, Iceland. Ten travellers, one host, no itinerary you have seen before.",
+  title: { default: "FABLE · Hosted group trips for 25 to 40 year olds", template: "%s · FABLE" },
+  description: "Hosted group weeks in Bali, Thailand, Cape Town and Rio for solo travellers and small groups aged 25 to 40. Twelve travellers, one villa, one host, all-in pricing, free cancellation for 14 days.",
   metadataBase: new URL(SITE_URL),
-  openGraph: {
-    siteName: "Fable Travels",
-    type: "website",
-  },
+  openGraph: { siteName: "FABLE", type: "website" },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#2D3A3A",
+  themeColor: "#ffffff",
   colorScheme: "light",
   width: "device-width",
   initialScale: 1,
@@ -58,11 +32,12 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${playfair.variable} ${cinzel.variable} ${crimson.variable}`}>
-      <body>
+    <html lang="en" className={`${jakarta.variable} ${manrope.variable}`}>
+      <body data-custom-cursor="on">
         <SmoothScroll>
           <TransitionProvider>
             <BookingProvider>
+              <Preloader />
               <SiteNav />
               {children}
               <Footer />

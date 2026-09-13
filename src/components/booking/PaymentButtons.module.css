@@ -47,7 +47,7 @@
 }
 
 .wallet:focus-visible {
-  outline: 1px solid var(--gold);
+  outline: 1px solid var(--sun);
   outline-offset: 4px;
 }
 
@@ -88,7 +88,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  color: var(--on-forest-muted);
+  color: var(--ink-2);
 }
 
 .divider::before,
@@ -96,7 +96,7 @@
   content: "";
   flex: 1;
   height: 1px;
-  background: var(--on-forest-line);
+  background: var(--line);
 }
 
 .or {
